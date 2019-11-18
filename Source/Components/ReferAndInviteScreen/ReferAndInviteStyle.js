@@ -1,0 +1,76 @@
+import * as AppConstants from '../Helper/AppConstants';
+
+export default {
+  mainContainer: {
+    flex: 1,
+  },
+  cardView: {
+    backgroundColor: AppConstants.COLORS.WHITE,
+    borderColor: AppConstants.COLORS.APPTHEME,
+    borderRadius: AppConstants.getDeviceHeight(1),
+    borderWidth: AppConstants.getDeviceHeight(0.5),
+    alignSelf: 'center',
+    marginTop: AppConstants.getDeviceHeight(3.5),
+    width: AppConstants.getDeviceWidth(89.6),
+    height: AppConstants.getDeviceHeight(81),
+  },
+  LinerGradentView: {
+    height: AppConstants.getDeviceHeight(25),
+    width: AppConstants.getDeviceWidth(88),
+    elevation: 0,
+    backgroundColor: AppConstants.COLORS.APPTHEME,
+  },
+  txtHowGood: {
+    textAlign: 'center',
+    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1_BOLD,
+    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS18),
+    marginTop: AppConstants.getDeviceHeight(3),
+    color: AppConstants.COLORS.WHITE,
+  },
+  txtYourReferral: {
+    textAlign: 'center',
+    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1_BOLD,
+    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS12),
+    marginTop: AppConstants.getDeviceHeight(8),
+  },
+  viewReferralcode: {
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: AppConstants.getDeviceHeight(0.1),
+    borderColor: AppConstants.COLORS.LINEARGRADIENT_1,
+    borderRadius: AppConstants.getDeviceHeight(1),
+    padding: AppConstants.getDeviceHeight(3),
+    marginTop: AppConstants.getDeviceHeight(2),
+  },
+  inviteFriendsImage: {
+    height: AppConstants.getDeviceHeight(15),
+    width: AppConstants.getDeviceWidth(20),
+    marginTop: AppConstants.getDeviceHeight(-10),
+    alignSelf: 'center',
+    position: 'absolute',
+  },
+  txtreferralcode: {
+    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS25),
+    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1_BOLD,
+    textAlign: 'center',
+  },
+  buttonView: {
+    flexDirection: 'row',
+    width: AppConstants.getDeviceWidth(44.7),
+    height: AppConstants.getDeviceHeight(5.7),
+    marginTop: AppConstants.getDeviceHeight(10),
+    backgroundColor: AppConstants.COLORS.APPTHEME,
+    borderRadius: AppConstants.getDeviceHeight(1),
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  txtCopyTrack: {
+    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS15),
+    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1_BOLD,
+    color: AppConstants.COLORS.WHITE,
+    alignSelf: 'center',
+    marginLeft: AppConstants.getDeviceWidth(1),
+  },
+};
