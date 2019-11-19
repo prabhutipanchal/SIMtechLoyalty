@@ -4,18 +4,19 @@ import styles from './DealersStyle';
 import * as AppConstants from '../Helper/AppConstants';
 import MyButton from '../../CustomControls/MyButton';
 const Images = {
-    Logobw: 'icon',
+    Logo: 'nodealerfound',
 };
 
 export default class Dealers extends Component {
     render() {
         return (
 
+
             <View style={styles.mainContainer}>
                 <View style={styles.logoContainer}>
                     <Image
                         resizeMode="contain"
-                        source={{ uri: Images.Logobw }}
+                        source={{ uri: Images.Logo}}
                         style={styles.logo}
                     />
                 </View>

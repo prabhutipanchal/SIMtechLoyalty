@@ -53,7 +53,7 @@ class HamburgerIcon extends Component {
             name="menu"
             style={{ marginLeft: AppConstants.getDeviceWidth(3.5) }}
             size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS30)}
-            color={AppConstants.COLORS.WHITE}
+            color={AppConstants.COLORS.BLACK}
           />
         </TouchableOpacity>
       </View>
@@ -145,8 +145,8 @@ export const Tab_1 = createBottomTabNavigator(
                 size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS36)}
                 color={
                   focused
-                    ? AppConstants.COLORS.APPTHEME
-                    : AppConstants.COLORS.BASECOLOR_2
+                    ? AppConstants.COLORS.HOMEICON
+                    : AppConstants.COLORS.WHITE
                 }
               />
             </View>
@@ -232,6 +232,9 @@ const RootStack = createStackNavigator(
         isBack: 1,
       },
     },
+    Dealers: {
+      screen: Dealers,
+    },
     Initial: {
       screen: Initial,
       navigationOptions: {
@@ -250,6 +253,9 @@ const RootStack = createStackNavigator(
       navigationOptions: {
         title: 'ForgotPassword',
       },
+      // params: {
+      //   showWhiteBackground: true,
+      // },
     },
     OTP: {
       screen: OTP,
@@ -262,9 +268,9 @@ const RootStack = createStackNavigator(
       navigationOptions: {
         // title: 'Login',
       },
-      params: {
-        isBack: true,
-      },
+      // params: {
+      //   showWhiteBackground: true,
+      // },
     },
     Setting: {
       screen: Setting,
@@ -295,59 +301,50 @@ const RootStack = createStackNavigator(
       navigationOptions: {
         title: 'FAQ',
       },
-      params: {
-        showWhiteBackground: true,
-      },
+
     },
     ReferAndInvite: {
       screen: ReferAndInvite,
       navigationOptions: {
         title: 'ReferAndInvite',
       },
-      params: {
-        showWhiteBackground: true,
-      },
+
     },
     Analytics: {
       screen: Analytics,
       navigationOptions: {
         title: 'Analytics',
       },
-      params: {
-        showWhiteBackground: true,
-      },
+
     },
     EnableFaceID: {
       screen: EnableFaceId,
       navigationOptions: {
         title: 'EnableFaceID',
       },
-      params: {
-        showWhiteBackground: true,
-      },
+
     },
     TermsAndCondition: {
       screen: TermsAndCondition,
       navigationOptions: {
         title: 'TermsAndCondition',
       },
-      params: {
-        showWhiteBackground: true,
-      },
+
     },
     CreatePresentation: {
       screen: CreatePresentation,
       navigationOptions: {
         title: 'CreatePresentation',
       },
-      params: {
-        showWhiteBackground: true,
-      },
+
     },
     AddDealers: {
       screen: AddDealers,
       navigationOptions: {
         title: 'AddDealers',
+      },
+      params: {
+        showWhiteBackground: true,
       },
     },
     Logout: {
@@ -355,9 +352,7 @@ const RootStack = createStackNavigator(
       navigationOptions: {
         title: 'Logout',
       },
-      params: {
-        showWhiteBackground: true,
-      },
+
     },
   },
   {
@@ -400,38 +395,15 @@ const MyDrawerNavigator = createDrawerNavigator(
     Dashboard: {
       screen: RootStack,
     },
-    Setting: {
-      screen: Setting,
-    },
-    OTP: {
-      screen: OTP,
-    },
-    // dashboard: {
-    //   screen: RootStack,
-    // },
   },
   {
     contentComponent: drawerContentComponents,
   },
-  // {
-  //   contentOptions: {
-  //     borderWidth: 10,
-  //     borderRadius: 10,
-  //     alignItems: 'center',
-  //     justifyContent: 'center',
-  //     marginTop: 100,
-  //     height: 100,
 
-  //     activeTintColor: '#e91e63',
-  //     inactiveTintColor: '#FFF',
-  //   },
-  //   drawerType: 'slide',
-  //   hideStatusBar: true,
-  //   drawerLockMode: 'locked-open',
-  //   drawerBackgroundColor: AppConstants.COLORS.APPTHEME,
-  // },
 );
 export default createAppContainer(MyDrawerNavigator);
+
+
 function getHeaderLeft(navigation) {
   if (navigation.getParam('isBack') == undefined) {
     return AppConstants.BackButton(navigation);
@@ -444,7 +416,8 @@ function getHeaderLeft(navigation) {
         name="arrow-left"
         style={{ marginLeft: AppConstants.getDeviceWidth(4), opacity: 0 }}
         size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS25)}
-        color={AppConstants.COLORS.APPTHEME}
+        color={AppConstants.COLORS.WHITE
+        }
       />
     );
   }
@@ -454,9 +427,12 @@ function getControlColour(navigation) {
   switch (navigation.state.routeName) {
     case 'Signup':
     case 'Login':
+    case 'Notication':
     // case 'ForgotPassword':
     // case 'OTP':
     case 'Changepassword':
+    case 'Dashboard':
+    case 'Dealers':
       return AppConstants.COLORS.BLACK;
     default:
       return AppConstants.COLORS.WHITE;
@@ -468,12 +444,14 @@ function getHeaderBackground(navigation) {
     case 'Signup':
     case 'Login':
     case 'Changepassword':
+    case 'Dashboard':
+    case 'Notication':
       return null;
     default:
       return (
         <View
           style={{
-            backgroundColor: AppConstants.COLORS.APPTHEME,
+            backgroundColor: AppConstants.COLORS.WHITE,
             flex: 1,
           }}
         />
@@ -490,26 +468,27 @@ function getRightIcons(navigation) {
     case 'Account':
     case 'Notification':
     case 'Cart':
+    case 'Dealers':
       return (
         <View
           style={{
             flexDirection: 'row',
             marginRight: AppConstants.getDeviceWidth(3),
           }}>
-          {/* <SearchIcons
+          <SearchIcons
             onPress={() => navigation.navigate('Setting')}
             name="md-settings"
-            style={{marginRight: AppConstants.getDeviceWidth(3)}}
+            style={{ marginRight: AppConstants.getDeviceWidth(3) }}
             size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)}
             color={getControlColour(navigation)}
-          /> */}
+          />
         </View>
       );
-    case 'Login':
+    // case 'Login':
     case 'OTP':
     case 'Dashboard':
     case 'Search':
-      // case 'ForgotPassword':
+    case 'ForgotPassword':
       return (
         <TouchableOpacity
           activeOpacity={0.9}

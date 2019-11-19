@@ -8,7 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Toast, { DURATION } from 'react-native-easy-toast';
 
 const Images = {
-  Logobw: 'icon',
+  Logobw: 'smalllogo',
 };
 
 export default class ForgotPassword extends Component {
@@ -36,7 +36,7 @@ export default class ForgotPassword extends Component {
         AppConstants.Messages.MOBILENOLENGTH,
         DURATION.LENGTH_LONG,
       );
-    } 
+    }
     else {
       Alert.alert('All Ok');
     }
@@ -70,7 +70,7 @@ export default class ForgotPassword extends Component {
           <Text style={styles.txtsignintitle}>Sign in to access your account.</Text>
         </View>
 
-        <View style={styles.phoneViewstyle}>
+        <View>
 
           <View style={styles.txtInputView}>
             <TextField
@@ -104,7 +104,8 @@ export default class ForgotPassword extends Component {
               onChangeText={MobileNumber => this.setState({ MobileNumber })}
               returnKeyType={'go'}
             />
-            <Icon style={styles.phoneIcon} name="mobile-phone" size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)} color="#0F58D6" />
+            <Icon style={styles.phoneIcon} name="mobile-phone" size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)}
+              color={AppConstants.COLORS.APPTHEME} />
           </View>
         </View>
 
@@ -115,9 +116,6 @@ export default class ForgotPassword extends Component {
           />
         </View>
 
-        {/* <View style={styles.btnLoginView}>
-          <MyButton onPress={() => navigate('Login')} Text="LOGIN" />
-        </View> */}
       </View>
     );
   }

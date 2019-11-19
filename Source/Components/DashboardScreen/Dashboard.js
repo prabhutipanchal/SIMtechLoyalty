@@ -58,14 +58,14 @@ export default class Dashboard extends Component {
               <Text style={Styles.txt}> Changepassword </Text>
             </TouchableOpacity>
           </View>
-          {/* <View style={Styles.mainView}>
+          <View style={Styles.mainView}>
             <TouchableOpacity
               style={Styles.mainCardView}
               activeOpacity={0.9}
-              onPress={() => navigate(AppConstants.SCREENS.INVITEFRIENDS)}>
-              <Text style={Styles.txt}> Invite Friends </Text>
+              onPress={() => navigate(AppConstants.SCREENS.NOTIFICATION)}>
+              <Text style={Styles.txt}> Notification </Text>
             </TouchableOpacity>
-          </View> */}
+          </View>
 
           <View style={Styles.mainView}>
             <TouchableOpacity

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, Alert, Keyboard,Image,TouchableOpacity} from 'react-native';
+import { View, Text, ScrollView, Alert, Keyboard, Image, TouchableOpacity } from 'react-native';
 import Styles from './LoginStyle';
 import { TextField } from 'react-native-material-textfield';
 import Toast, { DURATION } from 'react-native-easy-toast';
@@ -17,7 +17,7 @@ export default class Login extends Component {
       MobileNumber: '',
       Password: '',
       showtxtPasswordIcon: 'visibility-off',
-      showtxtPassword: false,
+      showtxtPassword: true,
     };
   }
   validateFields() {
@@ -42,7 +42,7 @@ export default class Login extends Component {
         AppConstants.Messages.NOPASSWORD,
         DURATION.LENGTH_LONG,
       );
-    } 
+    }
     else {
       Alert.alert('All Ok');
     }
@@ -63,18 +63,17 @@ export default class Login extends Component {
         <ScrollView
           keyboardShouldPersistTaps="handled"
           contentContainerStyle={{ flexGrow: 1 }}>
-          {/* <Text style={Styles.txtLogin}> SimTech </Text> */}
           <View style={Styles.logoContainer}>
-          <Image
-            resizeMode="contain"
-            source={{ uri: Images.Logobw }}
-            style={Styles.logo}
-          />
-        </View>
-        <View style={Styles.Container}>
-          <Text style={Styles.txtLogintitle}>Login</Text>
-          <Text style={Styles.txtsignintitle}>Sign in to access your account.</Text>
-        </View>
+            <Image
+              resizeMode="contain"
+              source={{ uri: Images.Logobw }}
+              style={Styles.logo}
+            />
+          </View>
+          <View style={Styles.Container}>
+            <Text style={Styles.txtLogintitle}>Login</Text>
+            <Text style={Styles.txtsignintitle}>Sign in to access your account.</Text>
+          </View>
           <View style={Styles.txtInputView}>
             <TextField
               style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
@@ -108,7 +107,7 @@ export default class Login extends Component {
               onChangeText={MobileNumber => this.setState({ MobileNumber })}
               returnKeyType={'next'}
             />
-              <MIcon style={Styles.phoneIcon} name="mobile-phone" 
+            <MIcon style={Styles.phoneIcon} name="mobile-phone"
               size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)} color="#0F58D6" />
           </View>
           <View style={Styles.txtInputView}>
@@ -144,35 +143,23 @@ export default class Login extends Component {
               onChangeText={Password => this.setState({ Password })}
               returnKeyType={'go'}
             />
-            <PLIcon style={Styles.phoneIcon} name="lock" 
+            <PLIcon style={Styles.phoneIcon} name="lock"
               size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)} color="#0F58D6" />
-            {/* <Icon
-              style={Styles.icon}
-              name={this.state.showtxtPasswordIcon}
-              size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS25)}
-              onPress={() => {
-                this.setState({
-                  showtxtPasswordIcon: this.state.showtxtPassword
-                    ? 'visibility'
-                    : 'visibility-off',
-                  showtxtPassword: !this.state.showtxtPassword,
-                });
-              }}
-            /> */}
+
             <TouchableOpacity >
-            <Text style={Styles.txtForgot}>Forgot password?</Text> 
+              <Text style={Styles.txtForgot}>Forgot password?</Text>
             </TouchableOpacity>
           </View>
-        
-        <View style={Styles.btnsigninView}> 
-          <MyButton
-            Text="Sign in"
-            onPress={this.validateFields.bind(this)}
-          />
-        </View>
+
+          <View style={Styles.btnsigninView}>
+            <MyButton
+              Text="Sign in"
+              onPress={this.validateFields.bind(this)}
+            />
+          </View>
         </ScrollView>
       </View>
-      
+
     );
   }
 }

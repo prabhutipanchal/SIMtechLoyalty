@@ -39,7 +39,7 @@ const defaultButtonStyles = {
     shadowRadius: 1, //IOS
     elevation: 5, // Android,
     // paddingTop:AppConstants.getDeviceHeight(5.67),
-    height: AppConstants.getDeviceHeight(6.67),
+    height: AppConstants.getDeviceHeight(8),
     width: AppConstants.getDeviceWidth(91.47),
     borderRadius: AppConstants.getDeviceWidth(2),
     backgroundColor: AppConstants.COLORS.APPTHEME,

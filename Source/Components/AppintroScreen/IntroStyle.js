@@ -4,15 +4,13 @@ export default {
     flex: 1,
   },
   ToptextcontainerView: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     position: 'absolute',
-    alignItems: 'center',
-    right: AppConstants.getDeviceWidth(5),
-    top: AppConstants.getDeviceHeight(5),
+    // alignItems: 'center',
+    right: AppConstants.getDeviceWidth(0),
+    top: AppConstants.getDeviceHeight(0),
   },
-  skipView: {
-    right: 0,
-  },
+  
   bottomDoneButton: {
     position: 'absolute',
     right: 0,
@@ -36,6 +34,9 @@ export default {
     color: AppConstants.COLORS.APPTHEME,
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1_BOLD,
     // textAlign: 'center',
+    right: AppConstants.getDeviceWidth(3),
+    top: AppConstants.getDeviceHeight(3),
+    position:'absolute'
   },
   nextButtonView: {
     width: AppConstants.getDeviceWidth(20.27),

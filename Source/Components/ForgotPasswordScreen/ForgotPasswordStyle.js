@@ -2,6 +2,7 @@ import * as AppConstants from '../Helper/AppConstants';
 export default {
   mainContainer: {
     flex: 1,
+    alignItems: 'center',
   },
   Container: {
     marginTop: AppConstants.getDeviceHeight(4.93),
@@ -10,15 +11,15 @@ export default {
   },
 
   logoContainer: {
-    marginTop: AppConstants.getDeviceHeight(8),
-    height: AppConstants.getDeviceHeight(7.2),
-    width: AppConstants.getDeviceWidth(61.33),
+    marginBottom: AppConstants.getDeviceHeight(2),
+    height: AppConstants.getDeviceHeight(9),
+    width: AppConstants.getDeviceWidth(80),
     alignItems: 'center',
   },
   logo: {
-    height: AppConstants.getDeviceHeight(7.2),
+    height: AppConstants.getDeviceHeight(12),
     width: AppConstants.getDeviceWidth(61.33),
-    right:  AppConstants.getDeviceHeight(10),
+    right: AppConstants.getDeviceHeight(15),
   },
   txtResetpwdtitle: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS24),
@@ -30,34 +31,17 @@ export default {
     color: AppConstants.COLORS.TEXTCOLOR2,
   },
   txtInputView: {
-    marginTop: AppConstants.getDeviceHeight(8),
-    width: AppConstants.getDeviceWidth(80),
-    height: AppConstants.getDeviceHeight(11.09),
-    alignSelf: 'center',
-  },
-  phoneViewstyle: {
-    // flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    // marginTop: AppConstants.getDeviceHeight(3.3),
-
+    width: AppConstants.getDeviceWidth(91.47),
   },
   phoneIcon: {
     position: 'absolute',
-    top: 33,
-    left:  AppConstants.getDeviceHeight(1),
+    top: AppConstants.getDeviceHeight(5),
+    left: AppConstants.getDeviceHeight(1),
 
   },
   btnResetPwdView: {
     marginTop: AppConstants.getDeviceHeight(3.69),
     alignSelf: 'center',
   },
-  btnLoginView: {
-    marginTop: AppConstants.getDeviceHeight(2.62),
-    width: AppConstants.getDeviceWidth(80),
-    height: AppConstants.getDeviceHeight(7.35),
-    alignSelf: 'center',
-  },
+
 };

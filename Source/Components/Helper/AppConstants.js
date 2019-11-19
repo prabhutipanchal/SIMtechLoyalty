@@ -148,6 +148,10 @@ export const COLORS = {
   BORDER_COLOR: '#E7E7E7',
   YELLOW: '#FFF100',
   FORGOTTEXT:'#9CA2AD',
+  EDITBUTTON:'#14D60F',
+  HOMEICON:'#578AE2',
+  TEXTCOLOR:'#4F545C',
+ 
 };
 export const SHADOWCOLORS = {
   LOGO_SHADOW: 'rgba(0,0,0,0.3)',
