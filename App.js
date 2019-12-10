@@ -38,6 +38,12 @@ import MerchandiseProduct from './Source/Components/MerchandiseScreen/Merchandis
 import DealerDetail from './Source/Components/DealersScreen/DealerDetail';
 import ProductDetail from './Source/Components/MerchandiseScreen/ProductDetail';
 import BestPerformers from './Source/Components/BestPerformersScreen/BestPerformers';
+import AddDealer from './Source/Components/DealersScreen/AddDealer';
+import AddDealer2 from './Source/Components/DealersScreen/AddDealer2';
+import AddDealer3 from './Source/Components/DealersScreen/AddDealer3';
+import AddDealer4 from './Source/Components/DealersScreen/AddDealer4';
+import AddDealer5 from './Source/Components/DealersScreen/AddDealer5';
+import AddDealer6 from './Source/Components/DealersScreen/AddDealer6';
 
 class HamburgerIcon extends Component {
   toggleDrawer = () => {
@@ -362,6 +368,42 @@ const RootStack = createStackNavigator(
       screen: BestPerformers,
       navigationOptions: {
         title: 'Best Performers',
+      },
+    },
+    AddDealer: {
+      screen: AddDealer,
+      navigationOptions: {
+        title: 'Add Dealer',
+      },
+    },
+    AddDealer2: {
+      screen: AddDealer2,
+      navigationOptions: {
+        title: 'Add Dealer',
+      },
+    },
+    AddDealer3: {
+      screen: AddDealer3,
+      navigationOptions: {
+        title: 'Add Dealer',
+      },
+    },
+    AddDealer4: {
+      screen: AddDealer4,
+      navigationOptions: {
+        title: 'Add Dealer',
+      },
+    },
+    AddDealer5: {
+      screen: AddDealer5,
+      navigationOptions: {
+        title: 'Add Dealer',
+      },
+    },
+    AddDealer6: {
+      screen: AddDealer6,
+      navigationOptions: {
+        title: 'Add Dealer',
       },
     },
     Logout: {

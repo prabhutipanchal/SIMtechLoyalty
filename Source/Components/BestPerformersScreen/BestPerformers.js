@@ -31,7 +31,17 @@ export default class BestPerformers extends Component {
                     PersonName: "Nguyễn Diệp Chi",
                     Designation: "Sales Representative",
                     TotalSales: "Total Sales"
-                }
+                },
+                {
+                    PersonName: "Gopichand Sana",
+                    Designation: "Sales Representative",
+                    TotalSales: "Total Sales"
+                },
+                {
+                    PersonName: "Gopichand Sana",
+                    Designation: "Sales Representative",
+                    TotalSales: "Total Sales"
+                },
 
             ],
         }
@@ -57,11 +67,13 @@ export default class BestPerformers extends Component {
 
 
                             <View style={styles.mainCardView}>
-                                <Image
-                                    resizeMode={'contain'}
-                                    source={{ uri: Images.Imgreferearn }}
-                                    style={styles.ImageReferEarnStyle}
-                                />
+                                <View style={styles.ImagePhotoView}>
+                                    <Image
+                                        resizeMode={'contain'}
+                                        source={{ uri: Images.Imgreferearn }}
+                                        style={styles.ImagePhotoStyle}
+                                    />
+                                </View>
                                 <View style={styles.DistributorView}>
                                     <Text style={styles.txtDistributor}>Distributor</Text>
                                 </View>

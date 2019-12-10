@@ -67,6 +67,12 @@ export const SCREENS = {
   DEALERDETAIL: 'DealerDetail',
   PRODUCTDETAIL: 'ProductDetail',
   BESTPERFORMERS:'BestPerformers',
+  ADDDEALER:'AddDealer',
+  ADDDEALER2:'AddDealer2',
+  ADDDEALER3:'AddDealer3',
+  ADDDEALER4:'AddDealer4',
+  ADDDEALER5:'AddDealer5',
+  ADDDEALER6:'AddDealer6',
   LOGOUT: 'Logout'
 
 

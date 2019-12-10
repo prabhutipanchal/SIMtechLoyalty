@@ -15,8 +15,8 @@ export default {
         height: AppConstants.getDeviceHeight(12.78),
         width: AppConstants.getDeviceWidth(58.55),
         alignSelf: 'center',
+        marginBottom: AppConstants.getDeviceHeight(2),
     },
-
     mainCardView: {
         backgroundColor: AppConstants.COLORS.WHITE,
         borderRadius: AppConstants.getDeviceHeight(1),
@@ -29,6 +29,25 @@ export default {
         marginTop: AppConstants.getDeviceHeight(2),
         alignSelf: 'center',
         width: AppConstants.getDeviceWidth(89.33),
+    },
+    ImagePhotoView:{
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        backgroundColor: 'red',
+        width: AppConstants.getDeviceWidth(23),
+        borderBottomLeftRadius: AppConstants.getDeviceHeight(1),
+        borderTopRightRadius: AppConstants.getDeviceHeight(1),
+        borderTopLeftRadius: AppConstants.getDeviceHeight(1),
+        borderBottomRightRadius: AppConstants.getDeviceHeight(1),
+        marginBottom: AppConstants.getDeviceHeight(1),
+        marginLeft: AppConstants.getDeviceHeight(1.13),
+        marginTop: AppConstants.getDeviceHeight(1),
+    },
+    ImagePhotoStyle: {
+        height: AppConstants.getDeviceHeight(11.58),
+        width: AppConstants.getDeviceWidth(25.07),
+        alignSelf: 'center',  
     },
     DistributorView: {
         width: AppConstants.getDeviceWidth(23),
@@ -52,11 +71,13 @@ export default {
         flexDirection: 'row',
         width: AppConstants.getDeviceWidth(78.85),
         alignSelf: 'center',
+        marginLeft: AppConstants.getDeviceHeight(28),
     },
     txtPersonName: {
         fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
         fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
         color: AppConstants.COLORS.APPTHEME,
+      
 
     },
     txtDesignation: {
@@ -65,6 +86,7 @@ export default {
         color: AppConstants.COLORS.TEXTCOLOR,
         marginTop: AppConstants.getDeviceHeight(1.48),
         marginBottom: AppConstants.getDeviceHeight(1.48),
+      
 
     },
     txtTotalSales: {
@@ -72,6 +94,7 @@ export default {
         fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
         color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
         paddingBottom: AppConstants.getDeviceHeight(1.85),
+      
 
     },
     txtAmount: {
@@ -79,6 +102,8 @@ export default {
         fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
         color: AppConstants.COLORS.TEXTCOLOR,
         paddingBottom: AppConstants.getDeviceHeight(1.85),
+       
 
     },
+    
 }
