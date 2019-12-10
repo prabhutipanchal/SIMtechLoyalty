@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
-import { View, Image, Keyboard, Alert, Text } from 'react-native';
+import { View, Image, Keyboard, Alert, Text, TouchableOpacity } from 'react-native';
 import styles from './ForgotPasswordStyle';
 import * as AppConstants from '../Helper/AppConstants';
 import MyButton from '../../CustomControls/MyButton';
 import { TextField } from 'react-native-material-textfield';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import PhoneIcon from 'react-native-vector-icons/FontAwesome';
 import Toast, { DURATION } from 'react-native-easy-toast';
-
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 const Images = {
   Logobw: 'smalllogo',
 };
 
 export default class ForgotPassword extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerLeft: () => (
+        <TouchableOpacity activeOpacity={0.9} style={{ marginLeft: AppConstants.getDeviceWidth(3) }}
+          onPress={() => navigation.goBack()}>
+          <MaterialIcons name="arrow-back" size={25} color={AppConstants.COLORS.BLACK} />
+        </TouchableOpacity>
+      ),
+    };
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -74,7 +84,7 @@ export default class ForgotPassword extends Component {
 
           <View style={styles.txtInputView}>
             <TextField
-              style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
+              style={{ fontFamily: AppConstants.FONT_FAMILY_2 }}
               keyboardType={'phone-pad'}
               selectTextOnFocus={false}
               label="Mobile No."
@@ -87,7 +97,6 @@ export default class ForgotPassword extends Component {
                 AppConstants.FONTSIZE.FS15,
               )}
               inputContainerStyle={{
-
                 paddingLeft: AppConstants.getDeviceWidth(10.93),
                 fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
               }}
@@ -104,8 +113,7 @@ export default class ForgotPassword extends Component {
               onChangeText={MobileNumber => this.setState({ MobileNumber })}
               returnKeyType={'go'}
             />
-            <Icon style={styles.phoneIcon} name="mobile-phone" size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)}
-              color={AppConstants.COLORS.APPTHEME} />
+            <PhoneIcon style={styles.phoneIcon} name="mobile-phone" />
           </View>
         </View>
 

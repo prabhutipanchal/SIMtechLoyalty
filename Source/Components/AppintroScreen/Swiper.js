@@ -2,6 +2,7 @@
  * react-native-swiper
  * @author leecade<leecade@163.com>
  */
+import * as AppConstants from '../Helper/AppConstants';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -16,6 +17,7 @@ import {
 } from 'react-native';
 import ViewPagerAndroid from '@react-native-community/viewpager';
 import Styles from '../AppintroScreen/IntroStyle';
+import Styles1 from '../MerchandiseScreen/ProductDetailStyle';
 /**
  * Default styles
  * @type {StyleSheetPropType}
@@ -538,7 +540,7 @@ export default class extends Component {
       <View
         style={[
           {
-            backgroundColor: this.props.activeDotColor || '#000',
+            backgroundColor: this.props.activeDotColor || AppConstants.COLORS.APPTHEME,
             width: 8,
             height: 8,
             borderRadius: 4,
@@ -559,7 +561,7 @@ export default class extends Component {
             width: 8,
             height: 8,
             borderWidth: 1,
-            borderColor: '#000',
+            borderColor:AppConstants.COLORS.TEXTFIELDBASECOLOR ,
             borderRadius: 4,
             marginLeft: 3,
             marginRight: 3,

@@ -10,13 +10,16 @@ export default class Initial extends Component {
       'Warning: componentWillReceiveProps is deprecated',
     ]);
     console.disableYellowBox = true;
+
   }
   componentDidMount() {
     AsyncStorage.getItem('IntroScreen').then(Data => {
       if (Data == null) {
+        console.log("intro")
         this.props.navigation.replace('Intro');
       } else {
-        this.props.navigation.replace('Dashboard');
+        
+        this.props.navigation.replace('Login');
       }
     });
   }

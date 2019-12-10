@@ -74,9 +74,9 @@ export default class OTP extends Component {
                 textAlign: 'center',
               }}
               placeholder={'Enter OTP'}
-              tintColor={AppConstants.COLORS.BASECOLOR_1}
+              tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
               textColor={AppConstants.COLORS.BASECOLOR_2}
-              baseColor={AppConstants.COLORS.BASECOLOR_1}
+              baseColor={AppConstants.COLORS.TEXTFIELDTEXT}
               fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS20)}
               keyboardType={'number-pad'}
               maxLength={4}

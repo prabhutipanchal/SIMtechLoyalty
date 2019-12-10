@@ -2,42 +2,49 @@ import * as AppConstants from '../Helper/AppConstants';
 export default {
   mainContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: AppConstants.COLORS.APP_BG,
+    justifyContent: 'space-around',
+    backgroundColor: '#E4EEFF',
   },
-  mainView: {
+  Container: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
-  txt: {
-    color: AppConstants.COLORS.BASECOLOR_2,
-    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1_BOLD,
-    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS15),
-    textAlign: 'center',
-  },
-  Headertxt: {
-    color: AppConstants.COLORS.WHITE,
-    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1_BOLD,
-    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS20),
-    marginLeft: AppConstants.getDeviceHeight(3),
-  },
-  HeaderView: {
-    width: AppConstants.getDeviceWidth(100),
-    height: AppConstants.getDeviceHeight(5.5),
-    borderBottomLeftRadius: AppConstants.getDeviceHeight(1.5),
-    borderBottomRightRadius: AppConstants.getDeviceHeight(1.5),
-    backgroundColor: AppConstants.COLORS.APPTHEME,
-  },
   mainCardView: {
-    marginTop: AppConstants.getDeviceHeight(1),
-    marginBottom: AppConstants.getDeviceHeight(1),
     backgroundColor: AppConstants.COLORS.WHITE,
-    borderColor: AppConstants.COLORS.APPTHEME,
-    borderWidth: AppConstants.getDeviceHeight(0.1),
-    paddingTop: AppConstants.getDeviceHeight(2.85),
-    paddingBottom: AppConstants.getDeviceHeight(2.85),
-    width: AppConstants.getDeviceWidth(95),
+    borderRadius: AppConstants.getDeviceHeight(1),
+    shadowColor: AppConstants.COLORS.TEXTFIELDBASECOLOR, // IOS
+    shadowOffset: { height: 1, width: 1 }, // IOS
+    shadowOpacity: 1, // IOS
+    shadowRadius: 1, //IOS
+    elevation: 5,
+    paddingTop: AppConstants.getDeviceHeight(1.85),
+    paddingBottom: AppConstants.getDeviceHeight(1.85),
+    width: AppConstants.getDeviceWidth(42.13),
     justifyContent: 'center',
   },
+
+  ImgCommonStyle: {
+    height: AppConstants.getDeviceHeight(7),
+    width: AppConstants.getDeviceWidth(12),
+    alignSelf: 'center',
+  },
+  txtTitleCommonStyle: {
+    marginTop: AppConstants.getDeviceHeight(1),
+    color: AppConstants.COLORS.TEXTCOLOR,
+    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
+    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
+    textAlign: 'center'
+  },
+
+
+
+
+
+
+
+
+
+
+
+  
 };

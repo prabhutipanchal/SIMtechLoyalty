@@ -3,7 +3,7 @@
 // /* eslint-disable eqeqeq */
 // /* eslint-disable no-fallthrough */
 // /* eslint-disable react-native/no-inline-styles */
-import { View, Platform, TouchableOpacity, Easing, Animated } from 'react-native';
+import { View, Platform, TouchableOpacity, Easing, Animated, BackHandler, Alert } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import drawerContentComponents from './Source/Components/AccountScreen/drawerContentComponents';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
@@ -11,22 +11,17 @@ import { createStackNavigator } from 'react-navigation-stack';
 import React, { Component } from 'react';
 import * as AppConstants from './Source/Components/Helper/AppConstants';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
-import DIcons from "react-native-vector-icons/FontAwesome5";
+import DealersIcons from "react-native-vector-icons/FontAwesome5";
 import SearchIcons from 'react-native-vector-icons/Ionicons';
-// import Chat from './Source/Components/ChatScreen/Chat';
-// import CalendarIcon from 'react-native-vector-icons/FontAwesome';
 import Login from './Source/Components/LoginScreen/Login';
 import Changepassword from './Source/Components/ChangePasswordScreen/Changepassword';
 import Dashboard from './Source/Components/DashboardScreen/Dashboard';
 import Initial from './Source/Components/DashboardScreen/Initial';
-// import Account from './Source/Components/AccountScreen/Account';
-import Setting from './Source/Components/SettingsScreen/Setting';
 import Intro from './Source/Components/AppintroScreen/Intro';
-import OTP from './Source/Components/OTPScreen/OTP';
 import ForgotPassword from './Source/Components/ForgotPasswordScreen/ForgotPassword';
 import Dealers from './Source/Components/DealersScreen/Dealers';
 import ReferAndInvite from './Source/Components/ReferAndInviteScreen/ReferAndInvite';
-import Product from './Source/Components/ProductScreen/Product';
+import Products from './Source/Components/ProductsScreen/Products';
 import Merch from './Source/Components/MerchScreen/Merch';
 import Notification from './Source/Components/NotificationScreen/Notification';
 import FAQ from './Source/Components/FAQScreen/Faq';
@@ -36,7 +31,13 @@ import TermsAndCondition from './Source/Components/TermsAndConditionScreen/Terms
 import CreatePresentation from './Source/Components/CreatePresentationScreen/CreatePresentation';
 import Logout from './Source/Components/LogoutScreen/Logout';
 import AddDealers from './Source/Components/DealersScreen/AddDealers';
+import Merchandise from './Source/Components/MerchandiseScreen/Merchandise';
 import { createDrawerNavigator } from 'react-navigation-drawer';
+import NoDealers from './Source/Components/DealersScreen/NoDealers';
+import MerchandiseProduct from './Source/Components/MerchandiseScreen/MerchandiseProduct';
+import DealerDetail from './Source/Components/DealersScreen/DealerDetail';
+import ProductDetail from './Source/Components/MerchandiseScreen/ProductDetail';
+import BestPerformers from './Source/Components/BestPerformersScreen/BestPerformers';
 
 class HamburgerIcon extends Component {
   toggleDrawer = () => {
@@ -63,7 +64,7 @@ class HamburgerIcon extends Component {
 const transitionConfig = () => {
   return {
     transitionSpec: {
-      duration: 200,
+      duration: 500,
       easing: Easing.out(Easing.poly(4)),
       timing: Animated.timing,
       useNativeDriver: true,
@@ -111,7 +112,7 @@ export const Tab_1 = createBottomTabNavigator(
         return {
           tabBarLabel: 'Dealers',
           tabBarIcon: ({ focused }) => (
-            <DIcons
+            <DealersIcons
               name="users"
               size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS20)}
               color={
@@ -124,16 +125,16 @@ export const Tab_1 = createBottomTabNavigator(
         };
       },
     },
-    Event: {
-      screen: Dealers,
+    Merchandise: {
+      screen: Merchandise,
       navigationOptions: ({ navigation }) => {
         return {
           tabBarLabel: ' ',
           tabBarIcon: ({ focused }) => (
             <View
               style={{
-                height: AppConstants.getDeviceHeight(10),
-                width: AppConstants.getDeviceHeight(10),
+                height: AppConstants.getDeviceHeight(11),
+                width: AppConstants.getDeviceHeight(11),
                 alignItems: 'center',
                 justifyContent: 'center',
                 backgroundColor: AppConstants.COLORS.APPTHEME,
@@ -154,8 +155,8 @@ export const Tab_1 = createBottomTabNavigator(
         };
       },
     },
-    Product: {
-      screen: Product,
+    Products: {
+      screen: Products,
       navigationOptions: ({ navigation }) => {
         return {
           tabBarOnPress: ({ }) => {
@@ -217,9 +218,16 @@ export const Tab_1 = createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: AppConstants.COLORS.APPTHEME,
       inactiveTintColor: AppConstants.COLORS.BASECOLOR_2,
+
       labelStyle: {
         fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
-        fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS10),
+        fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS13),
+        color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
+      },
+      style: {
+        backgroundColor: AppConstants.COLORS.TABBAR_BG_COLOR,
+        padding: AppConstants.getDeviceHeight(1),
+        height: AppConstants.getDeviceHeight(10.22),
       },
     },
   },
@@ -250,50 +258,54 @@ const RootStack = createStackNavigator(
 
     ForgotPassword: {
       screen: ForgotPassword,
-      navigationOptions: {
-        title: 'ForgotPassword',
-      },
-      // params: {
-      //   showWhiteBackground: true,
+      // navigationOptions: {
+      //   // gesturesEnabled: false,
+      //   // drawerLockMode: 'closeDrawer',
+      //   // drawerLabel: <Login />,
+      // },
+      //   navigationOptions: {
+      //     drawerLockMode: "locked-close",
+      //     disableGestures: true
       // },
     },
-    OTP: {
-      screen: OTP,
-      navigationOptions: {
-        title: 'OTP',
-      },
-    },
+
     Login: {
       screen: Login,
       navigationOptions: {
-        // title: 'Login',
+        gesturesEnabled: false,
       },
-      // params: {
-      //   showWhiteBackground: true,
-      // },
+      // navigationOptions: ({ navigation })=> ({
+      //   drawerLockMode: navigation.state.index > 0 ? 'locked-closed' : 'unlocked',
+      // }),
     },
-    Setting: {
-      screen: Setting,
+    Merchandise: {
+      screen: Merchandise,
       navigationOptions: {
-        title: 'Settings',
+        title: 'Merchandise',
       },
+    },
+    MerchandiseProduct: {
+      screen: MerchandiseProduct,
+      navigationOptions: {
+        title: 'Electronics',
+      },
+    },
+    DealerDetail: {
+      screen: DealerDetail,
+    },
+    ProductDetail: {
+      screen: ProductDetail,
     },
     Changepassword: {
       screen: Changepassword,
       navigationOptions: {
         title: 'Settings',
       },
-      params: {
-        showWhiteBackground: true,
-      },
     },
     Notification: {
       screen: Notification,
       navigationOptions: {
         title: 'Notification',
-      },
-      params: {
-        showWhiteBackground: true,
       },
     },
     FAQ: {
@@ -305,10 +317,6 @@ const RootStack = createStackNavigator(
     },
     ReferAndInvite: {
       screen: ReferAndInvite,
-      navigationOptions: {
-        title: 'ReferAndInvite',
-      },
-
     },
     Analytics: {
       screen: Analytics,
@@ -338,13 +346,22 @@ const RootStack = createStackNavigator(
       },
 
     },
+    NoDealers: {
+      screen: NoDealers,
+      navigationOptions: {
+        title: 'AddDealers',
+      },
+    },
     AddDealers: {
       screen: AddDealers,
       navigationOptions: {
         title: 'AddDealers',
       },
-      params: {
-        showWhiteBackground: true,
+    },
+    BestPerformers: {
+      screen: BestPerformers,
+      navigationOptions: {
+        title: 'Best Performers',
       },
     },
     Logout: {
@@ -373,8 +390,8 @@ const RootStack = createStackNavigator(
       },
       headerTitleStyle: {
         color: getControlColour(navigation),
-        fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-        fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS18),
+        fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
+        fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS20),
         ...Platform.select({
           android: {
             justifyContent: 'center',
@@ -388,6 +405,7 @@ const RootStack = createStackNavigator(
       headerRight: getRightIcons(navigation),
     }),
   },
+
 );
 
 const MyDrawerNavigator = createDrawerNavigator(
@@ -398,10 +416,12 @@ const MyDrawerNavigator = createDrawerNavigator(
   },
   {
     contentComponent: drawerContentComponents,
+
   },
 
 );
-export default createAppContainer(MyDrawerNavigator);
+const AppContainer = createAppContainer(MyDrawerNavigator);
+// export default createAppContainer(MyDrawerNavigator);
 
 
 function getHeaderLeft(navigation) {
@@ -416,8 +436,7 @@ function getHeaderLeft(navigation) {
         name="arrow-left"
         style={{ marginLeft: AppConstants.getDeviceWidth(4), opacity: 0 }}
         size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS25)}
-        color={AppConstants.COLORS.WHITE
-        }
+        color={AppConstants.COLORS.WHITE}
       />
     );
   }
@@ -425,28 +444,35 @@ function getHeaderLeft(navigation) {
 
 function getControlColour(navigation) {
   switch (navigation.state.routeName) {
-    case 'Signup':
-    case 'Login':
-    case 'Notication':
-    // case 'ForgotPassword':
-    // case 'OTP':
-    case 'Changepassword':
-    case 'Dashboard':
-    case 'Dealers':
-      return AppConstants.COLORS.BLACK;
-    default:
+    // case 'Notification':
+    // case 'AddDealers':
+    // case 'Changepassword':
+    // case 'MerchandiseProduct':
+    // case 'Dashboard':
+    case 'DealerDetail':
       return AppConstants.COLORS.WHITE;
+    default:
+      return AppConstants.COLORS.TEXTCOLOR;
   }
 }
 
 function getHeaderBackground(navigation) {
   switch (navigation.state.routeName) {
-    case 'Signup':
     case 'Login':
     case 'Changepassword':
+    case 'MerchandiseProduct':
     case 'Dashboard':
-    case 'Notication':
       return null;
+    case 'ReferAndInvite':
+    case 'DealerDetail':
+      return (
+        <View
+          style={{
+            backgroundColor: AppConstants.COLORS.APPTHEME,
+            flex: 1,
+          }}
+        />
+      );
     default:
       return (
         <View
@@ -461,13 +487,7 @@ function getHeaderBackground(navigation) {
 
 function getRightIcons(navigation) {
   switch (navigation.state.routeName) {
-    case 'Signup':
-    case 'ChangePassword':
-    case 'EditProfile':
-    case 'OffersDetails':
-    case 'Account':
-    case 'Notification':
-    case 'Cart':
+    // case 'Changepassword':
     case 'Dealers':
       return (
         <View
@@ -480,24 +500,17 @@ function getRightIcons(navigation) {
             name="md-settings"
             style={{ marginRight: AppConstants.getDeviceWidth(3) }}
             size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)}
-            color={getControlColour(navigation)}
+            color={AppConstants.COLORS.BLACK}
           />
         </View>
       );
-    // case 'Login':
-    case 'OTP':
+
     case 'Dashboard':
-    case 'Search':
     case 'ForgotPassword':
+    case 'Notification':
       return (
         <TouchableOpacity
           activeOpacity={0.9}
-          onPress={() => {
-            AppConstants.CheckLogin = '1';
-            AppConstants.checkForUserLogin() == true
-              ? navigation.navigate(AppConstants.SCREENS.CART)
-              : navigation.navigate(AppConstants.SCREENS.LOGIN);
-          }}
           style={{
             flexDirection: 'row',
             marginRight: AppConstants.getDeviceWidth(3),
@@ -505,7 +518,7 @@ function getRightIcons(navigation) {
           }}
         />
       );
-    case 'ReferAndInvite':
+
     case 'PrivacyPolicy':
       return <View style={{ flexDirection: 'row' }} />;
     default:
@@ -519,10 +532,10 @@ function getRightIcons(navigation) {
           {/* <SearchIcons
             onPress={() => navigation.navigate('Setting')}
             name="md-settings"
-            style={{marginRight: AppConstants.getDeviceWidth(3)}}
+            style={{ marginRight: AppConstants.getDeviceWidth(3) }}
             size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)}
             color={getControlColour(navigation)}
-          /> */}
+          />
           <TouchableOpacity
             style={{ flexDirection: 'row' }}
             activeOpacity={0.9}
@@ -532,41 +545,41 @@ function getRightIcons(navigation) {
                 ? navigation.navigate(AppConstants.SCREENS.CART)
                 : navigation.navigate(AppConstants.SCREENS.LOGIN);
             }}
-          />
+          /> */}
         </View>
       );
   }
 }
 
-// export default class App extends Component {
-//   componentWillMount() {
-//     BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
-//   }
-//   handleBackButton = () => {
-//     Alert.alert(
-//       'Exit App',
-//       'Are u sure to exit?',
-//       [
-//         {
-//           text: 'Cancel',
-//           style: 'cancel',
-//         },
-//         {
-//           text: 'OK',
-//           onPress: () => BackHandler.exitApp(),
-//         },
-//       ],
-//       {
-//         cancelable: false,
-//       },
-//     );
-//     return true;
-//   };
+export default class App extends Component {
+  componentWillMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+  }
+  handleBackButton = () => {
+    Alert.alert(
+      'Exit Application',
+      'Do you want to Exit App?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'OK',
+          onPress: () => BackHandler.exitApp(),
+        },
+      ],
+      {
+        cancelable: false,
+      },
+    );
+    return true;
+  };
 
-//   componentWillUnmount() {
-//     BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
-//   }
-//   render() {
-//     return <AppContainer />;
-//   }
-// }
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+  }
+  render() {
+    return <AppContainer />;
+  }
+}

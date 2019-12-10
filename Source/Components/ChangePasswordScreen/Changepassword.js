@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Keyboard, Alert, Text, TextInput } from 'react-native';
+import { View, ScrollView, Keyboard, Alert, Text, } from 'react-native';
 import styles from './ChangepasswordStyle';
 import * as AppConstants from '../Helper/AppConstants';
 import PwdIcon from 'react-native-vector-icons/MaterialIcons';
@@ -70,8 +70,10 @@ export default class ChangePassword extends Component {
             keyboardShouldPersistTaps="handled"
             contentContainerStyle={{ flexGrow: 1 }}>
             <View style={styles.Container}>
+
               <Text style={styles.txtchangepwdtitle}>Change Password</Text>
               <Text style={styles.txtsignintitle}>Sign in to access your account.</Text>
+              
             </View>
 
 
@@ -114,11 +116,11 @@ export default class ChangePassword extends Component {
                   onChangeText={OldPassword => this.setState({ OldPassword })}
                   returnKeyType={'next'}
                 />
-                <PwdIcon style={styles.lockIcon} name="lock-outline" size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)} color="#0F58D6" />
+                <PwdIcon style={styles.lockIcon}
+                  name="lock-outline" />
                 <PwdIcon
-                  style={styles.icon}
+                  style={styles.EyeIconStyle}
                   name={this.state.showtxtPasswordIcon}
-                  size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS20)}
                   onPress={() => {
                     this.setState({
                       showtxtPasswordIcon: this.state.showtxtPassword
@@ -168,11 +170,10 @@ export default class ChangePassword extends Component {
                   onChangeText={NewPassword => this.setState({ NewPassword })}
                   returnKeyType={'next'}
                 />
-                <PwdIcon style={styles.lockIcon} name="lock-outline" size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)} color="#0F58D6" />
+                <PwdIcon style={styles.lockIcon} name="lock-outline" />
                 <PwdIcon
-                  style={styles.icon}
+                  style={styles.EyeIconStyle}
                   name={this.state.showtxtNewPasswordIcon}
-                  size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS20)}
                   onPress={() => {
                     this.setState({
                       showtxtNewPasswordIcon: this.state.showtxtNewPassword
@@ -226,12 +227,10 @@ export default class ChangePassword extends Component {
                     this.setState({ ConfirmPassword })
                   }
                 />
-                <PwdIcon style={styles.lockIcon} name="lock-outline" size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)} color="#0F58D6" />
-               
+                <PwdIcon style={styles.lockIcon} name="lock-outline" />
                 <PwdIcon
-                  style={styles.icon}
+                  style={styles.EyeIconStyle}
                   name={this.state.showtxtNewConfirmPasswordIcon}
-                  size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS20)}
                   onPress={() => {
                     this.setState({
                       showtxtNewConfirmPasswordIcon: this.state
@@ -243,32 +242,10 @@ export default class ChangePassword extends Component {
                     });
                   }}
                 />
-                
               </View>
-              {/* <View style={styles.searchSection}>
-                  <PwdIcon style={styles.searchIcon} name="lock-outline" size={20} color="#000" />
-
-                  <TextInput
-                    style={styles.input}
-                    placeholder="User Nickname"
-                    underlineColorAndroid="transparent"
-                  />
-                  <PwdIcon
-                    style={styles.icon}
-                    name={this.state.showtxtNewPasswordIcon}
-                    size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS25)}
-                    onPress={() => {
-                      this.setState({
-                        showtxtNewPasswordIcon: this.state.showtxtNewPassword
-                          ? 'visibility'
-                          : 'visibility-off',
-                        showtxtNewPassword: !this.state.showtxtNewPassword,
-                      });
-                    }}
-                  />
-                </View> */}
             </View>
             <View style={styles.btnSignupView}>
+
               <MyButton
                 Text="Reset Password"
                 onPress={this.validateFields.bind(this)}

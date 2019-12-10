@@ -11,27 +11,6 @@ export default
       alignItems: 'center',
       backgroundColor: AppConstants.COLORS.APP_BG,
     },
-    Container: {
-      marginTop: AppConstants.getDeviceHeight(4.93),
-      width: AppConstants.getDeviceWidth(91.47),
-      alignSelf: 'center',
-    },
-    txtLogintitle: {
-      fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS24),
-    },
-    txtsignintitle: {
-      marginTop: AppConstants.getDeviceHeight(2),
-      fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS18),
-    },
-    txtInputView: {
-      width: AppConstants.getDeviceWidth(91.47),
-    },
-    txtForgot: {
-      fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS12),
-      color: AppConstants.COLORS.FORGOTTEXT,
-      marginTop: AppConstants.getDeviceHeight(1.97),
-      textAlign:'right',
-    },
     logoContainer: {
       marginBottom: AppConstants.getDeviceHeight(2),
       height: AppConstants.getDeviceHeight(9),
@@ -43,11 +22,44 @@ export default
       width: AppConstants.getDeviceWidth(61.33),
       right: AppConstants.getDeviceHeight(12),
     },
+    Container: {
+      marginTop: AppConstants.getDeviceHeight(4.93),
+      width: AppConstants.getDeviceWidth(91.47),
+      alignSelf: 'center',
+    },
+    txtLogintitle: {
+      fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS24),
+      fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
+      color: AppConstants.COLORS.TEXTCOLOR, 
+    },
+    txtsignintitle: {
+      marginTop: AppConstants.getDeviceHeight(2),
+      fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
+      fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS18),
+      color: AppConstants.COLORS.TEXTFIELDBASECOLOR, 
+    },
+    txtInputView: {
+      width: AppConstants.getDeviceWidth(91.47),
+    },
     phoneIcon: {
       position: 'absolute',
       top: AppConstants.getDeviceHeight(5),
       left: AppConstants.getDeviceHeight(1),
-
+      fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS22),
+      color: AppConstants.COLORS.APPTHEME,
+    },
+    passwordLockIcon: {
+      position: 'absolute',
+      top: AppConstants.getDeviceHeight(5),
+      left: AppConstants.getDeviceHeight(1),
+      fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS22),
+      color: AppConstants.COLORS.APPTHEME,
+    },
+    txtForgot: {
+      fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS12),
+      color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
+      marginTop: AppConstants.getDeviceHeight(1.97),
+      textAlign:'right',
     },
     btnsigninView: {
       marginTop: AppConstants.getDeviceHeight(3.69),

@@ -5,7 +5,7 @@ import * as AppConstants from '../Helper/AppConstants';
 import MyButton from '../../CustomControls/MyButton';
 import { TextField } from 'react-native-material-textfield';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import PLIcon from 'react-native-vector-icons/Octicons';
+import PasswordLockIcon from 'react-native-vector-icons/Octicons';
 import Toast, { DURATION } from 'react-native-easy-toast';
 export default class AddDealers extends Component {
     constructor(props) {
@@ -52,7 +52,7 @@ export default class AddDealers extends Component {
                     textStyle={AppConstants.CommonStyles.ToastTextStyle}
                 />
 
-                <View style={styles.phoneViewstyle}>
+                <View>
 
                     <View style={styles.txtInputView}>
                         <TextField
@@ -86,7 +86,7 @@ export default class AddDealers extends Component {
                             onChangeText={Name => this.setState({ Name })}
                             returnKeyType={'go'}
                         />
-                        <Icon style={styles.phoneIcon} name="mobile-phone" size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)} color="#0F58D6" />
+                        <Icon style={styles.phoneIcon} name="mobile-phone" />
                     </View>
                     <View style={styles.txtInputView}>
                         <TextField
@@ -120,7 +120,7 @@ export default class AddDealers extends Component {
                             onChangeText={Email => this.setState({ Email })}
                             returnKeyType={'go'}
                         />
-                        <PLIcon style={styles.phoneIcon} name="lock" size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)} color="#0F58D6" />
+                        <PasswordLockIcon style={styles.LockIcon} name="lock"  />
                     </View>
                     <View style={styles.txtInputView}>
                         <TextField
@@ -154,7 +154,7 @@ export default class AddDealers extends Component {
                             onChangeText={Name => this.setState({ Name })}
                             returnKeyType={'go'}
                         />
-                        <Icon style={styles.phoneIcon} name="mobile-phone" size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)} color="#0F58D6" />
+                        <Icon style={styles.phoneIcon} name="mobile-phone" />
                     </View>
                     <View style={styles.txtInputView}>
                         <TextField
@@ -188,7 +188,7 @@ export default class AddDealers extends Component {
                             onChangeText={Email => this.setState({ Email })}
                             returnKeyType={'go'}
                         />
-                        <PLIcon style={styles.phoneIcon} name="lock" size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)} color="#0F58D6" />
+                        <PasswordLockIcon style={styles.LockIcon} name="lock"  />
                     </View>
                     <View style={styles.txtInputView}>
                         <TextField
@@ -222,7 +222,7 @@ export default class AddDealers extends Component {
                             onChangeText={Name => this.setState({ Name })}
                             returnKeyType={'go'}
                         />
-                        <Icon style={styles.phoneIcon} name="mobile-phone" size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)} color="#0F58D6" />
+                        <Icon style={styles.phoneIcon} name="mobile-phone"  />
                     </View>
                     <View style={styles.txtInputView}>
                         <TextField
@@ -256,15 +256,15 @@ export default class AddDealers extends Component {
                             onChangeText={Email => this.setState({ Email })}
                             returnKeyType={'go'}
                         />
-                        <PLIcon style={styles.phoneIcon} name="lock" size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)} color="#0F58D6" />
+                        <PasswordLockIcon style={styles.LockIcon} name="lock" />
                     </View>
 
                 </View>
 
 
-                <View style={styles.btnResetPwdView}>
+                <View style={styles.btnSaveView}>
                     <MyButton
-                        Text="Sign in"
+                        Text="SAVE"
                         onPress={this.validateFields.bind(this)}
                     />
                 </View>

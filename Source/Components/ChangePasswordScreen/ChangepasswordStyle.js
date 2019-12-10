@@ -8,65 +8,50 @@ export default {
     width: AppConstants.getDeviceWidth(91.47),
     alignSelf: 'center',
   },
-  txtchangepwdtitle:{
+  txtchangepwdtitle: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS24),
-    color: AppConstants.COLORS.TEXTCOLOR1,
+    color: AppConstants.COLORS.TEXTCOLOR,
+    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
+    paddingBottom: AppConstants.getDeviceHeight(1),
   },
-  txtsignintitle:{
+  txtsignintitle: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS18),
-    color: AppConstants.COLORS.TEXTCOLOR2,
+    color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
+    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
   },
   lockiconview: {
-    // flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:AppConstants.COLORS.WHITE,
-    // marginTop: AppConstants.getDeviceHeight(3.3),
-
-},
+    backgroundColor: AppConstants.COLORS.WHITE,
+  },
   txtInputView1: {
-  
-    // marginTop: AppConstants.getDeviceHeight(3.3),
     width: AppConstants.getDeviceWidth(91.47),
     alignSelf: 'center',
+  },
+  lockIcon: {
+    position: 'absolute',
+    top: AppConstants.getDeviceHeight(5),
+    left: AppConstants.getDeviceHeight(1),
+    color: AppConstants.COLORS.APPTHEME,
+    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS22),
+  },
+  EyeIconStyle: {
+    position: 'absolute',
+    borderLeftWidth: AppConstants.getDeviceWidth(0.2),
+    paddingLeft: AppConstants.getDeviceWidth(2.50),
+    borderLeftColor: AppConstants.COLORS.TEXTFIELDBASECOLOR,
+    top: AppConstants.getDeviceHeight(3.67),
+    right: AppConstants.getDeviceWidth(2.67),
+    color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
+    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS20),
   },
   txtInputView2: {
     width: AppConstants.getDeviceWidth(91.47),
     alignSelf: 'center',
   },
-  icon: {
-    position: 'absolute',
-    borderLeftWidth: 1,
-    paddingLeft: AppConstants.getDeviceWidth(2.50),
-    borderLeftColor: AppConstants.COLORS.TEXTFIELDBASECOLOR,
-    top: AppConstants.getDeviceHeight(3.67),
-    right: AppConstants.getDeviceWidth(2.67),
-    color:AppConstants.COLORS. TEXTFIELDBASECOLOR,
-
-  
-  },
   btnSignupView: {
     marginTop: AppConstants.getDeviceHeight(3.69),
     alignSelf: 'center',
   },
-  
-lockIcon: {
-
-  position: 'absolute',
-  top: 33,
-  left:  AppConstants.getDeviceHeight(1),
-   
-},
-input: {
-    flex: 1,
-    paddingTop: 10,
-    paddingRight: 10,
-    paddingBottom: 10,
-    paddingLeft: 0,
-    backgroundColor: '#fff',
-    color: '#424242',
-    
-   
-},
 };

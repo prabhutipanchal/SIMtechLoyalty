@@ -4,12 +4,6 @@ export default {
     flex: 1,
     alignItems: 'center',
   },
-  Container: {
-    marginTop: AppConstants.getDeviceHeight(4.93),
-    width: AppConstants.getDeviceWidth(91.47),
-    alignSelf: 'center',
-  },
-
   logoContainer: {
     marginBottom: AppConstants.getDeviceHeight(2),
     height: AppConstants.getDeviceHeight(9),
@@ -19,16 +13,23 @@ export default {
   logo: {
     height: AppConstants.getDeviceHeight(12),
     width: AppConstants.getDeviceWidth(61.33),
-    right: AppConstants.getDeviceHeight(15),
+    right: AppConstants.getDeviceHeight(12),
   },
-  txtResetpwdtitle: {
+  Container: {
+    marginTop: AppConstants.getDeviceHeight(4.93),
+    width: AppConstants.getDeviceWidth(91.47),
+    alignSelf: 'center',
+  },
+   txtResetpwdtitle: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS24),
-    color: AppConstants.COLORS.TEXTCOLOR1,
+    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
+    color: AppConstants.COLORS.TEXTCOLOR,
   },
   txtsignintitle: {
     marginTop: AppConstants.getDeviceHeight(2),
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS18),
-    color: AppConstants.COLORS.TEXTCOLOR2,
+    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
+    color: AppConstants.COLORS.TEXTFIELDBASECOLOR, 
   },
   txtInputView: {
     width: AppConstants.getDeviceWidth(91.47),
@@ -37,7 +38,8 @@ export default {
     position: 'absolute',
     top: AppConstants.getDeviceHeight(5),
     left: AppConstants.getDeviceHeight(1),
-
+    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS22),
+    color: AppConstants.COLORS.APPTHEME,
   },
   btnResetPwdView: {
     marginTop: AppConstants.getDeviceHeight(3.69),

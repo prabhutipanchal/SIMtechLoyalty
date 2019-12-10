@@ -12,7 +12,7 @@ import RNFetchBlob from 'rn-fetch-blob';
 import Iconss from 'react-native-vector-icons/MaterialCommunityIcons';
 // var Fabric = require('react-native-fabric');
 // var {Crashlytics} = Fabric;
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 const guidelineBaseWidth = 350;
 const guidelineBaseHeight = 680;
@@ -21,7 +21,7 @@ const scale = size => (width / guidelineBaseWidth) * size;
 const verticalScale = size => (height / guidelineBaseHeight) * size;
 const moderateScale = (size, factor = 0.5) =>
   size + (scale(size) - size) * factor;
-export {scale, verticalScale, moderateScale};
+export { scale, verticalScale, moderateScale };
 
 // export const FIREBASEPASSWORD = '123456';
 // export const DeviceID = DeviceInfo.getUniqueID();
@@ -38,10 +38,10 @@ export const CheckLogin = '0';
 export const SCREENS = {
   //---------------TabBar Screens------------
   ACCOUNT: 'Account',
-  MERCH:'Merch',
+  MERCH: 'Merch',
   DASHBOARD: 'Dashboard',
   EVENTS: 'Events',
-  PRODUCT: 'Product',
+  PRODUCT: 'Products',
   //---------------TABBAR SCREENS-------------
 
   //-------------Stack Navigation Screens----
@@ -54,14 +54,20 @@ export const SCREENS = {
   FORGOTPASSWORD: 'ForgotPassword',
   OTP: 'OTP',
   CHANGEPASSWORD: 'Changepassword',
-  NOTIFICATION:'Notification',
-  FAQ:'Faq',
-  ANALYTICS:'Analytics',
-  ENABLEFACEID:'EnableFaceID',
-  TERMASANDCONDITION:'TermsAndCondition',
-  CREATEPRESENTATION:'CreatePresentation',
-  ADDDEALERS:'AddDealers',
-  LOGOUT:'Logout'
+  NOTIFICATION: 'Notification',
+  FAQ: 'Faq',
+  ANALYTICS: 'Analytics',
+  ENABLEFACEID: 'EnableFaceID',
+  TERMASANDCONDITION: 'TermsAndCondition',
+  CREATEPRESENTATION: 'CreatePresentation',
+  ADDDEALERS: 'AddDealers',
+  NODEALERS: 'NoDealers',
+  PRODUCTSFILTER: 'ProductsFilter',
+  MERCHANDISEPRODUCT: 'MerchandiseProduct',
+  DEALERDETAIL: 'DealerDetail',
+  PRODUCTDETAIL: 'ProductDetail',
+  BESTPERFORMERS:'BestPerformers',
+  LOGOUT: 'Logout'
 
 
   //------------STACK NAVIGATION SCREENS----
@@ -127,18 +133,18 @@ export const Messages = {
 };
 export const COLORS = {
   APP_BG: '#FFF',
-  APPTHEME:'#0F58D6',
+  APPTHEME: '#0F58D6',
+  TABBAR_BG_COLOR:'#EBF2FC',
   RED: '#E00201',
   WHITE: '#FFFFFF',
-  BORDERBOTTOMCOLOR:'#144498',
+  BORDERBOTTOMCOLOR: '#144498',
   LIGHTWHITE: '#E9E8E8',
   BLACK: '#000000',
   DARKPINK: '#DD0241',
   INDIGO: '#423B5D',
   PURPLE: '#4A00E0',
-  BASECOLOR_1: '#0F58D6',
-  TEXTFIELDTEXT:'#0F58D6',
-  TEXTFIELDBASECOLOR:'#9CA2AD',
+  TEXTFIELDTEXT: '#0F58D6',
+  TEXTFIELDBASECOLOR: '#9CA2AD',
   BASECOLOR_2: '#4A4A4A',
   GOOGLE_BUTTON: '#F05522',
   FACEBOOK_BUTTON: '#2672CB',
@@ -147,11 +153,18 @@ export const COLORS = {
   SKYBLUE: '#4A90E2',
   BORDER_COLOR: '#E7E7E7',
   YELLOW: '#FFF100',
-  FORGOTTEXT:'#9CA2AD',
-  EDITBUTTON:'#14D60F',
-  HOMEICON:'#578AE2',
-  TEXTCOLOR:'#4F545C',
- 
+  EDITBUTTON: '#14D60F',
+  HOMEICON: '#578AE2',
+  TEXTCOLOR: '#4F545C',
+  VIEWCOLOR: '#E3E9F2',
+  TOPBORDERCOLOR: '#D1DDF1',
+  TYPECOLOR: '#B060CC',
+  BORDERCOLOR: '#DBE3F2',
+  DROPDOWNBORDERBOTTOMCOLOR: '#E6E6E6',
+  MEDICINETEXTCOLOR: '#669EFF',
+  DEALERDETAILBORDERBOTTOMCOLOR: '#164DAD',
+  MODALBACKGROUNDCOLOR:'rgba(79, 84, 92, 0.82)',
+
 };
 export const SHADOWCOLORS = {
   LOGO_SHADOW: 'rgba(0,0,0,0.3)',
@@ -245,7 +258,7 @@ export const SHADOWOFFSET = {
   },
 };
 
-Number.prototype.pad = function(size) {
+Number.prototype.pad = function (size) {
   var s = String(this);
   while (s.length < (size || 2)) {
     s = '0' + s;
@@ -336,8 +349,8 @@ export function BackButton(navigation) {
         ),
       }}
       size={moderateScale(FONTSIZE.FS25)}
-      color={
-        navigation.getParam('showWhiteBackground') ? COLORS.BLACK : COLORS.WHITE
+      color={COLORS.TEXTCOLOR
+        // navigation.getParam('showWhiteBackground') ? COLORS.WHITE : COLORS.BLACK
       }
     />
   );

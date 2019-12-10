@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "180318466828",
+    "firebase_url": "https://simtech-loyalty.firebaseio.com",
+    "project_id": "simtech-loyalty",
+    "storage_bucket": "simtech-loyalty.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180318466828:android:ef0c0d418d25180f974f29",
+        "android_client_info": {
+          "package_name": "com.simtech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180318466828-c6o28j4p8ugo4okp93ofhe8jcpta1bpd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOQDWl3X_MzPj_v1-hScgf6JuZ-EVvoMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180318466828-c6o28j4p8ugo4okp93ofhe8jcpta1bpd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

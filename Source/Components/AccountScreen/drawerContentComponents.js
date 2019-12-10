@@ -2,13 +2,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { Component } from 'react'
 import { NavigationActions } from 'react-navigation'
-import { Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
-import { Avatar} from "react-native-elements";
+import { Text, View, TouchableOpacity, Image,} from 'react-native';
+import { Avatar } from "react-native-elements";
 import styles from './drawerContentComponentsStyle';
 import * as AppConstants from '../Helper/AppConstants';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AnalyticsIcons from 'react-native-vector-icons/AntDesign';
-import TCIcons from 'react-native-vector-icons/Feather';
+import TermsIcons from 'react-native-vector-icons/Feather';
 import KeyIcon from 'react-native-vector-icons/FontAwesome5';
 import BellIcon from 'react-native-vector-icons/Fontisto';
 const Images = {
@@ -22,13 +22,13 @@ const Images = {
   Iconterms: 'iconterms',
   Iconcreatepresentation: 'iconcreatepresentation',
   Iconlogout: 'iconlogout',
-
 };
 
 export default class drawerContentComponents extends Component {
   navigateToScreen = route => () => {
     const navigateAction = NavigationActions.navigate({
-      routeName: route,
+      routeName: 'route',
+      
     });
     this.props.navigation.dispatch(navigateAction);
   };
@@ -37,7 +37,6 @@ export default class drawerContentComponents extends Component {
   };
   render() {
     return (
-
       <View style={styles.mainContainer}>
         <View style={{
           flex: 1,
@@ -48,14 +47,10 @@ export default class drawerContentComponents extends Component {
               onPress={() => this.toggleDrawer.bind(this)}>
             </TouchableOpacity>
 
-            <View style={{
-              flexDirection: 'row',
-              marginTop: AppConstants.getDeviceHeight(5),
-              marginBottom: AppConstants.getDeviceHeight(2),
-            }}>
-              <TouchableOpacity style={{ flexDirection: 'row', marginLeft: AppConstants.getDeviceWidth(5) }}>
+            <View style={styles.AvatarMainViewStyle}>
+              <View style={styles.AvatarViewStyle}>
                 <Avatar
-                  size={AppConstants.getDeviceWidth(25)}
+                  size={AppConstants.getDeviceWidth(20)}
                   rounded
                   activeOpacity={0.7}
                   containerStyle={{
@@ -76,141 +71,88 @@ export default class drawerContentComponents extends Component {
                     borderColor: AppConstants.COLORS.WHITE,
                   }}
                 />
-              </TouchableOpacity>
-              <View style={{ marginLeft: AppConstants.getDeviceWidth(5), marginTop: AppConstants.getDeviceHeight(5) }}>
+              </View>
+              <View style={styles.BusinessNameViewStyle}>
                 <Text style={styles.txtbusinessName}>Business Name</Text>
                 <Text style={styles.txtpersonName}>Nathan Arnold</Text>
               </View>
             </View>
           </View>
+          <View>
+            <TouchableOpacity
+              activeOpacity={0.9}
+              style={styles.drawerNavStyle}
+              onPress={() =>
+                this.props.navigation.navigate(AppConstants.SCREENS.CHANGEPASSWORD)
+              }>
+              <KeyIcon style={styles.Iconstyle} name="key" />
+              <Text style={styles.screentxtcolor}>Change Password</Text>
+            </TouchableOpacity>
 
-          <ScrollView showsVerticalScrollIndicator={false}>
-            <View>
+            <TouchableOpacity
+              activeOpacity={0.9} style={styles.drawerNavStyle}
+              onPress={() =>
+                this.props.navigation.navigate(AppConstants.SCREENS.NOTIFICATION)
+              }>
+              <BellIcon style={styles.Iconstyle}
+                name="bell"/>
+              <Text style={styles.screentxtcolor}>Notifications</Text>
 
-              <TouchableOpacity
-                activeOpacity={0.9}
-                style={styles.drawerNavStyle}
-                onPress={() =>
-                  this.props.navigation.navigate(AppConstants.SCREENS.CHANGEPASSWORD)
-                }>
-                <KeyIcon style={styles.Iconstyle} name="key"
-                  size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color="#FFFF" />
-                <Text style={styles.screentxtcolor}>Change password</Text>
-              </TouchableOpacity>
+            </TouchableOpacity>
 
-              <TouchableOpacity 
-               activeOpacity={0.9} style={styles.drawerNavStyle}
-                onPress={() =>
-                  this.props.navigation.navigate(AppConstants.SCREENS.NOTIFICATION)
-                }>
-                <BellIcon style={styles.Iconstyle}
-                  name="bell"
-                  size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color="#FFFF" />
-                <Text style={styles.screentxtcolor}>Notification</Text>
+            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
+              <Icons style={styles.Iconstyle}
+                name="calendar-question" />
+              <Text style={styles.screentxtcolor}>FAQ</Text>
 
-              </TouchableOpacity>
+            </TouchableOpacity>
 
-              <TouchableOpacity   activeOpacity={0.9} style={styles.drawerNavStyle}
-                onPress={() =>
-                  this.props.navigation.navigate(AppConstants.SCREENS.FAQ)
-                }>
-                <Icons style={styles.Iconstyle}
-                  name="calendar-question"
-                  size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color="#FFFF" />
-                <Text style={styles.screentxtcolor}>FAQ</Text>
+            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}
+              onPress={() =>
+                this.props.navigation.navigate(AppConstants.SCREENS.REFERANDINVITE)
+              }>
+              <Image
+                resizeMode='contain'
+                source={{ uri: Images.Iconrefer }}
+                style={styles.ReferIconImageStyle} />
+              <Text style={styles.screentxtcolor}>Refer & Invite</Text>
 
-              </TouchableOpacity>
+            </TouchableOpacity>
 
-              <TouchableOpacity  activeOpacity={0.9} style={styles.drawerNavStyle}
-                onPress={() =>
-                  this.props.navigation.navigate(AppConstants.SCREENS.REFERANDINVITE)
-                }>
-                <Image
-                  resizeMode='contain'
-                  source={{ uri: Images.Iconrefer }}
-                  style={{
-                    width: AppConstants.getDeviceWidth(5),
-                    height: AppConstants.getDeviceHeight(10),
-                    marginLeft: AppConstants.getDeviceWidth(5),
-                  }} />
-                {/* <Icons style={{
-                  fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS15),
-                  marginLeft: AppConstants.getDeviceWidth(3),
-                }}
-                  name="calendar-question"
-                  size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color="#FFFF" /> */}
-                <Text style={styles.screentxtcolor}>Refer & invite</Text>
+            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
+              <AnalyticsIcons style={styles.Iconstyle}
+                name="piechart"/>
+              <Text style={styles.screentxtcolor}>Analytics</Text>
 
-              </TouchableOpacity>
+            </TouchableOpacity>
 
-              <TouchableOpacity  activeOpacity={0.9}  style={styles.drawerNavStyle}
-                onPress={() =>
-                  this.props.navigation.navigate(AppConstants.SCREENS.ANALYTICS)
-                }>
-                <AnalyticsIcons style={styles.Iconstyle}
-                  name="piechart"
-                  size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color="#FFFF" />
-                <Text style={styles.screentxtcolor}>Analytics</Text>
+            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
+              <Image
+                resizeMode='contain'
+                source={{ uri: Images.Iconenablefaceid }}
+                style={styles.EnablefaceImageStyle} />
+              <Text style={styles.screentxtcolor}>Enable FaceID</Text>
+            </TouchableOpacity>
 
-              </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
+              <TermsIcons style={styles.Iconstyle}
+                name="info" />
+              <Text style={styles.screentxtcolor}>Terms & Conditions</Text>
+            </TouchableOpacity>
 
-              <TouchableOpacity  activeOpacity={0.9} style={styles.drawerNavStyle}
-                onPress={() =>
-                  this.props.navigation.navigate(AppConstants.SCREENS.CHAT)
-                }>
-                <Image
-                  resizeMode='contain'
-                  source={{ uri: Images.Iconenablefaceid }}
-                  style={{
-                    width: AppConstants.getDeviceWidth(5),
-                    height: AppConstants.getDeviceHeight(5),
-                    marginLeft: AppConstants.getDeviceWidth(5),
-                  }} />
-                {/* <AnalyticsIcons style={{
-                  fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS15),
-                  marginLeft: AppConstants.getDeviceWidth(3),
-                }}
-                  name="piechart"
-                  size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color="#FFFF" /> */}
-                <Text style={styles.screentxtcolor}>Enable FaceID</Text>
+            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
+              <Icons style={styles.Iconstyle}
+                name="file-presentation-box" />
+              <Text style={styles.screentxtcolor}>Create Presentation</Text>
+            </TouchableOpacity>
 
-              </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
+              <Icons style={styles.Iconstyle}
+                name="logout" />
+              <Text style={styles.screentxtcolor}>Logout</Text>
+            </TouchableOpacity>
 
-              <TouchableOpacity  activeOpacity={0.9} style={styles.drawerNavStyle}
-                onPress={() =>
-                  this.props.navigation.navigate(AppConstants.SCREENS.CHAT)
-                }>
-                <TCIcons style={styles.Iconstyle}
-                  name="info"
-                  size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color="#FFFF" />
-                <Text style={styles.screentxtcolor}>Terms & Contidion</Text>
-
-              </TouchableOpacity>
-
-              <TouchableOpacity  activeOpacity={0.9} style={styles.drawerNavStyle}
-                onPress={() =>
-                  this.props.navigation.navigate(AppConstants.SCREENS.CHAT)
-                }>
-                <Icons style={styles.Iconstyle}
-                  name="file-presentation-box"
-                  size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color="#FFFF" />
-                <Text style={styles.screentxtcolor}>Create Presentation</Text>
-
-              </TouchableOpacity>
-
-              <TouchableOpacity  activeOpacity={0.9} style={styles.drawerNavStyle}
-                onPress={() =>
-                  this.props.navigation.navigate(AppConstants.SCREENS.CHAT)
-                }>
-                <Icons style={styles.Iconstyle}
-                  name="logout"
-                  size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color="#FFFF" />
-                <Text style={styles.screentxtcolor}>Logout</Text>
-
-              </TouchableOpacity>
-
-            </View>
-          </ScrollView>
+          </View>
         </View>
       </View>
 

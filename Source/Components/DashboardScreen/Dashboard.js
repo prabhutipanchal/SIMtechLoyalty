@@ -1,16 +1,19 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {Component} from 'react';
-import {
-  View,
-  Text,
-  StatusBar,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, StatusBar, TouchableOpacity, Image } from 'react-native';
 import * as AppConstants from '../Helper/AppConstants';
 import Styles from './DashboardStyle';
 import SplashScreen from 'react-native-splash-screen';
-import MyButton from '../../CustomControls/MyButton';
+const Images = {
+  Iconcoupon: 'iconcoupon',
+  Iconelectronics: 'iconelectronics',
+  Iconmenacc: 'iconmenacc',
+  Iconwomenacc: 'iconwomenacc',
+  Iconstationary: 'iconstationary',
+  Iconhealthcare: 'iconhealthcare',
+  Iconfoodcoupon: 'iconfoodcoupon',
+  Iconsubscription: 'iconsubscription',
+}
 export default class Dashboard extends Component {
   //
   constructor(props) {
@@ -22,101 +25,65 @@ export default class Dashboard extends Component {
   }
 
   render() {
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
     return (
       <View style={Styles.mainContainer}>
         <StatusBar
-          backgroundColor={AppConstants.COLORS.APPTHEME}
-          barStyle="light-content"
+          backgroundColor={AppConstants.COLORS.WHITE}
+          barStyle="dark-content"
         />
+        <View style={Styles.Container}>
 
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{flexGrow: 1}}>
-          {/* <View style={Styles.mainView}>
-            <TouchableOpacity
-              style={Styles.mainCardView}
-              activeOpacity={0.9}
-              onPress={() => navigate(AppConstants.SCREENS.OTP)}>
-              <Text style={Styles.txt}> OTP </Text>
-            </TouchableOpacity>
-          </View> */}
-          <View style={Styles.mainView}>
-            <TouchableOpacity
-              style={Styles.mainCardView}
-              activeOpacity={0.9}
-              onPress={() => navigate(AppConstants.SCREENS.FORGOTPASSWORD)}>
-              <Text style={Styles.txt}> ForgotPassword </Text>
-            </TouchableOpacity>
-          </View>
-          <View style={Styles.mainView}>
-            <TouchableOpacity
-              style={Styles.mainCardView}
-              activeOpacity={0.9}
-              onPress={() => navigate(AppConstants.SCREENS.CHANGEPASSWORD)}>
-              <Text style={Styles.txt}> Changepassword </Text>
-            </TouchableOpacity>
-          </View>
-          <View style={Styles.mainView}>
-            <TouchableOpacity
-              style={Styles.mainCardView}
-              activeOpacity={0.9}
-              onPress={() => navigate(AppConstants.SCREENS.NOTIFICATION)}>
-              <Text style={Styles.txt}> Notification </Text>
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+            <Image resizeMode='contain' source={{ uri: Images.Iconcoupon }} style={Styles.ImgCommonStyle}></Image>
+            <Text style={Styles.txtTitleCommonStyle}>Target V/S Achivements </Text>
+          </TouchableOpacity>
 
-          <View style={Styles.mainView}>
-            <TouchableOpacity
-              style={Styles.mainCardView}
-              activeOpacity={0.9}
-              onPress={() => navigate(AppConstants.SCREENS.LOGIN)}>
-              <Text style={Styles.txt}> Login </Text>
-            </TouchableOpacity>
-          </View>
-          <View style={Styles.mainView}>
-            <TouchableOpacity
-              style={Styles.mainCardView}
-              activeOpacity={0.9}
-              onPress={() => navigate(AppConstants.SCREENS.ADDDEALERS)}>
-              <Text style={Styles.txt}>Add Dealers </Text>
-            </TouchableOpacity>
-          </View>
-          {/* <View style={Styles.mainView}>
-            <TouchableOpacity
-              style={Styles.mainCardView}
-              activeOpacity={0.9}
-              onPress={() => navigate('Setting')}>
-              <Text style={Styles.txt}> Profile </Text>
-            </TouchableOpacity>
-          </View> */}
-          {/* <View style={Styles.mainView}>
-            <TouchableOpacity
-              style={Styles.mainCardView}
-              activeOpacity={0.9}
-              onPress={() => navigate('Setting')}>
-              <Text style={Styles.txt}> Profile </Text>
-            </TouchableOpacity>
-          </View> */}
-          {/* <View style={Styles.mainView}>
-            <TouchableOpacity
-              style={Styles.mainCardView}
-              activeOpacity={0.9}
-              onPress={() => navigate('Setting')}>
-              <Text style={Styles.txt}> Profile </Text>
-            </TouchableOpacity>
-          </View> */}
-        </ScrollView>
-        {/* <View>
-          <MyButton
-            onPress={() => {
-              this.props.navigation.navigate('Setting');
-            }}
-            Text="Next"
-            isRoundedCorners={false}
-          />
-        </View> */}
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+            <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={Styles.ImgCommonStyle}></Image>
+            <Text style={Styles.txtTitleCommonStyle}> Payout Reports </Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={Styles.Container}>
+
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+            <Image resizeMode='contain' source={{ uri: Images.Iconcoupon }} style={Styles.ImgCommonStyle}></Image>
+            <Text style={Styles.txtTitleCommonStyle}>Scheme Performance</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+            <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={Styles.ImgCommonStyle}></Image>
+            <Text style={Styles.txtTitleCommonStyle}> Product Performance</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={Styles.Container}>
+
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+            <Image resizeMode='contain' source={{ uri: Images.Iconcoupon }} style={Styles.ImgCommonStyle}></Image>
+            <Text style={Styles.txtTitleCommonStyle}> Distribution Activity</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+            <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={Styles.ImgCommonStyle}></Image>
+            <Text style={Styles.txtTitleCommonStyle}>Business Dev.Activity </Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={Styles.Container}>
+
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+            <Image resizeMode='contain' source={{ uri: Images.Iconcoupon }} style={Styles.ImgCommonStyle}></Image>
+            <Text style={Styles.txtTitleCommonStyle}> Sales Analysis  </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+            <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={Styles.ImgCommonStyle}></Image>
+            <Text style={Styles.txtTitleCommonStyle}>Market Penetration </Text>
+          </TouchableOpacity>
+        </View>
+
       </View>
     );
   }

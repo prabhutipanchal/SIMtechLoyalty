@@ -6,7 +6,7 @@
          <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
     </style>
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowBackground">@drawable/smalllogo</item>
     </style>
     <style name="MyDatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorAccent">#39A749</item>

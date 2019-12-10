@@ -4,13 +4,15 @@ export default {
     flex: 1,
   },
   ToptextcontainerView: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     position: 'absolute',
-    // alignItems: 'center',
-    right: AppConstants.getDeviceWidth(0),
-    top: AppConstants.getDeviceHeight(0),
+    alignItems: 'center',
+    right: AppConstants.getDeviceWidth(5),
+    top: AppConstants.getDeviceHeight(5),
   },
-  
+  skipView: {
+    right: 0,
+  },
   bottomDoneButton: {
     position: 'absolute',
     right: 0,
@@ -34,13 +36,10 @@ export default {
     color: AppConstants.COLORS.APPTHEME,
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1_BOLD,
     // textAlign: 'center',
-    right: AppConstants.getDeviceWidth(3),
-    top: AppConstants.getDeviceHeight(3),
-    position:'absolute'
   },
   nextButtonView: {
     width: AppConstants.getDeviceWidth(20.27),
-    backgroundColor: AppConstants.COLORS.YELLOW,
+    backgroundColor: AppConstants.COLORS.WHITE,
     height: AppConstants.getDeviceWidth(14.04),
     borderTopLeftRadius: AppConstants.getDeviceWidth(24),
     borderBottomLeftRadius: AppConstants.getDeviceWidth(24),
@@ -50,7 +49,7 @@ export default {
   },
   backButtonView: {
     width: AppConstants.getDeviceWidth(20.27),
-    backgroundColor: AppConstants.COLORS.YELLOW,
+    backgroundColor: AppConstants.COLORS.WHITE,
     height: AppConstants.getDeviceWidth(14.04),
     borderTopRightRadius: AppConstants.getDeviceWidth(24),
     borderBottomRightRadius: AppConstants.getDeviceWidth(24),
@@ -60,7 +59,7 @@ export default {
   },
   bottomButtonText: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
-    color: AppConstants.COLORS.APPTHEME,
+    color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1_BOLD,
     textAlign: 'center',
   },
