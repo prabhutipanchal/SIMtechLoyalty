@@ -44,6 +44,7 @@ import AddDealer3 from './Source/Components/DealersScreen/AddDealer3';
 import AddDealer4 from './Source/Components/DealersScreen/AddDealer4';
 import AddDealer5 from './Source/Components/DealersScreen/AddDealer5';
 import AddDealer6 from './Source/Components/DealersScreen/AddDealer6';
+import Reports from './Source/Components/ReportsScreen/Reports';
 
 class HamburgerIcon extends Component {
   toggleDrawer = () => {
@@ -405,6 +406,9 @@ const RootStack = createStackNavigator(
       navigationOptions: {
         title: 'Add Dealer',
       },
+    },
+    Reports: {
+      screen: Reports,
     },
     Logout: {
       screen: Logout,

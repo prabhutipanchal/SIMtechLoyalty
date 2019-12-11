@@ -89,6 +89,16 @@ export default class Merch extends Component {
             <Text style={Styles.txt}>Add Dealer6 </Text>
           </TouchableOpacity>
         </View>
+
+
+        <View style={Styles.mainView}>
+          <TouchableOpacity
+            style={Styles.mainCardView}
+            activeOpacity={0.9}
+            onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+            <Text style={Styles.txt}>Reports</Text>
+          </TouchableOpacity>
+        </View>
         </ScrollView>
       </View>
     )
