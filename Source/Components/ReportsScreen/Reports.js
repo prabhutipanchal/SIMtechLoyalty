@@ -3,7 +3,7 @@
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { Text, View,TouchableOpacity,Platform } from 'react-native'
 import PureChart from 'react-native-pure-chart';
 import styles from './ReportsStyle';
 import * as AppConstants from '../Helper/AppConstants';
@@ -46,11 +46,16 @@ export default class Reports extends Component {
         ]
         return (
             <View style={styles.mainContainer}>
-            <Text>Target V/S Achivements</Text>
+                <Text style={styles.txtTarget}>Target V/S Achivements</Text>
                 <PureChart data={sampleData}
                     width={AppConstants.getDeviceWidth(92.27)}
                     height={AppConstants.getDeviceHeight(43.6)}
                     numberOfYAxisGuideLine={'10'}
+                    // xAxisGridLineColor={'red'}
+                    // yAxisGridLineColor={'red'}
+                    // xAxisColor={'red'}
+                    // yAxisColor={'red'}
+                    // labelColor={'red'}
                     type='bar' />
             </View>
         )

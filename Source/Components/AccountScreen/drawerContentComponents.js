@@ -140,7 +140,10 @@ export default class drawerContentComponents extends Component {
               <Text style={styles.screentxtcolor}>Terms & Conditions</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
+            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}
+             onPress={() =>
+                this.props.navigation.navigate(AppConstants.SCREENS.CREATEPRESENTATION)
+              }>
               <Icons style={styles.Iconstyle}
                 name="file-presentation-box" />
               <Text style={styles.screentxtcolor}>Create Presentation</Text>

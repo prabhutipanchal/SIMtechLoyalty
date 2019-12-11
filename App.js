@@ -349,7 +349,7 @@ const RootStack = createStackNavigator(
     CreatePresentation: {
       screen: CreatePresentation,
       navigationOptions: {
-        title: 'CreatePresentation',
+        title: 'Presentation',
       },
 
     },
