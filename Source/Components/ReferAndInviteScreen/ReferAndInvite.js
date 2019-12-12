@@ -90,6 +90,7 @@ export default class ReferAndInvite extends Component {
         >
           <Text style={styles.txtDummyReferralCode}>dummyreferral50%code</Text>
         </TouchableOpacity>
+        
         <MyButton
           Text="Copy and Share"
         // onPress={() => this.shareCode()}

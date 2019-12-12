@@ -36,9 +36,9 @@ const Tab = createMaterialTopTabNavigator(
     },
     {
         tabBarOptions: {
+            upperCaseLabel: false,
             indicatorStyle: {
-                backgroundColor: AppConstants.COLORS.APPTHEME,
-                upperCaseLabel: false,
+                backgroundColor: AppConstants.COLORS.APPTHEME,  
             },
             activeTintColor: AppConstants.COLORS.APPTHEME,
             inactiveTintColor: AppConstants.SHADOWCOLORS.RED,
