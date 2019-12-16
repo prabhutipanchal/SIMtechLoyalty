@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { Component } from 'react'
 import { Text, View, Keyboard, Alert } from 'react-native'
 import { TextField } from 'react-native-material-textfield';
@@ -279,7 +280,7 @@ export default class ContactDetail extends Component {
 
                     <MyButton
                         Text="Add Bank Detail"
-                        onPress={this.validateFields.bind(this)}
+                        onPress={() => this.props.onPageChange(4)}
                     />
 
                 </View>

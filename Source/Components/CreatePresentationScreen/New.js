@@ -1,3 +1,5 @@
+/* eslint-disable react/no-string-refs */
+/* eslint-disable quotes */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react'
@@ -25,11 +27,13 @@ export default class New extends Component {
             Year: '',
             Quarter: '',
             isLoading: false,
-            selectedItem: 0,
+            selectedItem: -1,
             iconFill: false,
             data: '1',
             FlatListItems: [
+
                 {
+                    id: '1',
                     image: <Image
                         resizeMode={'cover'}
                         source={{ uri: Images.Imgreferearn }}
@@ -42,6 +46,7 @@ export default class New extends Component {
                     />,
                 },
                 {
+                    id: '2',
                     image: <Image
                         resizeMode={'cover'}
                         source={{ uri: Images.Imgreferearn }}
@@ -53,6 +58,7 @@ export default class New extends Component {
                 },
 
                 {
+                    id: '3',
                     image: <Image
                         resizeMode={'cover'}
                         source={{ uri: Images.Imgreferearn }}
@@ -63,6 +69,7 @@ export default class New extends Component {
 
                 },
                 {
+                    id: '4',
                     image: <Image
                         resizeMode={'cover'}
                         source={{ uri: Images.Imgreferearn }}
@@ -73,6 +80,7 @@ export default class New extends Component {
 
                 },
                 {
+                    id: '5',
                     image: <Image
                         resizeMode={'cover'}
                         source={{ uri: Images.Imgreferearn }}
@@ -83,6 +91,7 @@ export default class New extends Component {
 
                 },
                 {
+                    id: '6',
                     image: <Image
                         resizeMode={'cover'}
                         source={{ uri: Images.Imgreferearn }}
@@ -93,6 +102,7 @@ export default class New extends Component {
 
                 },
                 {
+                    id: '7',
                     image: <Image
                         resizeMode={'cover'}
                         source={{ uri: Images.Imgreferearn }}
@@ -105,6 +115,104 @@ export default class New extends Component {
                 },
 
                 {
+                    id: '8',
+                    image: <Image
+                        resizeMode={'cover'}
+                        source={{ uri: Images.Imgreferearn }}
+                        style={styles.ImageReferEarnStyle}
+                    />,
+                    TargetAchivements: "Market Penetration",
+                    icon1: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
+                    icon: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
+                },
+
+            ],
+            FlatListItemsReport: [
+
+                {
+                    id: '1',
+                    image: <Image
+                        resizeMode={'cover'}
+                        source={{ uri: Images.Imgreferearn }}
+                        style={styles.ImageReferEarnStyle}
+                    />,
+                    TargetAchivements: "Target V/S Achivements",
+                    icon1: <RadioButtonIcon name="md-radio-button-on" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
+                    icon: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} onpress={{}}
+                        color={AppConstants.COLORS.RADIOBUTTONCOLOR}
+                    />,
+                },
+                {
+                    id: '2',
+                    image: <Image
+                        resizeMode={'cover'}
+                        source={{ uri: Images.Imgreferearn }}
+                        style={styles.ImageReferEarnStyle}
+                    />,
+                    TargetAchivements: "Payout Reports",
+                    icon: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
+
+                },
+
+                {
+                    id: '3',
+                    image: <Image
+                        resizeMode={'cover'}
+                        source={{ uri: Images.Imgreferearn }}
+                        style={styles.ImageReferEarnStyle}
+                    />,
+                    TargetAchivements: "Scheme Performance",
+                    icon: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
+
+                },
+                {
+                    id: '4',
+                    image: <Image
+                        resizeMode={'cover'}
+                        source={{ uri: Images.Imgreferearn }}
+                        style={styles.ImageReferEarnStyle}
+                    />,
+                    TargetAchivements: "Product Performance",
+                    icon: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
+
+                },
+                {
+                    id: '5',
+                    image: <Image
+                        resizeMode={'cover'}
+                        source={{ uri: Images.Imgreferearn }}
+                        style={styles.ImageReferEarnStyle}
+                    />,
+                    TargetAchivements: "Distribution Activity",
+                    icon: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
+
+                },
+                {
+                    id: '6',
+                    image: <Image
+                        resizeMode={'cover'}
+                        source={{ uri: Images.Imgreferearn }}
+                        style={styles.ImageReferEarnStyle}
+                    />,
+                    TargetAchivements: "Business Dev. Activity",
+                    icon: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
+
+                },
+                {
+                    id: '7',
+                    image: <Image
+                        resizeMode={'cover'}
+                        source={{ uri: Images.Imgreferearn }}
+                        style={styles.ImageReferEarnStyle}
+                    />,
+                    TargetAchivements: "Sales Analysis",
+                    icon: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} onpress={{}}
+                        color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
+
+                },
+
+                {
+                    id: '8',
                     image: <Image
                         resizeMode={'cover'}
                         source={{ uri: Images.Imgreferearn }}
@@ -132,9 +240,9 @@ export default class New extends Component {
             Alert.alert('All Ok');
         }
     }
-    onPressList(index) {
+    onPressList(index, id) {
         console.log('index', index)
-        this.setState({ selectedItem: index });
+        this.setState({ selectedItem: id });
     }
     componentDidMount() {
         this.lists = [
@@ -146,7 +254,7 @@ export default class New extends Component {
         return (
             <View style={styles.mainCardView} >
                 <Text style={styles.txtTarget}>{item.TargetAchivements}</Text>
-                <TouchableOpacity onpress={() => this.onPressList(index)} >
+                <TouchableOpacity onpress={() => this.onPressList(index, item.id)} >
                     <CloseIcon1 name={value}
                         size={AppConstants.getDeviceWidth(6)} color={AppConstants.COLORS.EDITBUTTON}
                     />
@@ -184,10 +292,11 @@ export default class New extends Component {
 
                             <Text style={styles.txtAddReport}>Add Report</Text>
                             <FlatList
-                                data={this.state.FlatListItems}
+                                data={this.state.FlatListItemsReport}
                                 keyExtractor={(item, index) => index.toString()}
-                                ItemSeparatorComponent={this.FlatListItemSeparator}
+                                // ItemSeparatorComponent={this.FlatListItemSeparator}
                                 renderItem={this.renderItem}
+                                extraData={this.state.selectedItem}
                             />
                             <TouchableOpacity
                                 activeOpacity={0.9}

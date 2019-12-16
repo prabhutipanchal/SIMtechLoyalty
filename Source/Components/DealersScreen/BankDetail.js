@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
 import { Text, View, Keyboard, Alert } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
@@ -72,7 +73,7 @@ export default class BankDetail extends Component {
     render() {
         return (
             <View>
-               
+
                 <Text style={styles.txtBusinessDetail}>Bank Details </Text>
                 <Toast
                     ref="toast"
@@ -276,7 +277,7 @@ export default class BankDetail extends Component {
 
                     <MyButton
                         Text="Upload Documents"
-                        onPress={this.validateFields.bind(this)}
+                        onPress={() => this.props.onPageChange(5)}
                     />
 
                 </View>

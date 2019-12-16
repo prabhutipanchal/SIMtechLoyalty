@@ -1,3 +1,6 @@
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-trailing-spaces */
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StatusBar } from 'react-native';
 import styles from './CommonAddDealersStyle';
@@ -45,22 +48,20 @@ export default class CommonAddDealers extends Component {
     getStepContent = (step) => {
         switch (step) {
             case 0:
-                    
-                return <BusinessDetail onPageChange={() => this.onPageChange.bind(this)}></BusinessDetail>
+                return <BusinessDetail onPageChange={this.onPageChange.bind(this)}></BusinessDetail>
             case 1:
-                return <BillingDetail onPageChange={() => this.onPageChange.bind(this)}></BillingDetail>
+                return <BillingDetail onPageChange={this.onPageChange.bind(this)}></BillingDetail>
             case 2:
-                return <WarehouseDetail onPageChange={() => this.onPageChange.bind(this)}></WarehouseDetail>
+                return <WarehouseDetail onPageChange={this.onPageChange.bind(this)}></WarehouseDetail>
             case 3:
-                return <ContactDetail onPageChange={() => this.onPageChange.bind(this)}></ContactDetail>
+                return <ContactDetail onPageChange={this.onPageChange.bind(this)}></ContactDetail>
             case 4:
-                return <BankDetail onPageChange={() => this.onPageChange.bind(this)}></BankDetail>
+                return <BankDetail onPageChange={this.onPageChange.bind(this)}></BankDetail>
             case 5:
-                return <UploadDetails onPageChange={() => this.onPageChange.bind(this)}></UploadDetails>
+                return <UploadDetails onPageChange={this.onPageChange.bind(this)}></UploadDetails>
         }
     }
     onPageChange = (position) => {
-        console.log('position', position)
         this.setState({ currentPosition: position });
     }
     render() {

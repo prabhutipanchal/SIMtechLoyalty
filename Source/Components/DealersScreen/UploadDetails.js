@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, Alert } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
@@ -162,7 +163,8 @@ export default class UploadDetails extends Component {
 
                     <MyButton
                         Text="Onboard Dealer"
-                    // onPress={this.validateFields.bind(this)}
+                        onPress={() => this.props.onPageChange(0)}
+                    // eslint-disable-next-line prettier/prettier
                     />
 
                 </View>

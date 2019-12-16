@@ -51,8 +51,7 @@ export default class BusinessDetail extends Component {
             );
         }
         else {
-            Alert.alert('All Ok');
-            // this.props.navigation.navigate('BillingDetail')
+            this.props.onPageChange(1)
         }
     }
 
@@ -217,12 +216,8 @@ export default class BusinessDetail extends Component {
 
                     <MyButton
                         Text="Add Billing Address"
-                        onPress={this.props.onPageChange(1)}
-                    // onPress={() => navigate(AppConstants.SCREENS.MERCHANDISEPRODUCT)}
-                    // onPress={this.validateFields.bind(this)}
-                    // onPress={() => this.validateFields.bind(this.props.navigation.navigate('BillingDetail'))}
+                        onPress={ this.validateFields.bind(this)}
                     />
-
                 </View>
             </View>
         )

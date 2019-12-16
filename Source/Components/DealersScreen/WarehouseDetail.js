@@ -1,5 +1,6 @@
+/* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
-import { Text, View,Keyboard,Alert } from 'react-native';
+import { Text, View, Keyboard, Alert } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
 import { Dropdown } from 'react-native-material-dropdown';
 import MyButton from '../../CustomControls/MyButton';
@@ -97,7 +98,7 @@ export default class WarehouseDetail extends Component {
         ];
         return (
             <View>
-                
+
                 <Text style={styles.txtBusinessDetail}>Warehouse Address </Text>
                 <Toast
                     ref="toast"
@@ -279,10 +280,9 @@ export default class WarehouseDetail extends Component {
 
                 </View>
                 <View style={styles.btnAddBillingAddress}>
-
                     <MyButton
                         Text="Add Contact Detail"
-                        onPress={this.validateFields.bind(this)}
+                        onPress={()=>this.props.onPageChange(3)}
                     />
 
                 </View>

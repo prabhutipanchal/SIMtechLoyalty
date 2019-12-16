@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
 import { Text, View, Keyboard, Alert } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
@@ -97,9 +98,9 @@ export default class BillingDetail extends Component {
         ];
 
         return (
-            
+
             <View>
-               
+
                 <Text style={styles.txtBusinessDetail}>Billing Address </Text>
                 <Toast
                     ref="toast"
@@ -284,8 +285,7 @@ export default class BillingDetail extends Component {
 
                     <MyButton
                         Text="Add Warehouse Address"
-                        onPress={this.props.onPageChange(2)}
-                        // onPress={this.validateFields.bind(this)}
+                        onPress={() => this.props.onPageChange(2)}
                     />
 
                 </View>
