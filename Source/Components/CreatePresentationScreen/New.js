@@ -11,12 +11,11 @@ import Toast, { DURATION } from 'react-native-easy-toast';
 import Icon from 'react-native-vector-icons/AntDesign';
 import CloseIcon from 'react-native-vector-icons/Entypo';
 import RadioButtonIcon from 'react-native-vector-icons/Ionicons';
+import CloseIcon1 from 'react-native-vector-icons/FontAwesome';
 const Images = {
     Imgreferearn: 'imgreferearn'
 };
 export default class New extends Component {
-
-
     constructor(props) {
         super(props);
         this.state = {
@@ -26,7 +25,9 @@ export default class New extends Component {
             Year: '',
             Quarter: '',
             isLoading: false,
-
+            selectedItem: 0,
+            iconFill: false,
+            data: '1',
             FlatListItems: [
                 {
                     image: <Image
@@ -35,9 +36,10 @@ export default class New extends Component {
                         style={styles.ImageReferEarnStyle}
                     />,
                     TargetAchivements: "Target V/S Achivements",
-                    icon: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
-
-
+                    icon1: <RadioButtonIcon name="md-radio-button-on" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
+                    icon: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} onpress={{}}
+                        color={AppConstants.COLORS.RADIOBUTTONCOLOR}
+                    />,
                 },
                 {
                     image: <Image
@@ -97,7 +99,8 @@ export default class New extends Component {
                         style={styles.ImageReferEarnStyle}
                     />,
                     TargetAchivements: "Sales Analysis",
-                    icon: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
+                    icon: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} onpress={{}}
+                        color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
 
                 },
 
@@ -108,11 +111,14 @@ export default class New extends Component {
                         style={styles.ImageReferEarnStyle}
                     />,
                     TargetAchivements: "Market Penetration",
+                    icon1: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
                     icon: <RadioButtonIcon name="md-radio-button-off" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.RADIOBUTTONCOLOR} />,
                 },
 
             ],
         };
+        this.onPressList = this.onPressList.bind(this);
+        this.renderItem = this.renderItem.bind(this);
     }
 
     validateFields() {
@@ -126,7 +132,28 @@ export default class New extends Component {
             Alert.alert('All Ok');
         }
     }
-
+    onPressList(index) {
+        console.log('index', index)
+        this.setState({ selectedItem: index });
+    }
+    componentDidMount() {
+        this.lists = [
+            this.props.navigation.addListener('didFocus', () => { this.renderItem })
+        ];
+    }
+    renderItem({ item, index }) {
+        const value = this.state.selectedItem == index ? 'check-circle' : 'circle-outline'
+        return (
+            <View style={styles.mainCardView} >
+                <Text style={styles.txtTarget}>{item.TargetAchivements}</Text>
+                <TouchableOpacity onpress={() => this.onPressList(index)} >
+                    <CloseIcon1 name={value}
+                        size={AppConstants.getDeviceWidth(6)} color={AppConstants.COLORS.EDITBUTTON}
+                    />
+                </TouchableOpacity>
+            </View>
+        )
+    }
     render() {
         const { navigate } = this.props.navigation;
 
@@ -158,19 +185,14 @@ export default class New extends Component {
                             <Text style={styles.txtAddReport}>Add Report</Text>
                             <FlatList
                                 data={this.state.FlatListItems}
+                                keyExtractor={(item, index) => index.toString()}
                                 ItemSeparatorComponent={this.FlatListItemSeparator}
-                                renderItem={({ item }) =>
-                                    <View style={styles.mainCardView}>
-                                        <Text style={styles.txtTarget}>{item.TargetAchivements}</Text>
-                                        {item.icon}
-                                    </View>
-
-                                }
+                                renderItem={this.renderItem}
                             />
                             <TouchableOpacity
                                 activeOpacity={0.9}
                                 style={styles.ApplyButton}
-                            // onPress={() => this.setState({ modalVisible: false })}
+                                onPress={() => this.setState({ modalVisible: false })}
                             >
                                 <Text style={styles.txtApplyButton}>Apply</Text>
                             </TouchableOpacity>
@@ -202,13 +224,12 @@ export default class New extends Component {
                                 AppConstants.FONTSIZE.FS15,
                             )}
                             inputContainerStyle={{
-
                                 // paddingLeft: AppConstants.getDeviceWidth(10.93),
                                 fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
                             }}
                             maxLength={20}
                             labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                            labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
+                            // labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
                             autoCorrect={false}
                             autoCapitalize="none"
                             blurOnSubmit={true}
@@ -299,7 +320,7 @@ export default class New extends Component {
                         />
                     </View>
                     <View style={styles.ReportsView}>
-                        <View>
+                        <View style={{}}>
                             <Text style={styles.txtReports}>Reports</Text>
                             <Text style={styles.txtDescription}>Select & Arrange Reports you wanted in presentation</Text>
                         </View>
@@ -309,27 +330,39 @@ export default class New extends Component {
                         </TouchableOpacity>
                     </View>
 
-                    <View style={styles.PayoutView}>
-                        <TouchableOpacity
-                            style={styles.CardView}
-                            activeOpacity={0.9}>
-                            <Text style={styles.txtPayout}>Payout Reports </Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.PayoutView}>
-                        <TouchableOpacity
-                            style={styles.CardView}
-                            activeOpacity={0.9}>
-                            <Text style={styles.txtProduct}>Product Performance </Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.PayoutView}>
-                        <TouchableOpacity
-                            style={styles.CardView}
-                            activeOpacity={0.9}>
-                            <Text style={styles.txtMarket}>Market Penetration </Text>
-                        </TouchableOpacity>
-                    </View>
+
+                    <TouchableOpacity
+                        style={styles.CardView}
+                        activeOpacity={0.9}>
+
+                        <Text style={styles.txtPayout}>Payout Reports </Text>
+                        <Icon name="closecircle"
+                            size={AppConstants.getDeviceWidth(5)} color={AppConstants.COLORS.RED}
+                        // onPress={this.addImage.bind(this)}
+                        />
+                    </TouchableOpacity>
+
+
+                    <TouchableOpacity
+                        style={styles.CardView}
+                        activeOpacity={0.9}>
+                        <Text style={styles.txtProduct}>Product Performance </Text>
+                        <Icon name="closecircle"
+                            size={AppConstants.getDeviceWidth(5)} color={AppConstants.COLORS.RED}
+                        // onPress={this.addImage.bind(this)}
+                        />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={styles.CardView}
+                        activeOpacity={0.9}>
+                        <Text style={styles.txtMarket}>Market Penetration </Text>
+                        <Icon name="closecircle"
+                            size={AppConstants.getDeviceWidth(5)} color={AppConstants.COLORS.RED}
+                        // onPress={this.addImage.bind(this)}
+                        />
+                    </TouchableOpacity>
+
                     <View style={styles.ButtonView}>
                         <TouchableOpacity
                             activeOpacity={0.9}
@@ -344,7 +377,7 @@ export default class New extends Component {
                         </TouchableOpacity>
                     </View>
                 </ScrollView>
-            </View >
+            </View>
         );
     }
 }

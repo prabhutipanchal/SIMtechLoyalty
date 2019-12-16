@@ -17,7 +17,8 @@ export default {
     shadowRadius: 1, //IOS
     elevation: 5,
     alignSelf: 'center',
-    height: AppConstants.getDeviceHeight(56.87),
+    paddingBottom: AppConstants.getDeviceHeight(4),
+    // height: AppConstants.getDeviceHeight(56.87),
     width: AppConstants.getDeviceWidth(89.33),
     borderColor: AppConstants.COLORS.BORDERCOLOR,
     backgroundColor: AppConstants.COLORS.WHITE,
@@ -131,6 +132,7 @@ export default {
     backgroundColor: AppConstants.COLORS.APPTHEME,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: AppConstants.getDeviceHeight(3),
   },
   txtFilterButton: {
     color: AppConstants.COLORS.WHITE,

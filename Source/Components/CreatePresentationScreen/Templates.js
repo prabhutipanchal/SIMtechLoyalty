@@ -5,7 +5,7 @@ export default class Templates extends Component {
     render() {
         return (
             <View>
-                <Text> textInComponent </Text>
+                <Text> Templates </Text>
             </View>
         )
     }

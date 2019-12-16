@@ -36,12 +36,12 @@ export default class Merch extends Component {
           </TouchableOpacity>
         </View>
 
-        <View style={Styles.mainView}>
+        {/* <View style={Styles.mainView}>
           <TouchableOpacity
             style={Styles.mainCardView}
             activeOpacity={0.9}
-            onPress={() => navigate(AppConstants.SCREENS.ADDDEALER)}>
-            <Text style={Styles.txt}>Add Dealer </Text>
+            onPress={() => navigate(AppConstants.SCREENS.BUSINESSDETAIL)}>
+            <Text style={Styles.txt}>Business Detail </Text>
           </TouchableOpacity>
         </View>
 
@@ -49,8 +49,8 @@ export default class Merch extends Component {
           <TouchableOpacity
             style={Styles.mainCardView}
             activeOpacity={0.9}
-            onPress={() => navigate(AppConstants.SCREENS.ADDDEALER2)}>
-            <Text style={Styles.txt}>Add Dealer2 </Text>
+            onPress={() => navigate(AppConstants.SCREENS.BILLINGDETAIL)}>
+            <Text style={Styles.txt}>Billing Detail </Text>
           </TouchableOpacity>
         </View>
 
@@ -58,8 +58,8 @@ export default class Merch extends Component {
           <TouchableOpacity
             style={Styles.mainCardView}
             activeOpacity={0.9}
-            onPress={() => navigate(AppConstants.SCREENS.ADDDEALER3)}>
-            <Text style={Styles.txt}>Add Dealer3 </Text>
+            onPress={() => navigate(AppConstants.SCREENS.WAREHOUSEDETAIL)}>
+            <Text style={Styles.txt}>Warehouse Detail </Text>
           </TouchableOpacity>
         </View>
 
@@ -67,8 +67,8 @@ export default class Merch extends Component {
           <TouchableOpacity
             style={Styles.mainCardView}
             activeOpacity={0.9}
-            onPress={() => navigate(AppConstants.SCREENS.ADDDEALER4)}>
-            <Text style={Styles.txt}>Add Dealer4 </Text>
+            onPress={() => navigate(AppConstants.SCREENS.CONTACTDETAIL)}>
+            <Text style={Styles.txt}>Contact Detail </Text>
           </TouchableOpacity>
         </View>
 
@@ -76,8 +76,8 @@ export default class Merch extends Component {
           <TouchableOpacity
             style={Styles.mainCardView}
             activeOpacity={0.9}
-            onPress={() => navigate(AppConstants.SCREENS.ADDDEALER5)}>
-            <Text style={Styles.txt}>Add Dealer5 </Text>
+            onPress={() => navigate(AppConstants.SCREENS.BANKDETAIL)}>
+            <Text style={Styles.txt}>Bank Detail </Text>
           </TouchableOpacity>
         </View>
 
@@ -85,8 +85,17 @@ export default class Merch extends Component {
           <TouchableOpacity
             style={Styles.mainCardView}
             activeOpacity={0.9}
-            onPress={() => navigate(AppConstants.SCREENS.ADDDEALER6)}>
-            <Text style={Styles.txt}>Add Dealer6 </Text>
+            onPress={() => navigate(AppConstants.SCREENS.UPLOADDETAILS)}>
+            <Text style={Styles.txt}>Upload Documents Detail </Text>
+          </TouchableOpacity>
+        </View> */}
+
+        <View style={Styles.mainView}>
+          <TouchableOpacity
+            style={Styles.mainCardView}
+            activeOpacity={0.9}
+            onPress={() => navigate(AppConstants.SCREENS.COMMONADDDEALERS)}>
+            <Text style={Styles.txt}>Common Add Dealers </Text>
           </TouchableOpacity>
         </View>
 
@@ -95,7 +104,7 @@ export default class Merch extends Component {
           <TouchableOpacity
             style={Styles.mainCardView}
             activeOpacity={0.9}
-            onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+            onPress={() => navigate(AppConstants.SCREENS.BUSINESSDETAIL)}>
             <Text style={Styles.txt}>Reports</Text>
           </TouchableOpacity>
         </View>

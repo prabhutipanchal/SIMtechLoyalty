@@ -18,8 +18,9 @@ export default {
     justifyContent: 'space-around',
     paddingRight: AppConstants.getDeviceWidth(6),
     paddingLeft: AppConstants.getDeviceWidth(6.5),
-    paddingBottom: AppConstants.getDeviceHeight(1),
-    marginTop: AppConstants.getDeviceHeight(3),
+    marginTop: AppConstants.getDeviceHeight(5),
+    // backgroundColor: AppConstants.COLORS.REPORTSBG_COLOR,
+
   },
   txtReports: {
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
@@ -33,44 +34,48 @@ export default {
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
 
   },
-  PayoutView: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-  },
   CardView: {
-    marginTop: AppConstants.getDeviceHeight(1),
-    marginBottom: AppConstants.getDeviceHeight(1),
     backgroundColor: AppConstants.COLORS.WHITE,
-    borderColor: AppConstants.COLORS.REPORTSBORDERCOLOR,
-    borderWidth: AppConstants.getDeviceHeight(0.1),
+    borderRadius: AppConstants.getDeviceHeight(1),
+    // shadowColor: AppConstants.COLORS.BORDERCOLOR, // IOS
+    // shadowOffset: { height: 1, width: 1 }, // IOS
+    // shadowOpacity: 1, // IOS
+    // shadowRadius: 1, //IOS
+    elevation: 5,
     paddingTop: AppConstants.getDeviceHeight(2.85),
-    paddingBottom: AppConstants.getDeviceHeight(2.85),
-    width: AppConstants.getDeviceWidth(91.47),
-    justifyContent: 'center',
+    paddingBottom: AppConstants.getDeviceHeight(2),
+    marginTop: AppConstants.getDeviceHeight(2),
+    alignSelf: 'center',
+    width: AppConstants.getDeviceWidth(89.33),
+    justifyContent: 'space-between',
+    paddingHorizontal: AppConstants.getDeviceWidth(3),
+    flexDirection: 'row',
+   
   },
   txtPayout: {
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
-
+    marginLeft: AppConstants.getDeviceWidth(4),
   },
   txtProduct: {
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
+    marginLeft: AppConstants.getDeviceWidth(4),
   },
   txtMarket: {
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
-
+    marginLeft: AppConstants.getDeviceWidth(4),
   },
   ButtonView: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
   SaveTemplateViewCode: {
-    marginBottom: AppConstants.getDeviceHeight(2.63),
+    marginBottom: AppConstants.getDeviceHeight(3),
     alignSelf: 'center',
     justifyContent: 'space-evenly',
     shadowColor: AppConstants.COLORS.BLACK, // IOS
@@ -91,7 +96,7 @@ export default {
     color: AppConstants.COLORS.WHITE,
   },
   GenerateReportViewCode: {
-    marginBottom: AppConstants.getDeviceHeight(2.63),
+    marginBottom: AppConstants.getDeviceHeight(3),
     alignSelf: 'center',
     justifyContent: 'space-evenly',
     shadowColor: AppConstants.COLORS.BLACK, // IOS
@@ -136,6 +141,7 @@ export default {
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1_BOLD,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS18),
     marginTop: AppConstants.getDeviceHeight(2),
+    paddingBottom: AppConstants.getDeviceHeight(3),
     paddingLeft: AppConstants.getDeviceHeight(3),
 
   },
@@ -170,8 +176,9 @@ export default {
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
     color: AppConstants.COLORS.TEXTCOLOR,
-    marginTop: AppConstants.getDeviceHeight(3),
-    paddingBottom: AppConstants.getDeviceHeight(2),
+    marginTop: AppConstants.getDeviceHeight(1),
+    // marginBottom: AppConstants.getDeviceHeight(3),
+    paddingBottom: AppConstants.getDeviceHeight(3),
     paddingLeft: AppConstants.getDeviceHeight(2),
 
   },
@@ -240,8 +247,8 @@ export default {
     alignItems: 'center',
     justifyContent: 'space-between',
     flex: 1,
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop: AppConstants.getDeviceHeight(2),
+    marginBottom: AppConstants.getDeviceHeight(2),
     width: AppConstants.getDeviceWidth(80),
   },
   ApplyButton2: {

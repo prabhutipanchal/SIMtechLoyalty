@@ -39,7 +39,7 @@ export default class Dashboard extends Component {
             <Text style={Styles.txtTitleCommonStyle}>Target V/S Achivements </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}  onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
             <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}> Payout Reports </Text>
           </TouchableOpacity>

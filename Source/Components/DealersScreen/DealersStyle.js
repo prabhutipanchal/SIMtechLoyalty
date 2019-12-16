@@ -7,7 +7,6 @@ export default {
   mainView: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-
   },
   mainCardView: {
     backgroundColor: AppConstants.COLORS.WHITE,
@@ -19,6 +18,7 @@ export default {
     elevation: 5,
     paddingTop: AppConstants.getDeviceHeight(2.85),
     marginTop: AppConstants.getDeviceHeight(2),
+    marginBottom: AppConstants.getDeviceHeight(2),
     alignSelf: 'center',
     width: AppConstants.getDeviceWidth(89.33),
   },

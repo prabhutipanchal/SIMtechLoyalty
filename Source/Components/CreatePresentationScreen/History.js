@@ -5,7 +5,7 @@ export default class History extends Component {
     render() {
         return (
             <View>
-                <Text> textInComponent </Text>
+                <Text>History </Text>
             </View>
         )
     }

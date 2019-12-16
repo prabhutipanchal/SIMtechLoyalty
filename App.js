@@ -38,12 +38,13 @@ import MerchandiseProduct from './Source/Components/MerchandiseScreen/Merchandis
 import DealerDetail from './Source/Components/DealersScreen/DealerDetail';
 import ProductDetail from './Source/Components/MerchandiseScreen/ProductDetail';
 import BestPerformers from './Source/Components/BestPerformersScreen/BestPerformers';
-import AddDealer from './Source/Components/DealersScreen/AddDealer';
-import AddDealer2 from './Source/Components/DealersScreen/AddDealer2';
-import AddDealer3 from './Source/Components/DealersScreen/AddDealer3';
-import AddDealer4 from './Source/Components/DealersScreen/AddDealer4';
-import AddDealer5 from './Source/Components/DealersScreen/AddDealer5';
-import AddDealer6 from './Source/Components/DealersScreen/AddDealer6';
+import BusinessDetail from './Source/Components/DealersScreen/BusinessDetail';
+import BillingDetail from './Source/Components/DealersScreen/BillingDetail';
+import WarehouseDetail from './Source/Components/DealersScreen/WarehouseDetail';
+import ContactDetail from './Source/Components/DealersScreen/ContactDetail';
+import BankDetail from './Source/Components/DealersScreen/BankDetail';
+import UploadDetails from './Source/Components/DealersScreen/UploadDetails';
+import CommonAddDealers from './Source/Components/DealersScreen/CommonAddDealers'
 import Reports from './Source/Components/ReportsScreen/Reports';
 
 class HamburgerIcon extends Component {
@@ -371,38 +372,45 @@ const RootStack = createStackNavigator(
         title: 'Best Performers',
       },
     },
-    AddDealer: {
-      screen: AddDealer,
+    BusinessDetail: {
+      screen: BusinessDetail,
       navigationOptions: {
         title: 'Add Dealer',
       },
     },
-    AddDealer2: {
-      screen: AddDealer2,
+    BillingDetail: {
+      screen: BillingDetail,
       navigationOptions: {
         title: 'Add Dealer',
       },
     },
-    AddDealer3: {
-      screen: AddDealer3,
+    WarehouseDetail: {
+      screen: WarehouseDetail,
       navigationOptions: {
         title: 'Add Dealer',
       },
     },
-    AddDealer4: {
-      screen: AddDealer4,
+    ContactDetail: {
+      screen: ContactDetail,
       navigationOptions: {
         title: 'Add Dealer',
       },
     },
-    AddDealer5: {
-      screen: AddDealer5,
+    BankDetail: {
+      screen: BankDetail,
       navigationOptions: {
         title: 'Add Dealer',
       },
     },
-    AddDealer6: {
-      screen: AddDealer6,
+    UploadDetails: {
+      screen: UploadDetails,
+      navigationOptions: {
+        title: 'Add Dealer',
+      },
+    },
+
+    CommonAddDealers: {
+      screen: CommonAddDealers,
       navigationOptions: {
         title: 'Add Dealer',
       },

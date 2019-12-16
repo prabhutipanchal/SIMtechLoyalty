@@ -17,7 +17,9 @@ export default {
     shadowOpacity: 1, // IOS
     shadowRadius: 1, //IOS
     elevation: 5,
-    paddingTop: AppConstants.getDeviceHeight(1.85),
+    marginTop: AppConstants.getDeviceHeight(3),
+    marginBottom: AppConstants.getDeviceHeight(3),
+    paddingTop: AppConstants.getDeviceHeight(1),
     paddingBottom: AppConstants.getDeviceHeight(1.85),
     width: AppConstants.getDeviceWidth(42.13),
     justifyContent: 'center',

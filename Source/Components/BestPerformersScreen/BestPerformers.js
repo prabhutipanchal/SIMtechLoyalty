@@ -64,8 +64,6 @@ export default class BestPerformers extends Component {
                         data={this.state.FlatListItems}
                         ItemSeparatorComponent={this.FlatListItemSeparator}
                         renderItem={({ item }) =>
-
-
                             <View style={styles.mainCardView}>
                                 <View style={styles.ImagePhotoView}>
                                     <Image
