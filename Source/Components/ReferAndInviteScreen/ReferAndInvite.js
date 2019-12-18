@@ -62,7 +62,7 @@ export default class ReferAndInvite extends Component {
           textStyle={AppConstants.CommonStyles.ToastTextStyle}
         />
         <View style={styles.cardView}>
-          <Text style={styles.txtReferEarn}>Refer & Earn</Text>
+          <Text style={styles.txtReferEarn}>Refer Friends</Text>
           <View>
             <Image
               resizeMode={'contain'}
@@ -73,9 +73,9 @@ export default class ReferAndInvite extends Component {
           <Text style={styles.txtInviteFriend}>
             Invite your friend and earn 50 loyalty points for free for every sign ups.</Text>
 
-          <TouchableOpacity>
+          {/* <TouchableOpacity>
             <Text style={styles.txtKnowMore}>Know More</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
         </View>
 
@@ -86,14 +86,14 @@ export default class ReferAndInvite extends Component {
         <TouchableOpacity
           activeOpacity={0.9}
           style={styles.DummyReferralViewCode}
-        // onPress={() => {this.copyReferralCode();}}
+        onPress={() => {this.copyReferralCode();}}
         >
-          <Text style={styles.txtDummyReferralCode}>dummyreferral50%code</Text>
+          <Text style={styles.txtDummyReferralCode}>REF30OFF</Text>
         </TouchableOpacity>
         
         <MyButton
           Text="Copy and Share"
-        // onPress={() => this.shareCode()}
+        onPress={() => this.shareCode()}
         />
       </View>
     );

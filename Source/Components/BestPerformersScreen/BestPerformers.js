@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Text, View, Image, TouchableOpacity, FlatList } from 'react-native'
 import styles from './BestPerformersStyle';
 import * as AppConstants from '../Helper/AppConstants';
+import SplashScreen from 'react-native-splash-screen';
+import MyButton from '../../CustomControls/MyButton';
 const Images = {
     Imgreferearn: 'imgreferearn'
 };
@@ -15,43 +17,37 @@ export default class BestPerformers extends Component {
                 {
                     PersonName: "Carole Chimako",
                     Designation: "Sales Representative",
-                    TotalSales: "Total Sales"
+                    TotalSales: "Total Sales",
+                    Region: "Region"
                 },
                 {
                     PersonName: "Chinelo Chyke",
                     Designation: "Sales Representative",
-                    TotalSales: "Total Sales"
+                    TotalSales: "Total Sales",
+                    Region: "Distributor"
                 },
                 {
                     PersonName: "Gopichand Sana",
                     Designation: "Sales Representative",
-                    TotalSales: "Total Sales"
+                    TotalSales: "Total Sales",
+                    Region: "Sales"
                 },
-                {
-                    PersonName: "Nguyễn Diệp Chi",
-                    Designation: "Sales Representative",
-                    TotalSales: "Total Sales"
-                },
-                {
-                    PersonName: "Gopichand Sana",
-                    Designation: "Sales Representative",
-                    TotalSales: "Total Sales"
-                },
-                {
-                    PersonName: "Gopichand Sana",
-                    Designation: "Sales Representative",
-                    TotalSales: "Total Sales"
-                },
+
 
             ],
         }
     }
+    componentDidMount() {
+        SplashScreen.hide();
+    }
+
     GetFlatListItem(item) {
 
         Alert.alert(item);
 
     }
     render() {
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.mainContainer}>
                 <View style={styles.cardView}>
@@ -64,16 +60,20 @@ export default class BestPerformers extends Component {
                         data={this.state.FlatListItems}
                         ItemSeparatorComponent={this.FlatListItemSeparator}
                         renderItem={({ item }) =>
-                            <View style={styles.mainCardView}>
+                            <TouchableOpacity 
+                            // onPress={() => this.props.navigation.replace(AppConstants.SCREENS.DASHBOARD)} 
+                            style={styles.mainCardView}>
                                 <View style={styles.ImagePhotoView}>
                                     <Image
                                         resizeMode={'contain'}
-                                        source={{ uri: Images.Imgreferearn }}
+                                        source={{
+                                            uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+                                        }}
                                         style={styles.ImagePhotoStyle}
                                     />
                                 </View>
                                 <View style={styles.DistributorView}>
-                                    <Text style={styles.txtDistributor}>Distributor</Text>
+                                    <Text style={styles.txtDistributor}>{item.Region}</Text>
                                 </View>
 
 
@@ -89,9 +89,15 @@ export default class BestPerformers extends Component {
                                     <Text style={styles.txtTotalSales}>{item.TotalSales} </Text>
                                     <Text style={styles.txtAmount}>12,655</Text>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         }
                     />
+                    <View style={styles.btnsigninView}>
+                        <MyButton
+                            Text="Continue to Dashboard"
+                            onPress={() => navigate(AppConstants.SCREENS.DASHBOARD)}
+                        />
+                    </View>
                 </View>
             </View>
 

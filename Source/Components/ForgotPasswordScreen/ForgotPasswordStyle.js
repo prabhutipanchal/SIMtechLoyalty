@@ -20,13 +20,7 @@ export default {
     width: AppConstants.getDeviceWidth(91.47),
     alignSelf: 'center',
   },
-   txtResetpwdtitle: {
-    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS24),
-    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
-    color: AppConstants.COLORS.TEXTCOLOR,
-  },
   txtsignintitle: {
-    marginTop: AppConstants.getDeviceHeight(2),
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS18),
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR, 

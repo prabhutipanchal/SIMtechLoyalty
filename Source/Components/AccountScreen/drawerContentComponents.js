@@ -2,7 +2,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { Component } from 'react'
 import { NavigationActions } from 'react-navigation'
-import { Text, View, TouchableOpacity, Image,} from 'react-native';
+import { Text, View, TouchableOpacity, Image, } from 'react-native';
 import { Avatar } from "react-native-elements";
 import styles from './drawerContentComponentsStyle';
 import * as AppConstants from '../Helper/AppConstants';
@@ -28,7 +28,7 @@ export default class drawerContentComponents extends Component {
   navigateToScreen = route => () => {
     const navigateAction = NavigationActions.navigate({
       routeName: 'route',
-      
+
     });
     this.props.navigation.dispatch(navigateAction);
   };
@@ -52,6 +52,10 @@ export default class drawerContentComponents extends Component {
                 <Avatar
                   size={AppConstants.getDeviceWidth(20)}
                   rounded
+                  source={{
+                    uri:
+                      'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+                  }}
                   activeOpacity={0.7}
                   containerStyle={{
                     borderWidth: AppConstants.getDeviceWidth(0.5),
@@ -95,17 +99,17 @@ export default class drawerContentComponents extends Component {
                 this.props.navigation.navigate(AppConstants.SCREENS.NOTIFICATION)
               }>
               <BellIcon style={styles.Iconstyle}
-                name="bell"/>
+                name="bell" />
               <Text style={styles.screentxtcolor}>Notifications</Text>
 
             </TouchableOpacity>
 
-            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
+            {/* <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
               <Icons style={styles.Iconstyle}
                 name="calendar-question" />
               <Text style={styles.screentxtcolor}>FAQ</Text>
 
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}
               onPress={() =>
@@ -115,41 +119,47 @@ export default class drawerContentComponents extends Component {
                 resizeMode='contain'
                 source={{ uri: Images.Iconrefer }}
                 style={styles.ReferIconImageStyle} />
-              <Text style={styles.screentxtcolor}>Refer & Invite</Text>
+              <Text style={styles.screentxtcolor}>Refer Friends</Text>
 
             </TouchableOpacity>
 
-            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
+            {/* <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
               <AnalyticsIcons style={styles.Iconstyle}
-                name="piechart"/>
+                name="piechart" />
               <Text style={styles.screentxtcolor}>Analytics</Text>
 
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
-            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
+            {/* <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
               <Image
                 resizeMode='contain'
                 source={{ uri: Images.Iconenablefaceid }}
                 style={styles.EnablefaceImageStyle} />
               <Text style={styles.screentxtcolor}>Enable FaceID</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
-            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
+            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}
+             onPress={() =>
+                this.props.navigation.navigate(AppConstants.SCREENS.TERMASANDCONDITION)
+              }>
               <TermsIcons style={styles.Iconstyle}
                 name="info" />
               <Text style={styles.screentxtcolor}>Terms & Conditions</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}
-             onPress={() =>
+            {/* <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}
+              onPress={() =>
                 this.props.navigation.navigate(AppConstants.SCREENS.CREATEPRESENTATION)
               }>
               <Icons style={styles.Iconstyle}
                 name="file-presentation-box" />
               <Text style={styles.screentxtcolor}>Create Presentation</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
-            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}>
+            <TouchableOpacity activeOpacity={0.9} style={styles.drawerNavStyle}
+              onPress={() =>
+                this.props.navigation.navigate(AppConstants.SCREENS.LOGIN)
+              }>
               <Icons style={styles.Iconstyle}
                 name="logout" />
               <Text style={styles.screentxtcolor}>Logout</Text>

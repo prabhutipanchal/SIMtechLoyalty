@@ -65,7 +65,7 @@ export default class WarehouseDetail extends Component {
         }
 
         else {
-            Alert.alert('All Ok');
+            this.props.onPageChange(3)
         }
     }
     render() {
@@ -282,7 +282,7 @@ export default class WarehouseDetail extends Component {
                 <View style={styles.btnAddBillingAddress}>
                     <MyButton
                         Text="Add Contact Detail"
-                        onPress={()=>this.props.onPageChange(3)}
+                        onPress={ this.validateFields.bind(this)}
                     />
 
                 </View>

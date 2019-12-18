@@ -16,9 +16,7 @@ export default {
   ReportsView: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingRight: AppConstants.getDeviceWidth(6),
-    paddingLeft: AppConstants.getDeviceWidth(6.5),
-    marginTop: AppConstants.getDeviceHeight(5),
+    marginTop: AppConstants.getDeviceHeight(2),
     // backgroundColor: AppConstants.COLORS.REPORTSBG_COLOR,
 
   },
@@ -29,6 +27,7 @@ export default {
     paddingBottom: AppConstants.getDeviceHeight(1),
   },
   txtDescription: {
+    width: AppConstants.getDeviceWidth(67),
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS13),
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
@@ -37,11 +36,11 @@ export default {
   CardView: {
     backgroundColor: AppConstants.COLORS.WHITE,
     borderRadius: AppConstants.getDeviceHeight(1),
-    // shadowColor: AppConstants.COLORS.BORDERCOLOR, // IOS
-    // shadowOffset: { height: 1, width: 1 }, // IOS
-    // shadowOpacity: 1, // IOS
-    // shadowRadius: 1, //IOS
-    elevation: 5,
+    shadowColor: AppConstants.COLORS.BORDERCOLOR, // IOS
+    shadowOffset: { height: 1, width: 1 }, // IOS
+    shadowOpacity: 1, // IOS
+    shadowRadius: 1, //IOS
+    elevation: 2,
     paddingTop: AppConstants.getDeviceHeight(2.85),
     paddingBottom: AppConstants.getDeviceHeight(2),
     marginTop: AppConstants.getDeviceHeight(2),
@@ -50,7 +49,8 @@ export default {
     justifyContent: 'space-between',
     paddingHorizontal: AppConstants.getDeviceWidth(3),
     flexDirection: 'row',
-   
+    marginBottom: AppConstants.getDeviceHeight(1),
+
   },
   txtPayout: {
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
@@ -165,6 +165,7 @@ export default {
   //FlatList Design
 
   mainCardView: {
+    // marginBottom: AppConstants.getDeviceHeight(1),
     backgroundColor: AppConstants.COLORS.WHITE,
     borderRadius: AppConstants.getDeviceHeight(1),
     flexDirection: 'row',
@@ -176,7 +177,7 @@ export default {
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
     color: AppConstants.COLORS.TEXTCOLOR,
-    marginTop: AppConstants.getDeviceHeight(1),
+    // marginTop: AppConstants.getDeviceHeight(1),
     // marginBottom: AppConstants.getDeviceHeight(3),
     paddingBottom: AppConstants.getDeviceHeight(3),
     paddingLeft: AppConstants.getDeviceHeight(2),
@@ -220,7 +221,7 @@ export default {
 
   SecondmodalMainView: {
     alignSelf: 'center',
-    height: AppConstants.getDeviceHeight(100),
+    // height: AppConstants.getDeviceHeight(100),
     width: AppConstants.getDeviceWidth(90),
     height: AppConstants.getDeviceHeight(80),
     backgroundColor: '#fff',
@@ -232,7 +233,7 @@ export default {
     color: AppConstants.COLORS.TEXTCOLOR,
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1_BOLD,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS18),
-    marginTop: AppConstants.getDeviceHeight(5),
+    marginTop: AppConstants.getDeviceHeight(2),
     paddingLeft: AppConstants.getDeviceHeight(3),
   },
   SecondFlatListView: {
@@ -260,7 +261,8 @@ export default {
     backgroundColor: AppConstants.COLORS.APPTHEME,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: AppConstants.getDeviceHeight(1),
+    marginTop: AppConstants.getDeviceHeight(2),
+    marginBottom: AppConstants.getDeviceHeight(2),
   },
   ImageReferEarnStyle: {
     height: AppConstants.getDeviceHeight(18.15),

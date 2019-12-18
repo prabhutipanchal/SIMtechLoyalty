@@ -21,7 +21,7 @@ export default {
   },
   NotificationViewstyle: {
     flexDirection: 'row',
-    width: AppConstants.getDeviceWidth(82.93),
+    // width: AppConstants.getDeviceWidth(82.93),
     alignSelf: 'center',
   },
   ThumbIconstyle: {

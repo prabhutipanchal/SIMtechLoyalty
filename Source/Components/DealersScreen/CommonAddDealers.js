@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StatusBar } from 'react-native';
 import styles from './CommonAddDealersStyle';
+import MyButton from '../../CustomControls/MyButton';
 import * as AppConstants from '../Helper/AppConstants';
 import StepIndicator from 'react-native-step-indicator';
 import BusinessDetail from './BusinessDetail';
@@ -43,7 +44,6 @@ export default class CommonAddDealers extends Component {
         this.state = {
             currentPosition: 0
         };
-        console.log('propas val', this.props.onPageChange)
     }
     getStepContent = (step) => {
         switch (step) {
@@ -59,6 +59,8 @@ export default class CommonAddDealers extends Component {
                 return <BankDetail onPageChange={this.onPageChange.bind(this)}></BankDetail>
             case 5:
                 return <UploadDetails onPageChange={this.onPageChange.bind(this)}></UploadDetails>
+            
+
         }
     }
     onPageChange = (position) => {
@@ -75,13 +77,21 @@ export default class CommonAddDealers extends Component {
 
                 <StepIndicator
                     stepCount={6}
-                    onPress={() => this.onPageChange(this.state.currentPosition + 1)}
+                    // onPress={() => this.onPageChange(this.state.currentPosition + 1)}
                     customStyles={customStyles}
                     currentPosition={this.state.currentPosition}
                 />
                 <ScrollView>
                     <View style={styles.mainContainer}>
                         {this.getStepContent(this.state.currentPosition)}
+                        {
+                            this.state.currentPosition == 5 ? <View style={styles.btnAddBillingAddress}><MyButton
+                                Text="Onboard Dealer"
+                                style={{ marginBottom: 10 }}
+                                onPress={() => this.props.navigation.navigate(AppConstants.SCREENS.DEALERS)}
+                            /></View>
+                                : <View />
+                        }
                     </View>
                 </ScrollView>
             </View>

@@ -56,7 +56,7 @@ export default class Login extends Component {
       );
     }
     else {
-      this.props.navigation.replace(AppConstants.SCREENS.DASHBOARD)
+      this.props.navigation.replace(AppConstants.SCREENS.BESTPERFORMERS)
     }
   }
   render() {
@@ -100,7 +100,7 @@ export default class Login extends Component {
             tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
             textColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
             baseColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
-            fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS15)}
+            fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
             labelFontSize={AppConstants.moderateScale(
               AppConstants.FONTSIZE.FS15,
             )}
@@ -135,7 +135,7 @@ export default class Login extends Component {
             tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
             textColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
             baseColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
-            fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS15)}
+            fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
             labelFontSize={AppConstants.moderateScale(
               AppConstants.FONTSIZE.FS15,
             )}
@@ -168,7 +168,7 @@ export default class Login extends Component {
 
         <View style={Styles.btnsigninView}>
           <MyButton
-            Text="Sign in"
+            Text="Sign In"
             onPress={this.validateFields.bind(this)}
           />
         </View>

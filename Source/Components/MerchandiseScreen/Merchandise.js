@@ -15,23 +15,27 @@ const Images = {
 
 export default class Merchandise extends Component {
     render() {
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.mainContainer}>
                 <View style={styles.Container}>
 
-                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}>
+                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}
+                    onPress={() => navigate(AppConstants.SCREENS.MERCHANDISEPRODUCT)}>
                         <Image resizeMode='contain' source={{ uri: Images.Iconcoupon }} style={styles.ImgCommonStyle}></Image>
                         <Text style={styles.txtTitleCommonStyle}> Coupon Code </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}>
+                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}
+                    onPress={() => navigate(AppConstants.SCREENS.MERCHANDISEPRODUCT)}>
                         <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={styles.ImgCommonStyle}></Image>
                         <Text style={styles.txtTitleCommonStyle}> Electronics </Text>
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.Container}>
-                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}>
+                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}
+                    onPress={() => navigate(AppConstants.SCREENS.MERCHANDISEPRODUCT)}>
 
                         <View style={styles.NewView}>
                             <Text style={styles.txtNew}>New</Text>
@@ -40,29 +44,34 @@ export default class Merchandise extends Component {
                         <Text style={styles.txtTitleCommonStyle}> Men’s Accessories </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}>
+                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}
+                    onPress={() => navigate(AppConstants.SCREENS.MERCHANDISEPRODUCT)}>
                         <Image resizeMode='contain' source={{ uri: Images.Iconwomenacc }} style={styles.ImgCommonStyle}></Image>
                         <Text style={styles.txtTitleCommonStyle}> Women’s Accessories </Text>
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.Container}>
-                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}>
+                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}
+                    onPress={() => navigate(AppConstants.SCREENS.MERCHANDISEPRODUCT)}>
                         <Image resizeMode='contain' source={{ uri: Images.Iconstationary }} style={styles.ImgCommonStyle}></Image>
                         <Text style={styles.txtTitleCommonStyle}> Stationary </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}>
+                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}
+                    onPress={() => navigate(AppConstants.SCREENS.MERCHANDISEPRODUCT)}>
                         <Image resizeMode='contain' source={{ uri: Images.Iconhealthcare }} style={styles.ImgCommonStyle}></Image>
                         <Text style={styles.txtTitleCommonStyle}> Healthcare </Text>
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.Container}>
-                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}>
+                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}
+                    onPress={() => navigate(AppConstants.SCREENS.MERCHANDISEPRODUCT)}>
                         <Image resizeMode='contain' source={{ uri: Images.Iconfoodcoupon }} style={styles.ImgCommonStyle}></Image>
                         <Text style={styles.txtTitleCommonStyle}> Food Coupons </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}>
+                    <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}
+                    onPress={() => navigate(AppConstants.SCREENS.MERCHANDISEPRODUCT)}>
                         <Image resizeMode='contain' source={{ uri: Images.Iconsubscription }} style={styles.ImgCommonStyle}></Image>
                         <Text style={styles.txtTitleCommonStyle}> Subscriptions </Text>
                     </TouchableOpacity>

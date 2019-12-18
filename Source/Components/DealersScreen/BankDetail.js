@@ -19,6 +19,10 @@ export default class BankDetail extends Component {
             BranchAddress: '',
         }
     }
+    validateIFSC = (IFSCCode) => {
+        var re = /^[A-Z]{4}0[A-Z0-9]{6}$/;
+        return re.test(IFSCCode)
+    };
     validateFields() {
         if (this.state.AccountName.trim() == '') {
             this.refs.toast.show(
@@ -38,15 +42,15 @@ export default class BankDetail extends Component {
         else if (this.state.AccountNumber.length != 14) {
             this.refs.toast.show(AppConstants.Messages.ACCOUNTNOLENGTH, DURATION.LENGTH_LONG);
         }
-        else if (this.state.IFSCCode.trim() == '') {
+        else if (this.state.IFSCCode.trim() == '' || !this.validateIFSC(this.state.IFSCCode.trim())) {
             this.refs.toast.show(
                 AppConstants.Messages.NOIFSCNO,
                 DURATION.LENGTH_LONG,
             );
         }
-        else if (this.state.IFSCCode.length != 11) {
-            this.refs.toast.show(AppConstants.Messages.IFSCNOLENGTH, DURATION.LENGTH_LONG);
-        }
+        // else if (this.state.IFSCCode.length != 11) {
+        //     this.refs.toast.show(AppConstants.Messages.IFSCNOLENGTH, DURATION.LENGTH_LONG);
+        // }
         else if (this.state.BankName.trim() == '') {
             this.refs.toast.show(
                 AppConstants.Messages.NOBANKNAME,
@@ -67,7 +71,7 @@ export default class BankDetail extends Component {
         }
 
         else {
-            this.props.onPageChange(0)
+            this.props.onPageChange(5)
         }
     }
     render() {
@@ -99,7 +103,6 @@ export default class BankDetail extends Component {
                             AppConstants.FONTSIZE.FS16,
                         )}
                         inputContainerStyle={{
-
                             // paddingLeft: AppConstants.getDeviceWidth(10.93),
                             fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
                         }}
@@ -161,7 +164,6 @@ export default class BankDetail extends Component {
                             AppConstants.FONTSIZE.FS16,
                         )}
                         inputContainerStyle={{
-
                             // paddingLeft: AppConstants.getDeviceWidth(10.93),
                             fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
                         }}
@@ -169,7 +171,7 @@ export default class BankDetail extends Component {
                         labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
                         labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
                         autoCorrect={false}
-                        autoCapitalize="none"
+                        autoCapitalize='characters'
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -277,7 +279,7 @@ export default class BankDetail extends Component {
 
                     <MyButton
                         Text="Upload Documents"
-                        onPress={() => this.props.onPageChange(5)}
+                        onPress={ this.validateFields.bind(this)}
                     />
 
                 </View>

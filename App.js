@@ -97,23 +97,6 @@ const transitionConfig = () => {
 };
 export const Tab_1 = createBottomTabNavigator(
   {
-    Dashboard: {
-      screen: Dashboard,
-      navigationOptions: {
-        tabBarLabel: 'Reports',
-        tabBarIcon: ({ focused }) => (
-          <Icons
-            name="file-table-outline"
-            size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS20)}
-            color={
-              focused
-                ? AppConstants.COLORS.APPTHEME
-                : AppConstants.COLORS.BASECOLOR_2
-            }
-          />
-        ),
-      },
-    },
     Dealers: {
       screen: Dealers,
       navigationOptions: ({ navigation }) => {
@@ -129,36 +112,6 @@ export const Tab_1 = createBottomTabNavigator(
                   : AppConstants.COLORS.BASECOLOR_2
               }
             />
-          ),
-        };
-      },
-    },
-    Merchandise: {
-      screen: Merchandise,
-      navigationOptions: ({ navigation }) => {
-        return {
-          tabBarLabel: ' ',
-          tabBarIcon: ({ focused }) => (
-            <View
-              style={{
-                height: AppConstants.getDeviceHeight(11),
-                width: AppConstants.getDeviceHeight(11),
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: AppConstants.COLORS.APPTHEME,
-                borderRadius: AppConstants.getDeviceHeight(10),
-                marginBottom: AppConstants.getDeviceHeight(1),
-              }}>
-              <Icons
-                name="home"
-                size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS36)}
-                color={
-                  focused
-                    ? AppConstants.COLORS.HOMEICON
-                    : AppConstants.COLORS.WHITE
-                }
-              />
-            </View>
           ),
         };
       },
@@ -188,8 +141,58 @@ export const Tab_1 = createBottomTabNavigator(
         };
       },
     },
+    Dashboard: {
+      screen: Dashboard,
+      navigationOptions: ({ navigation }) => {
+        return {
+          tabBarLabel: ' ',
+          tabBarIcon: ({ focused }) => (
+            <View
+              style={{
+                height: AppConstants.getDeviceHeight(11),
+                width: AppConstants.getDeviceHeight(11),
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: AppConstants.COLORS.APPTHEME,
+                borderRadius: AppConstants.getDeviceHeight(10),
+                marginBottom: AppConstants.getDeviceHeight(1),
+              }}>
+              <Icons
+                name="home"
+                size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS36)}
+                color={
+                  focused
+                    ? AppConstants.COLORS.HOMEICON
+                    : AppConstants.COLORS.WHITE
+                }
+              />
+            </View>
+          ),
+        };
+      },
+    },
+    CreatePresentation: {
+      screen: CreatePresentation,
+      navigationOptions: {
+        tabBarLabel: 'Presentations',
+        tabBarIcon: ({ focused }) => (
+          <Icons
+            name="file-table-outline"
+            size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS20)}
+            color={
+              focused
+                ? AppConstants.COLORS.APPTHEME
+                : AppConstants.COLORS.BASECOLOR_2
+            }
+          />
+        ),
+      },
+    },
+
+
+
     Merch: {
-      screen: Merch,
+      screen: Merchandise,
       navigationOptions: ({ navigation }) => {
         return {
           tabBarOnPress: ({ }) => {
@@ -307,13 +310,13 @@ const RootStack = createStackNavigator(
     Changepassword: {
       screen: Changepassword,
       navigationOptions: {
-        title: 'Settings',
+        title: 'Change Password',
       },
     },
     Notification: {
       screen: Notification,
       navigationOptions: {
-        title: 'Notification',
+        title: 'Notifications',
       },
     },
     FAQ: {
@@ -350,7 +353,7 @@ const RootStack = createStackNavigator(
     CreatePresentation: {
       screen: CreatePresentation,
       navigationOptions: {
-        title: 'Presentation',
+        title: 'Presentations',
       },
 
     },
@@ -370,6 +373,9 @@ const RootStack = createStackNavigator(
       screen: BestPerformers,
       navigationOptions: {
         title: 'Best Performers',
+      },
+      params: {
+        isBack: 0,
       },
     },
     BusinessDetail: {
@@ -483,18 +489,20 @@ function getHeaderLeft(navigation) {
     return AppConstants.BackButton(navigation);
   } else if (navigation.getParam('isBack') == 1) {
     return <HamburgerIcon navigationProps={navigation} />;
-  } else {
-    // temporary solution header title center
-    return (
-      <Icons
-        name="arrow-left"
-        style={{ marginLeft: AppConstants.getDeviceWidth(4), opacity: 0 }}
-        size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS25)}
-        color={AppConstants.COLORS.WHITE}
-      />
-    );
+  } else if (navigation.getParam('isBack') == 0) {
+    return <View></View>;
   }
+  // temporary solution header title center
+  return (
+    <Icons
+      name="arrow-left"
+      style={{ marginLeft: AppConstants.getDeviceWidth(4), opacity: 0 }}
+      size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS25)}
+      color={AppConstants.COLORS.WHITE}
+    />
+  );
 }
+
 
 function getControlColour(navigation) {
   switch (navigation.state.routeName) {

@@ -3,11 +3,22 @@ import { Text, View, FlatList, TouchableOpacity, Image } from 'react-native';
 import styles from './DealersStyle';
 import LocationIcon from 'react-native-vector-icons/EvilIcons';
 import * as AppConstants from '../Helper/AppConstants';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MyButton from '../../CustomControls/MyButton';
 const Images = {
     Logo: 'nodealerfound',
 };
 export default class Dealers extends Component {
+    static navigationOptions = ({ navigation }) => ({
+        headerRight: () => (
+            <TouchableOpacity activeOpacity={0.9} >
+                <MaterialIcons name="arrow-back" size={25} color={AppConstants.COLORS.SKYBLUE} />
+            </TouchableOpacity>
+        ),
+      
+    })
+
+    
     constructor() {
         super();
 
@@ -45,8 +56,11 @@ export default class Dealers extends Component {
     }
 
     renderItem({ item, index }) {
+        // const { navigate } = this.props.navigation;
         return (
-            <View style={styles.mainCardView}>
+            <TouchableOpacity  
+            // onPress={() => this.props.navigation.replace(AppConstants.SCREENS.DASHBOARD)}  
+            style={styles.mainCardView}>
                 <View style={styles.DealerTypeView}>
                     <Text style={styles.txtDealerType}>Dealer Type</Text>
                 </View>
@@ -72,11 +86,12 @@ export default class Dealers extends Component {
                     </View>
 
                 </View>
-            </View>
+            </TouchableOpacity>
         )
     }
-
+    
     render() {
+     
         return (
             <View style={styles.mainContainer}>
                 {this.state.FlatListItems.length == 0 ?

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { View, Text, StatusBar, TouchableOpacity, Image } from 'react-native';
 import * as AppConstants from '../Helper/AppConstants';
 import Styles from './DashboardStyle';
-import SplashScreen from 'react-native-splash-screen';
+// import SplashScreen from 'react-native-splash-screen';
 const Images = {
   Iconcoupon: 'iconcoupon',
   Iconelectronics: 'iconelectronics',
@@ -20,9 +20,9 @@ export default class Dashboard extends Component {
     super(props);
     this.state = {};
   }
-  componentDidMount() {
-    SplashScreen.hide();
-  }
+  // componentDidMount() {
+  //   SplashScreen.hide();
+  // }
 
   render() {
     const { navigate } = this.props.navigation;

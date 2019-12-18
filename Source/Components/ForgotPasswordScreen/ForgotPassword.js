@@ -48,7 +48,7 @@ export default class ForgotPassword extends Component {
       );
     }
     else {
-      Alert.alert('All Ok');
+      this.props.navigation.navigate(AppConstants.SCREENS.LOGIN)
     }
   }
 
@@ -76,7 +76,6 @@ export default class ForgotPassword extends Component {
           />
         </View>
         <View style={styles.Container}>
-          <Text style={styles.txtResetpwdtitle}>Reset Password</Text>
           <Text style={styles.txtsignintitle}>Sign in to access your account.</Text>
         </View>
 
@@ -119,7 +118,7 @@ export default class ForgotPassword extends Component {
 
         <View style={styles.btnResetPwdView}>
           <MyButton
-            Text="Reset password"
+            Text="Reset Password"
             onPress={this.validateFields.bind(this)}
           />
         </View>

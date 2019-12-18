@@ -30,7 +30,7 @@ export default class UploadDetails extends Component {
 
             } else if (response.error) {
                 Alert.alert(
-                    "Please allow Permissions to access Camera from Settings -> Apps -> MedKart -> Camera"
+                    "Please allow Permissions to access Camera from Settings -> Apps -> SimTech -> Camera"
                 );
             } else if (response.customButton) {
             } else {
@@ -43,6 +43,7 @@ export default class UploadDetails extends Component {
         });
     }
     render() {
+        // const { navigate } = this.props.navigation;
         return (
             <View>
                 <Toast
@@ -158,16 +159,6 @@ export default class UploadDetails extends Component {
                         size={AppConstants.getDeviceWidth(5)} color={AppConstants.COLORS.RED}
                     />
                 </TouchableOpacity>
-
-                <View style={styles.btnAddBillingAddress}>
-
-                    <MyButton
-                        Text="Onboard Dealer"
-                        onPress={() => this.props.onPageChange(0)}
-                    // eslint-disable-next-line prettier/prettier
-                    />
-
-                </View>
             </View>
         )
     }

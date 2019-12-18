@@ -19,7 +19,7 @@ export default class Initial extends Component {
         this.props.navigation.replace('Intro');
       } else {
         
-        this.props.navigation.replace('Dashboard');
+        this.props.navigation.replace('Login');
       }
     });
   }

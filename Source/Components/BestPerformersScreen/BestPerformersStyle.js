@@ -29,12 +29,12 @@ export default {
         marginTop: AppConstants.getDeviceHeight(2),
         alignSelf: 'center',
         width: AppConstants.getDeviceWidth(89.33),
+        marginBottom: AppConstants.getDeviceHeight(2),
     },
     ImagePhotoView:{
         position: 'absolute',
         top: 0,
         bottom: 0,
-        backgroundColor: 'red',
         width: AppConstants.getDeviceWidth(23),
         borderBottomLeftRadius: AppConstants.getDeviceHeight(1),
         borderTopRightRadius: AppConstants.getDeviceHeight(1),
@@ -42,7 +42,7 @@ export default {
         borderBottomRightRadius: AppConstants.getDeviceHeight(1),
         marginBottom: AppConstants.getDeviceHeight(1),
         marginLeft: AppConstants.getDeviceHeight(1.13),
-        marginTop: AppConstants.getDeviceHeight(1),
+        marginTop: AppConstants.getDeviceHeight(2),
     },
     ImagePhotoStyle: {
         height: AppConstants.getDeviceHeight(11.58),
@@ -103,7 +103,10 @@ export default {
         color: AppConstants.COLORS.TEXTCOLOR,
         paddingBottom: AppConstants.getDeviceHeight(1.85),
        
-
     },
+    btnsigninView: {
+        // marginTop: AppConstants.getDeviceHeight(3.69),
+        alignSelf: 'center',
+      },
     
 }

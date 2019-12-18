@@ -4,6 +4,7 @@ export default
   {
     mainContainer: {
       flex: 1,
+      alignSelf: 'center',
     },
     txtBusinessDetail: {
       fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,

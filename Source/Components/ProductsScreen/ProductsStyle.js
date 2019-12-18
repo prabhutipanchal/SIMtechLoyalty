@@ -176,6 +176,7 @@ export default {
     marginTop: AppConstants.getDeviceHeight(2),
     alignSelf: 'center',
     width: AppConstants.getDeviceWidth(89.33),
+    marginBottom: AppConstants.getDeviceHeight(2),
   },
   SalesNoView: {
     width: AppConstants.getDeviceWidth(23),

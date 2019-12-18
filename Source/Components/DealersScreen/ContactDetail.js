@@ -68,7 +68,7 @@ export default class ContactDetail extends Component {
             this.refs.toast.show(AppConstants.Messages.MOBILENOLENGTH, DURATION.LENGTH_LONG);
         }
         else {
-            Alert.alert('All Ok');
+            this.props.onPageChange(4)
         }
     }
     render() {
@@ -280,7 +280,7 @@ export default class ContactDetail extends Component {
 
                     <MyButton
                         Text="Add Bank Detail"
-                        onPress={() => this.props.onPageChange(4)}
+                        onPress={ this.validateFields.bind(this)}
                     />
 
                 </View>

@@ -14,11 +14,6 @@ export default {
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     paddingBottom: AppConstants.getDeviceHeight(1),
   },
-  txtsignintitle: {
-    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS18),
-    color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
-    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
-  },
   lockiconview: {
     flexDirection: 'row',
     justifyContent: 'center',

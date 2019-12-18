@@ -45,12 +45,14 @@ export default class ChangePassword extends Component {
         AppConstants.Messages.PASSWORDSHOULDMATCH,
         DURATION.LENGTH_LONG,
       );
-    } else {
-      Alert.alert('All Ok');
+    }
+     else {
+      this.props.navigation.navigate(AppConstants.SCREENS.DASHBOARD)
     }
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     if (this.state.isLoading) {
       return AppConstants.ShowActivityIndicator();
     }
@@ -70,10 +72,7 @@ export default class ChangePassword extends Component {
             keyboardShouldPersistTaps="handled"
             contentContainerStyle={{ flexGrow: 1 }}>
             <View style={styles.Container}>
-
               <Text style={styles.txtchangepwdtitle}>Change Password</Text>
-              <Text style={styles.txtsignintitle}>Sign in to access your account.</Text>
-              
             </View>
 
 
@@ -193,7 +192,7 @@ export default class ChangePassword extends Component {
                 <TextField
                   selectTextOnFocus={false}
                   secureTextEntry={this.state.showtxtNewConfirmPassword}
-                  label="Confirm Password"
+                  label="Confirm New Password"
                   tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
                   textColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                   baseColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
@@ -247,7 +246,7 @@ export default class ChangePassword extends Component {
             <View style={styles.btnSignupView}>
 
               <MyButton
-                Text="Reset Password"
+                Text="Change Password"
                 onPress={this.validateFields.bind(this)}
               />
 
