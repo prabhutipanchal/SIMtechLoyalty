@@ -41,7 +41,7 @@ export default {
   },
   BusinessViewstyle: {
     flexDirection: 'row',
-    width: AppConstants.getDeviceWidth(78.85),
+    width: AppConstants.getDeviceWidth(78),
     alignSelf: 'center',
   },
   txtbusinessName: {
@@ -59,7 +59,8 @@ export default {
 
   },
   LocationView: {
-    width: AppConstants.getDeviceWidth(82),
+    width: AppConstants.getDeviceWidth(80.5),
+    paddingBottom: AppConstants.getDeviceHeight(1.85),
     flexDirection: 'row',
     alignSelf: 'center',
   },
@@ -71,7 +72,7 @@ export default {
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
-    paddingBottom: AppConstants.getDeviceHeight(1.85),
+    // paddingBottom: AppConstants.getDeviceHeight(1.85),
 
   },
   loyaltyViewStyle: {
@@ -82,14 +83,14 @@ export default {
   },
   TouchLoyalty: {
     flexDirection: 'row',
-    width: AppConstants.getDeviceWidth(33),
+    width: AppConstants.getDeviceWidth(33.5),
     alignItems: 'center',
     justifyContent: 'center',
     borderRightWidth: AppConstants.getDeviceWidth(0.5),
     borderColor: AppConstants.COLORS.BORDERCOLOR,
-    marginTop: AppConstants.getDeviceHeight(0.5),
-    marginBottom: AppConstants.getDeviceHeight(0.5),
-    paddingBottom: AppConstants.getDeviceHeight(2),
+     marginTop: AppConstants.getDeviceHeight(1),
+     marginBottom: AppConstants.getDeviceHeight(1),
+    // paddingBottom: AppConstants.getDeviceHeight(2),
   },
   txtloyalty: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
@@ -97,10 +98,12 @@ export default {
   },
   TouchAmount: {
     flexDirection: 'row',
-    width: AppConstants.getDeviceWidth(33),
+    width: AppConstants.getDeviceWidth(33.5),
     alignItems: 'center',
     justifyContent: 'center',
-    paddingBottom: AppConstants.getDeviceHeight(2),
+    marginTop: AppConstants.getDeviceHeight(1),
+    marginBottom: AppConstants.getDeviceHeight(1),
+    // paddingBottom: AppConstants.getDeviceHeight(2),
   },
   txtamount: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),

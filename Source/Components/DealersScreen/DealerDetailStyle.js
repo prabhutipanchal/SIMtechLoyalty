@@ -18,7 +18,7 @@ export default {
         fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS24),
         color: AppConstants.COLORS.WHITE,
         marginLeft: AppConstants.getDeviceWidth(5.33),
-        marginTop: AppConstants.getDeviceHeight(2)
+        // marginTop: AppConstants.getDeviceHeight(2)
     },
     txtMedicineWholesaler: {
         color: AppConstants.COLORS.MEDICINETEXTCOLOR,
@@ -57,6 +57,28 @@ export default {
       },
     LocationIconstyle: {
         marginBottom:  AppConstants.getDeviceHeight(2),
-      }
+      },
+      QuartercardView: {
+        marginBottom: AppConstants.getDeviceHeight(3),
+        // alignSelf: 'center',
+        justifyContent: 'space-evenly',
+        shadowColor: AppConstants.COLORS.BLACK, // IOS
+        shadowOffset: { height: 1, width: 1 }, // IOS
+        shadowOpacity: 1, // IOS
+        shadowRadius: 1, //IOS
+        elevation: 5, // Android,
+        height: AppConstants.getDeviceHeight(8),
+        width: AppConstants.getDeviceWidth(15),
+        borderRadius: AppConstants.getDeviceWidth(2),
+        backgroundColor: AppConstants.COLORS.WHITE,
+        marginTop: AppConstants.getDeviceHeight(2),
+        
+    },
+    txtSaveTemplate: {
+        fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
+        fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
+        textAlign: 'center',
+        color: AppConstants.COLORS.TEXTCOLOR,
+      },
 
 }

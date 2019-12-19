@@ -39,7 +39,7 @@ export default class BankDetail extends Component {
         else if (isNaN(this.state.AccountNumber.trim())) {
             this.refs.toast.show(AppConstants.Messages.ACCOUNTNONOTANUMBER, DURATION.LENGTH_LONG);
         }
-        else if (this.state.AccountNumber.length != 14) {
+        else if (this.state.AccountNumber.length != 18) {
             this.refs.toast.show(AppConstants.Messages.ACCOUNTNOLENGTH, DURATION.LENGTH_LONG);
         }
         else if (this.state.IFSCCode.trim() == '' || !this.validateIFSC(this.state.IFSCCode.trim())) {
@@ -133,11 +133,10 @@ export default class BankDetail extends Component {
                             AppConstants.FONTSIZE.FS16,
                         )}
                         inputContainerStyle={{
-
                             // paddingLeft: AppConstants.getDeviceWidth(10.93),
                             fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
                         }}
-                        maxLength={14}
+                        maxLength={18}
                         labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
                         labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
                         autoCorrect={false}

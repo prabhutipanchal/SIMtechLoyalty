@@ -230,7 +230,7 @@ export default class Products extends Component {
                                 <Text style={styles.txtDescription}>{item.Description}</Text>
                             </View>
 
-                            <View style={styles.Container}>
+                            <View style={styles.ProductTypeView}>
                                 <Text style={styles.txtproductType}>{item.ProductType} </Text>
                             </View>
 

@@ -170,10 +170,8 @@ export default class New extends Component {
             Alert.alert('All Ok');
         }
     }
-    onPressList(index,data) {
+    onPressList(index) {
         this.setState({ selectedItem: index, });
-        this.selectItem(data)
-      
     }
     onPressListReport1(index, id) {
         this.setState({ removeItem: index });
@@ -224,7 +222,7 @@ export default class New extends Component {
     selectItem = (data) => {
         data.item.isSelect = !data.item.isSelect;
         data.item.selectedClass = data.item.isSelect
-            ? styles.selected: styles.list;
+            ? styles.selected : styles.list;
         const index = this.state.FlatListItemsReport1.findIndex(
             item => data.item.id === item.id
         );
@@ -265,14 +263,14 @@ export default class New extends Component {
             value: 'Quarter 1',
         }, {
             value: 'Quarter 2',
-        }, 
+        },
         {
             value: 'Quarter 3',
         },
         {
             value: 'Quarter 4',
         }
-    ];
+        ];
         if (this.state.isLoading) {
             return AppConstants.ShowActivityIndicator();
         }
@@ -433,7 +431,7 @@ export default class New extends Component {
                             <Text style={styles.txtReports}>Reports</Text>
                             <Text style={styles.txtDescription}>Select & Arrange Reports you wanted in presentation</Text>
                         </View>
-                        <TouchableOpacity style={{  justifyContent: 'flex-end' }} activeOpacity={0.9} onPress={() => this.setState({ modalVisible: true })}>
+                        <TouchableOpacity style={{ justifyContent: 'flex-end' }} activeOpacity={0.9} onPress={() => this.setState({ modalVisible: true })}>
                             <Icon name="pluscircle" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.APPTHEME} />
                         </TouchableOpacity>
                     </View>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, ImageBackground, TouchableOpacity, StatusBar, ScrollView } from 'react-native'
+import { Text, View, ImageBackground, TouchableOpacity, StatusBar, ScrollView, } from 'react-native'
 import Styles from './ProductDetailStyle';
 import * as AppConstants from '../Helper/AppConstants';
 import Swiper from '../AppintroScreen/Swiper';
@@ -30,7 +30,7 @@ export default class ProductDetail extends Component {
                                 dotStyle={{ bottom: AppConstants.getDeviceHeight(0) }}
                                 activeDotStyle={{ bottom: AppConstants.getDeviceHeight(0) }}>
                                 <View style={Styles.ImgContainerView}>
-                                    <StatusBar hidden />
+                                    {/* <StatusBar hidden /> */}
                                     <ImageBackground
                                         resizeMode="contain"
                                         source={{ uri: Images.Dummyillustration }}
@@ -38,7 +38,7 @@ export default class ProductDetail extends Component {
                                     />
                                 </View>
                                 <View style={Styles.ImgContainerView}>
-                                    <StatusBar hidden />
+                                    {/* <StatusBar hidden /> */}
                                     <ImageBackground
                                         resizeMode="contain"
                                         source={{ uri: Images.Dummyillustration }}
@@ -46,7 +46,7 @@ export default class ProductDetail extends Component {
                                     />
                                 </View>
                                 <View style={Styles.ImgContainerView}>
-                                    <StatusBar hidden />
+                                    {/* <StatusBar hidden /> */}
                                     <ImageBackground
                                         resizeMode="contain"
                                         source={{ uri: Images.Dummyillustration }}
@@ -54,7 +54,7 @@ export default class ProductDetail extends Component {
                                     />
                                 </View>
                                 <View style={Styles.ImgContainerView}>
-                                    <StatusBar hidden />
+                                    {/* <StatusBar hidden /> */}
                                     <ImageBackground
                                         resizeMode="contain"
                                         source={{ uri: Images.Dummyillustration }}

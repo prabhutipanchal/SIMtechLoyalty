@@ -15,10 +15,10 @@ export default class Dealers extends Component {
                 <MaterialIcons name="arrow-back" size={25} color={AppConstants.COLORS.SKYBLUE} />
             </TouchableOpacity>
         ),
-      
+
     })
 
-    
+
     constructor() {
         super();
 
@@ -55,43 +55,46 @@ export default class Dealers extends Component {
 
     }
 
-    renderItem({ item, index }) {
-        // const { navigate } = this.props.navigation;
+    renderItem = ({ item, index }) => {
+         const { navigate } = this.props.navigation;
         return (
-            <TouchableOpacity  
-            // onPress={() => this.props.navigation.replace(AppConstants.SCREENS.DASHBOARD)}  
-            style={styles.mainCardView}>
-                <View style={styles.DealerTypeView}>
-                    <Text style={styles.txtDealerType}>Dealer Type</Text>
-                </View>
-                <View style={styles.BusinessViewstyle}>
-                    <Text style={styles.txtbusinessName}>{item.Businessname}</Text>
-                </View>
-                <View style={styles.BusinessViewstyle}>
-                    <Text style={styles.txtPersonName}>{item.PersonName}</Text>
-                </View>
+            <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => navigate(AppConstants.SCREENS.DEALERDETAIL)}  >
+                <View
 
-                <View style={styles.LocationView}>
-                    <LocationIcon style={styles.LocationIconStyle} name="location" />
-                    <Text style={styles.txtlocation}>{item.location} </Text>
-                </View>
-                <View style={styles.loyaltyViewStyle}>
-                    <View style={styles.TouchLoyalty}>
-                        <Text style={styles.txtloyalty}>Loyalty </Text>
-                        <Text style={styles.txtloyaltyAmount}>566</Text>
+                    style={styles.mainCardView}>
+                    <View style={styles.DealerTypeView}>
+                        <Text style={styles.txtDealerType}>Dealer Type</Text>
                     </View>
-                    <View style={styles.TouchAmount}>
-                        <Text style={styles.txtamount}>Amount </Text>
-                        <Text style={styles.txtloyaltyAmount}> {'\u20B9'}699</Text>
+                    <View style={styles.BusinessViewstyle}>
+                        <Text style={styles.txtbusinessName}>{item.Businessname}</Text>
+                    </View>
+                    <View style={styles.BusinessViewstyle}>
+                        <Text style={styles.txtPersonName}>{item.PersonName}</Text>
                     </View>
 
+                    <View style={styles.LocationView}>
+                        <LocationIcon style={styles.LocationIconStyle} name="location" />
+                        <Text style={styles.txtlocation}>{item.location} </Text>
+                    </View>
+                    <View style={styles.loyaltyViewStyle}>
+                        <View style={styles.TouchLoyalty}>
+                            <Text style={styles.txtloyalty}>Loyalty </Text>
+                            <Text style={styles.txtloyaltyAmount}>566</Text>
+                        </View>
+                        <View style={styles.TouchAmount}>
+                            <Text style={styles.txtamount}>Amount </Text>
+                            <Text style={styles.txtloyaltyAmount}> {'\u20B9'}699</Text>
+                        </View>
+
+                    </View>
                 </View>
             </TouchableOpacity>
         )
     }
-    
+
     render() {
-     
         return (
             <View style={styles.mainContainer}>
                 {this.state.FlatListItems.length == 0 ?
@@ -112,12 +115,15 @@ export default class Dealers extends Component {
                         </View>
                     </View>
                     :
+
                     <FlatList
                         data={this.state.FlatListItems}
                         keyExtractor={(item, index) => index.toString()}
                         extraData={this.state.lastsyncstatus}
                         renderItem={this.renderItem}
+
                     />
+
                 }
             </View>
         )

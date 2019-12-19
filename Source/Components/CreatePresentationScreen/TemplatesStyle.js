@@ -21,16 +21,16 @@ export default {
   },
   NotificationViewstyle: {
     flexDirection: 'row',
-    // width: AppConstants.getDeviceWidth(82.93),
+    width: AppConstants.getDeviceWidth(79),
     alignSelf: 'center',
   },
-  ThumbIconstyle: {
-    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS20),
-    color: AppConstants.COLORS.APPTHEME,
-  },
+  // ThumbIconstyle: {
+  //   fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS20),
+  //   color: AppConstants.COLORS.APPTHEME,
+  // },
   txttitle: {
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
-    marginLeft: AppConstants.getDeviceWidth(3.47),
+    // marginLeft: AppConstants.getDeviceWidth(3.47),
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
     color: AppConstants.COLORS.APPTHEME,
     textAlign: 'center',

@@ -3,7 +3,7 @@
 // /* eslint-disable eqeqeq */
 // /* eslint-disable no-fallthrough */
 // /* eslint-disable react-native/no-inline-styles */
-import { View, Platform, TouchableOpacity, Easing, Animated, BackHandler, Alert } from 'react-native';
+import { View, Platform, TouchableOpacity, Easing, Animated, BackHandler, Alert,Text } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import drawerContentComponents from './Source/Components/AccountScreen/drawerContentComponents';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
@@ -222,6 +222,16 @@ export const Tab_1 = createBottomTabNavigator(
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
         headerTitle: routeName,
+        headerRight:navigation.state.index==0? <TouchableOpacity
+        activeOpacity={0.9}
+        onPress={()=>navigation.navigate(AppConstants.SCREENS.COMMONADDDEALERS)}>
+        <Icons
+          name="plus-circle"
+          style={{ marginRight: AppConstants.getDeviceWidth(3.5) }}
+          size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS30)}
+          color={AppConstants.COLORS.APPTHEME}
+        />
+      </TouchableOpacity>:<View/>
         //navigation.state.index == 0 ? '' :
       };
     },
@@ -346,7 +356,7 @@ const RootStack = createStackNavigator(
     TermsAndCondition: {
       screen: TermsAndCondition,
       navigationOptions: {
-        title: 'TermsAndCondition',
+        title: 'Terms and Conditions',
       },
 
     },

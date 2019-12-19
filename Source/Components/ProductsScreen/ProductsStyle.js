@@ -100,7 +100,7 @@ export default {
     width: AppConstants.getDeviceWidth(84),
     borderBottomWidth: AppConstants.getDeviceHeight(0.2),
     borderBottomColor: AppConstants.COLORS.DROPDOWNBORDERBOTTOMCOLOR,
-    
+
   },
   PickerStyle: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
@@ -174,9 +174,9 @@ export default {
     elevation: 5,
     paddingTop: AppConstants.getDeviceHeight(2.85),
     marginTop: AppConstants.getDeviceHeight(2),
+    marginBottom: AppConstants.getDeviceHeight(2),
     alignSelf: 'center',
     width: AppConstants.getDeviceWidth(89.33),
-    marginBottom: AppConstants.getDeviceHeight(2),
   },
   SalesNoView: {
     width: AppConstants.getDeviceWidth(23),
@@ -196,7 +196,13 @@ export default {
   },
   Container: {
     flexDirection: 'row',
-    width: AppConstants.getDeviceWidth(77),
+    width: AppConstants.getDeviceWidth(78),
+    alignSelf: 'center',
+  },
+  ProductTypeView: {
+    width: AppConstants.getDeviceWidth(78),
+    paddingBottom: AppConstants.getDeviceHeight(1.85),
+    flexDirection: 'row',
     alignSelf: 'center',
   },
   txtproductName: {
@@ -210,29 +216,29 @@ export default {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
     marginTop: AppConstants.getDeviceHeight(1.48),
     marginBottom: AppConstants.getDeviceHeight(1.48),
-
   },
   txtproductType: {
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
-    paddingBottom: AppConstants.getDeviceHeight(1.85),
+    // paddingBottom: AppConstants.getDeviceHeight(1.85),
   },
   SalesViewStyle: {
     flexDirection: 'row',
+    width: AppConstants.getDeviceWidth(89.33),
     borderTopColor: AppConstants.COLORS.TOPBORDERCOLOR,
     borderTopWidth: AppConstants.getDeviceWidth(0.3),
   },
   TouchSalesButton: {
     flexDirection: 'row',
-    width: AppConstants.getDeviceWidth(35),
+    width: AppConstants.getDeviceWidth(33.5),
     alignItems: 'center',
     justifyContent: 'center',
     borderRightWidth: AppConstants.getDeviceWidth(0.3),
     borderColor: AppConstants.COLORS.TOPBORDERCOLOR,
-    marginTop: AppConstants.getDeviceHeight(0.5),
-    marginBottom: AppConstants.getDeviceHeight(0.5),
-    paddingBottom: AppConstants.getDeviceHeight(1.85),
+    marginTop: AppConstants.getDeviceHeight(1),
+    marginBottom: AppConstants.getDeviceHeight(1),
+    // paddingBottom: AppConstants.getDeviceHeight(1.85),
   },
   txtSales: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
@@ -244,12 +250,12 @@ export default {
   },
   TouchPriceButton: {
     flexDirection: 'row',
-    width: AppConstants.getDeviceWidth(30),
+    width: AppConstants.getDeviceWidth(32.5),
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: AppConstants.getDeviceHeight(0.5),
-    marginBottom: AppConstants.getDeviceHeight(0.5),
-    paddingBottom: AppConstants.getDeviceHeight(1.85),
+    marginTop: AppConstants.getDeviceHeight(1),
+    marginBottom: AppConstants.getDeviceHeight(1),
+    // paddingBottom: AppConstants.getDeviceHeight(1.85),
 
   },
   txtPrice: {

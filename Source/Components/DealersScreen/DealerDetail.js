@@ -19,6 +19,8 @@ export default class DealerDetail extends Component {
         ),
     })
     render() {
+        const { navigate } = this.props.navigation;
+
         return (
             <View style={styles.mainContainer}>
 
@@ -47,7 +49,44 @@ export default class DealerDetail extends Component {
                         Punjab, India</Text>
                     </View>
 
+
                 </View>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', }}>
+                    <TouchableOpacity
+                        style={styles.QuartercardView}
+                        activeOpacity={0.9}
+                        onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+                        <Text style={styles.txtSaveTemplate}>Qtr 1 </Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={styles.QuartercardView}
+                        activeOpacity={0.9}
+                        onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+                        <Text style={styles.txtSaveTemplate}>Qtr 2 </Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={styles.QuartercardView}
+                        activeOpacity={0.9}
+                        onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+                        <Text style={styles.txtSaveTemplate}>Qtr 3 </Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={styles.QuartercardView}
+                        activeOpacity={0.9}
+                        onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+                        <Text style={styles.txtSaveTemplate}>Qtr 4 </Text>
+                    </TouchableOpacity>
+
+
+
+                </View>
+
+
+
+
             </View>
         )
     }

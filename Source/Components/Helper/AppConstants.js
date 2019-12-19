@@ -101,7 +101,7 @@ export const Messages = {
   PASSWORDCHANGESUCCESS: 'Password Change Successfully',
   NOOTP: 'Please enter OTP',
   MOBILENOLENGTH: 'Mobile Number should be 10 Digits',
-  ACCOUNTNOLENGTH: 'Account Number should be 14 Digits',
+  ACCOUNTNOLENGTH: 'Account Number should be 18 Digits',
   IFSCNOLENGTH: 'IFSC Code should be 11 Digits',
   MOBILENONOTANUMBER: 'Mobile Number should be Digits',
   ACCOUNTNONOTANUMBER: 'Account Number should be Digits',
