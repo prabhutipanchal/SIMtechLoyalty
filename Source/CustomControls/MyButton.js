@@ -59,9 +59,8 @@ const defaultButtonStyles = {
   textStyle: {
     color: AppConstants.COLORS.WHITE,
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
-    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
+    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS15),
     letterSpacing: 1.2,
-    
   },
 };
 

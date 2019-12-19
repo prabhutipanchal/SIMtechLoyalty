@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Image, TouchableOpacity, FlatList } from 'react-native'
+import { Text, View, Image, TouchableOpacity, FlatList, StatusBar } from 'react-native'
 import styles from './BestPerformersStyle';
 import * as AppConstants from '../Helper/AppConstants';
 import SplashScreen from 'react-native-splash-screen';
@@ -50,6 +50,10 @@ export default class BestPerformers extends Component {
         const { navigate } = this.props.navigation;
         return (
             <View style={styles.mainContainer}>
+                <StatusBar
+                    backgroundColor={AppConstants.COLORS.WHITE}
+                    barStyle="dark-content"
+                />
                 <View style={styles.cardView}>
                     <Image
                         resizeMode={'contain'}
@@ -60,9 +64,9 @@ export default class BestPerformers extends Component {
                         data={this.state.FlatListItems}
                         ItemSeparatorComponent={this.FlatListItemSeparator}
                         renderItem={({ item }) =>
-                            <TouchableOpacity 
-                            // onPress={() => this.props.navigation.replace(AppConstants.SCREENS.DASHBOARD)} 
-                            style={styles.mainCardView}>
+                            <View
+                                // onPress={() => this.props.navigation.replace(AppConstants.SCREENS.DASHBOARD)} 
+                                style={styles.mainCardView}>
                                 <View style={styles.ImagePhotoView}>
                                     <Image
                                         resizeMode={'contain'}
@@ -89,7 +93,7 @@ export default class BestPerformers extends Component {
                                     <Text style={styles.txtTotalSales}>{item.TotalSales} </Text>
                                     <Text style={styles.txtAmount}>12,655</Text>
                                 </View>
-                            </TouchableOpacity>
+                            </View>
                         }
                     />
                     <View style={styles.btnsigninView}>

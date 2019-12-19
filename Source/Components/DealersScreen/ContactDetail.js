@@ -279,7 +279,7 @@ export default class ContactDetail extends Component {
                 <View style={styles.btnAddBillingAddress}>
 
                     <MyButton
-                        Text="Add Bank Detail"
+                        Text=" Save & Add Bank Detail"
                         onPress={ this.validateFields.bind(this)}
                     />
 

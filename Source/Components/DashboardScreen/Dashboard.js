@@ -34,7 +34,7 @@ export default class Dashboard extends Component {
         />
         <View style={Styles.Container}>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
             <Image resizeMode='contain' source={{ uri: Images.Iconcoupon }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}>Target V/S Achivements </Text>
           </TouchableOpacity>
@@ -47,12 +47,12 @@ export default class Dashboard extends Component {
 
         <View style={Styles.Container}>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
             <Image resizeMode='contain' source={{ uri: Images.Iconcoupon }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}>Scheme Performance</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
             <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}> Product Performance</Text>
           </TouchableOpacity>
@@ -60,12 +60,12 @@ export default class Dashboard extends Component {
 
         <View style={Styles.Container}>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
             <Image resizeMode='contain' source={{ uri: Images.Iconcoupon }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}> Distribution Activity</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
             <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}>Business Dev.Activity </Text>
           </TouchableOpacity>
@@ -73,12 +73,12 @@ export default class Dashboard extends Component {
 
         <View style={Styles.Container}>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
             <Image resizeMode='contain' source={{ uri: Images.Iconcoupon }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}> Sales Analysis  </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}>
+          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
             <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}>Market Penetration </Text>
           </TouchableOpacity>

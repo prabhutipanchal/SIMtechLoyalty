@@ -277,7 +277,7 @@ export default class BankDetail extends Component {
                 <View style={styles.btnAddBillingAddress}>
 
                     <MyButton
-                        Text="Upload Documents"
+                        Text=" Save & Upload Documents"
                         onPress={ this.validateFields.bind(this)}
                     />
 

@@ -22,7 +22,6 @@ import ForgotPassword from './Source/Components/ForgotPasswordScreen/ForgotPassw
 import Dealers from './Source/Components/DealersScreen/Dealers';
 import ReferAndInvite from './Source/Components/ReferAndInviteScreen/ReferAndInvite';
 import Products from './Source/Components/ProductsScreen/Products';
-import Merch from './Source/Components/MerchScreen/Merch';
 import Notification from './Source/Components/NotificationScreen/Notification';
 import FAQ from './Source/Components/FAQScreen/Faq';
 import Analytics from './Source/Components/AnalyticsScreen/Analytics';
@@ -191,7 +190,7 @@ export const Tab_1 = createBottomTabNavigator(
 
 
 
-    Merch: {
+    Merchandise: {
       screen: Merchandise,
       navigationOptions: ({ navigation }) => {
         return {
@@ -217,6 +216,7 @@ export const Tab_1 = createBottomTabNavigator(
       },
     },
   },
+  
   {
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
@@ -251,6 +251,9 @@ export const Tab_1 = createBottomTabNavigator(
         height: AppConstants.getDeviceHeight(10.22),
       },
     },
+    
+      initialRouteName: 'Dashboard',
+  
   },
 );
 const RootStack = createStackNavigator(

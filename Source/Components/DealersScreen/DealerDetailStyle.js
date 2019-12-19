@@ -28,8 +28,8 @@ export default {
     },
     borderContainer: {
         width: AppConstants.getDeviceWidth(88.10),
-         // borderBottomWidth: AppConstants.getDeviceWidth(1),
-         // borderBottomColor: AppConstants.COLORS.DEALERDETAILBORDERBOTTOMCOLOR,
+        // borderBottomWidth: AppConstants.getDeviceWidth(1),
+        // borderBottomColor: AppConstants.COLORS.DEALERDETAILBORDERBOTTOMCOLOR,
         marginTop: AppConstants.getDeviceHeight(2),
         alignSelf: 'center',
         borderWidth: AppConstants.getDeviceWidth(0.5),
@@ -43,22 +43,45 @@ export default {
         marginLeft: AppConstants.getDeviceWidth(5.33),
         alignItems: 'center',
     },
-    textCommonStyle:{
+    textCommonStyle: {
         color: AppConstants.COLORS.WHITE,
         fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
         marginLeft: AppConstants.getDeviceWidth(5),
         alignSelf: 'center',
     },
     PhoneIconstyle: {
-        marginBottom:  AppConstants.getDeviceHeight(0),
-      },
-      EmailIconstyle: {
-        marginBottom:  AppConstants.getDeviceHeight(0),
-      },
+        marginBottom: AppConstants.getDeviceHeight(0),
+    },
+    EmailIconstyle: {
+        marginBottom: AppConstants.getDeviceHeight(0),
+    },
     LocationIconstyle: {
-        marginBottom:  AppConstants.getDeviceHeight(2),
+        marginBottom: AppConstants.getDeviceHeight(2),
+    },
+    QuarterMainView: {
+        // flexDirection: 'row',
+        // justifyContent: 'space-around',
+        backgroundColor: AppConstants.COLORS.VIEWCOLOR,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        borderBottomRightRadius: AppConstants.getDeviceHeight(3),
+        borderBottomLeftRadius: AppConstants.getDeviceHeight(3),
+        alignSelf: 'center',
+        width: AppConstants.getDeviceWidth(100),
+        paddingTop: AppConstants.getDeviceHeight(2.34),
+        // borderBottomRightRadius: AppConstants.getDeviceHeight(3),
+        // borderBottomLeftRadius: AppConstants.getDeviceHeight(3),
+    },
+    SwiperCardView: {
+        alignSelf: 'center',
+        elevation: 0,
+        width: AppConstants.getDeviceWidth(100),
+        height: AppConstants.getDeviceHeight(40),
+        backgroundColor: AppConstants.COLORS.WHITE,
+        borderBottomRightRadius: AppConstants.getDeviceHeight(3),
+        borderBottomLeftRadius: AppConstants.getDeviceHeight(3),
       },
-      QuartercardView: {
+    QuartercardView: {
         marginBottom: AppConstants.getDeviceHeight(3),
         // alignSelf: 'center',
         justifyContent: 'space-evenly',
@@ -67,18 +90,17 @@ export default {
         shadowOpacity: 1, // IOS
         shadowRadius: 1, //IOS
         elevation: 5, // Android,
-        height: AppConstants.getDeviceHeight(8),
+        height: AppConstants.getDeviceHeight(6),
         width: AppConstants.getDeviceWidth(15),
         borderRadius: AppConstants.getDeviceWidth(2),
         backgroundColor: AppConstants.COLORS.WHITE,
-        marginTop: AppConstants.getDeviceHeight(2),
-        
+        // marginTop: AppConstants.getDeviceHeight(2),
     },
-    txtSaveTemplate: {
+    txtQuarter: {
         fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
         fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
         textAlign: 'center',
         color: AppConstants.COLORS.TEXTCOLOR,
-      },
+    },
 
 }

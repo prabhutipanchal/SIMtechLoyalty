@@ -284,7 +284,7 @@ export default class BillingDetail extends Component {
                 <View style={styles.btnAddBillingAddress}>
 
                     <MyButton
-                        Text="Add Warehouse Address"
+                        Text=" Save & Add Warehouse Address"
                         onPress={ this.validateFields.bind(this)}
                     />
 

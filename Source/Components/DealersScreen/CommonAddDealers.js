@@ -86,7 +86,7 @@ export default class CommonAddDealers extends Component {
                         {this.getStepContent(this.state.currentPosition)}
                         {
                             this.state.currentPosition == 5 ? <View style={styles.btnAddBillingAddress}><MyButton
-                                Text="Onboard Dealer"
+                                Text="Save & Onboard Dealer"
                                 style={{ marginBottom: 10 }}
                                 onPress={() => this.props.navigation.navigate(AppConstants.SCREENS.DEALERS)}
                             /></View>

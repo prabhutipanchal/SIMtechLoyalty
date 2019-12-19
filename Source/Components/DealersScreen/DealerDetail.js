@@ -51,42 +51,38 @@ export default class DealerDetail extends Component {
 
 
                 </View>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around', }}>
-                    <TouchableOpacity
-                        style={styles.QuartercardView}
-                        activeOpacity={0.9}
-                        onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-                        <Text style={styles.txtSaveTemplate}>Qtr 1 </Text>
-                    </TouchableOpacity>
+                <View style={styles.SwiperCardView}>
+                    <View style={styles.QuarterMainView}>
 
-                    <TouchableOpacity
-                        style={styles.QuartercardView}
-                        activeOpacity={0.9}
-                        onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-                        <Text style={styles.txtSaveTemplate}>Qtr 2 </Text>
-                    </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.QuartercardView}
+                            activeOpacity={0.9}
+                            onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+                            <Text style={styles.txtQuarter}>Qtr 1 </Text>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity
-                        style={styles.QuartercardView}
-                        activeOpacity={0.9}
-                        onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-                        <Text style={styles.txtSaveTemplate}>Qtr 3 </Text>
-                    </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.QuartercardView}
+                            activeOpacity={0.9}
+                            onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+                            <Text style={styles.txtQuarter}>Qtr 2 </Text>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity
-                        style={styles.QuartercardView}
-                        activeOpacity={0.9}
-                        onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-                        <Text style={styles.txtSaveTemplate}>Qtr 4 </Text>
-                    </TouchableOpacity>
+                        <TouchableOpacity
+                            style={styles.QuartercardView}
+                            activeOpacity={0.9}
+                            onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+                            <Text style={styles.txtQuarter}>Qtr 3 </Text>
+                        </TouchableOpacity>
 
-
-
+                        <TouchableOpacity
+                            style={styles.QuartercardView}
+                            activeOpacity={0.9}
+                            onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+                            <Text style={styles.txtQuarter}>Qtr 4 </Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-
-
-
-
             </View>
         )
     }

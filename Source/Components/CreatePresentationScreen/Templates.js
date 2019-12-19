@@ -53,17 +53,16 @@ export default class Templates extends Component {
                     renderItem={({ item }) =>
 
                         <View style={Styles.mainCardView}>
-                            <View style={Styles.NotificationViewstyle}>
-                                {/* <ThumbIcon style={Styles.ThumbIconstyle} name="thumbs-up" /> */}
-                                <Text style={Styles.txttitle}>{item.name}</Text>
+                            <View style={Styles.TemplateViewstyle}>
+                                <Text style={Styles.txtname}>{item.name}</Text>
                             </View>
 
-                            <View style={Styles.NotificationViewstyle}>
-                                <Text style={Styles.txtdescription}>{item.Year}</Text>
+                            <View style={Styles.TemplateViewstyle}>
+                                <Text style={Styles.txtYear}>{item.Year}</Text>
                             </View>
 
-                            <View style={Styles.NotificationViewstyle}>
-                                <Text style={Styles.txttime}>{item.Reports} </Text>
+                            <View style={Styles.TemplateViewstyle}>
+                                <Text style={Styles.txtReports}>{item.Reports} </Text>
                             </View>
 
                         </View>

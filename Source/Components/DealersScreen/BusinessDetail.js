@@ -70,14 +70,35 @@ export default class BusinessDetail extends Component {
 
     render() {
 
-        let data = [{
-            value: '2019',
-        }, {
-            value: '2018',
-        }, {
-            value: '2017',
-        }];
-        // const { navigate } = this.props.navigation;
+        let firmType = [
+            {
+                value: 'Proprietor',
+            },
+            {
+                value: 'Partnership',
+            },
+            {
+                value: ' Limited',
+            },
+            {
+                value: ' LLP',
+            },
+        ];
+        let partnerType = [
+
+            {
+                value: 'Wholeseller',
+            },
+            {
+                value: 'Dealer',
+            },
+            {
+                value: 'Distributor',
+            },
+            {
+                value: 'Retailer',
+            },
+        ];
         return (
             <View>
 
@@ -126,7 +147,7 @@ export default class BusinessDetail extends Component {
                         itemCount={5}
                         animationDuration={5}
                         value={this.state.FirmType}
-                        data={data}
+                        data={firmType}
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
@@ -204,7 +225,7 @@ export default class BusinessDetail extends Component {
                         itemCount={5}
                         animationDuration={5}
                         value={this.state.PartnerType}
-                        data={data}
+                        data={partnerType}
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
@@ -223,7 +244,7 @@ export default class BusinessDetail extends Component {
                 <View style={styles.btnAddBillingAddress}>
 
                     <MyButton
-                        Text="Add Billing Address"
+                        Text=" Save & Add Billing Address"
                         onPress={this.validateFields.bind(this)}
                     />
                 </View>

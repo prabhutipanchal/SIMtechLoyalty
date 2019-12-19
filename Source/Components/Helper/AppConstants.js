@@ -38,7 +38,7 @@ export const CheckLogin = '0';
 export const SCREENS = {
   //---------------TabBar Screens------------
   ACCOUNT: 'Account',
-  MERCH: 'Merch',
+  MERCH: 'Merchandise',
   DASHBOARD: 'Dashboard',
   EVENTS: 'Events',
   PRODUCT: 'Products',
@@ -76,6 +76,7 @@ export const SCREENS = {
   UPLOADDETAILS: 'UploadDetails',
   COMMONADDDEALERS:'CommonAddDealers',
   REPORTS: 'Reports',
+  DASHBOARD: 'Dashboard',
   LOGOUT: 'Logout'
 
 

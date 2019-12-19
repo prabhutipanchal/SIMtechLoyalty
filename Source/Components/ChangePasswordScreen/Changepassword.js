@@ -46,7 +46,7 @@ export default class ChangePassword extends Component {
         DURATION.LENGTH_LONG,
       );
     }
-     else {
+    else {
       this.props.navigation.navigate(AppConstants.SCREENS.DASHBOARD)
     }
   }
@@ -72,7 +72,6 @@ export default class ChangePassword extends Component {
             keyboardShouldPersistTaps="handled"
             contentContainerStyle={{ flexGrow: 1 }}>
             <View style={styles.Container}>
-              <Text style={styles.txtchangepwdtitle}>Change Password</Text>
             </View>
 
 

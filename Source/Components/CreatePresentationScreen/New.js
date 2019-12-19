@@ -16,7 +16,8 @@ import RadioButtonIcon from 'react-native-vector-icons/Ionicons';
 // import CloseIcon1 from 'react-native-vector-icons/FontAwesome';
 import CloseIcon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 const Images = {
-    Imgreferearn: 'imgreferearn'
+    Imgreferearn: 'imgreferearn',
+    
 };
 export default class New extends Component {
     constructor(props) {

@@ -4,15 +4,9 @@ export default {
     flex: 1,
   },
   Container: {
-    marginTop: AppConstants.getDeviceHeight(4.93),
+    // marginTop: AppConstants.getDeviceHeight(4.93),
     width: AppConstants.getDeviceWidth(91.47),
     alignSelf: 'center',
-  },
-  txtchangepwdtitle: {
-    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS24),
-    color: AppConstants.COLORS.TEXTCOLOR,
-    fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
-    paddingBottom: AppConstants.getDeviceHeight(1),
   },
   lockiconview: {
     flexDirection: 'row',

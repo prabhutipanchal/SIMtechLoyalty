@@ -47,7 +47,7 @@ export default class Products extends Component {
     }
     updateUser = (category) => {
         this.setState({ category: category })
-        
+
     }
     GetFlatListItem(item) {
 
@@ -142,7 +142,7 @@ export default class Products extends Component {
                                 <Picker
                                     style={styles.PickerStyle}
                                     selectedValue={this.state.category} onValueChange={this.updateUser}>
-                                    <Picker.Item label="Category" value="Category"  />
+                                    <Picker.Item label="Category" value="Category" />
                                     <Picker.Item label="Category1" value="Category1" />
                                     <Picker.Item label="Category2" value="Category2" />
 
@@ -214,9 +214,12 @@ export default class Products extends Component {
                 <FlatList
                     data={this.state.FlatListItems}
                     ItemSeparatorComponent={this.FlatListItemSeparator}
+
                     renderItem={({ item }) =>
 
-                        <View style={styles.mainCardView}>
+                        <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}
+                            onPress={() => this.props.navigation.navigate(AppConstants.SCREENS.PRODUCTDETAIL, { Name: item.Productname })}
+                        >
 
                             <View style={styles.SalesNoView}>
                                 <Text style={styles.txtSalesNo}>SKU#4255</Text>
@@ -245,7 +248,7 @@ export default class Products extends Component {
                                 </TouchableOpacity>
                             </View>
 
-                        </View>
+                        </TouchableOpacity>
                     }
                 />
             </View>
