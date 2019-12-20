@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Text, View, Image, TouchableOpacity, FlatList, StatusBar } from 'react-native'
+import { Text, View, Image,FlatList, StatusBar } from 'react-native'
 import styles from './BestPerformersStyle';
 import * as AppConstants from '../Helper/AppConstants';
 import SplashScreen from 'react-native-splash-screen';
 import MyButton from '../../CustomControls/MyButton';
 const Images = {
-    Imgreferearn: 'imgreferearn'
+    BestPerform: 'bestperfomimg',
 };
 
 export default class BestPerformers extends Component {
@@ -57,8 +57,8 @@ export default class BestPerformers extends Component {
                 <View style={styles.cardView}>
                     <Image
                         resizeMode={'contain'}
-                        source={{ uri: Images.Imgreferearn }}
-                        style={styles.ImageReferEarnStyle}
+                        source={{ uri: Images.BestPerform }}
+                        style={styles.ImgBestPerformStyle}
                     />
                     <FlatList
                         data={this.state.FlatListItems}

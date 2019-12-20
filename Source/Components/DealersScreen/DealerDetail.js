@@ -24,59 +24,60 @@ export default class DealerDetail extends Component {
         return (
             <View style={styles.mainContainer}>
 
-                <View style={styles.cardView}>
-                    <Text style={styles.txtBusinessName}>Business Name</Text>
-                    <Text style={styles.txtMedicineWholesaler}>Medicine wholesaler</Text>
+                <View style={styles.QuarterView}>
 
-                    <View style={styles.borderContainer} />
+                    <View style={styles.BusinessView}>
 
-                    <View style={styles.InformationView}>
-                        <PhoneIcon style={styles.PhoneIconstyle} name="phone"
-                            size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color={AppConstants.COLORS.WHITE} />
-                        <Text style={styles.textCommonStyle}>+01 123 456 7890</Text>
+                        <Text style={styles.txtBusinessName}>Business Name</Text>
+                        <Text style={styles.txtMedicineWholesaler}>Medicine wholesaler</Text>
 
-                    </View>
-                    <View style={styles.InformationView} >
-                        <EmailIcon style={styles.EmailIconstyle} name="email"
-                            size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color={AppConstants.COLORS.WHITE} />
-                        <Text style={styles.textCommonStyle}>info@businessname.com</Text>
-                    </View>
-                    <View style={styles.InformationView}>
-                        <LocationIcon style={styles.LocationIconstyle} name="location"
-                            size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color={AppConstants.COLORS.WHITE} />
-                        <Text style={styles.textCommonStyle}>K-22, Sector 2, Industrial area phase 1,
-                        Mohali,
+                        <View style={styles.borderContainer} />
+
+                        <View style={styles.InformationView}>
+                            <PhoneIcon style={styles.PhoneIconstyle} name="phone"
+                                size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color={AppConstants.COLORS.WHITE} />
+                            <Text style={styles.textCommonStyle}>+01 123 456 7890</Text>
+
+                        </View>
+                        <View style={styles.InformationView} >
+                            <EmailIcon style={styles.EmailIconstyle} name="email"
+                                size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color={AppConstants.COLORS.WHITE} />
+                            <Text style={styles.textCommonStyle}>info@businessname.com</Text>
+                        </View>
+                        <View style={styles.InformationView}>
+                            <LocationIcon style={styles.LocationIconstyle} name="location"
+                                size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS13)} color={AppConstants.COLORS.WHITE} />
+                            <Text style={styles.textCommonStyle}>K-22, Sector 2, Industrial area phase 1,
+                            Mohali,
                         Punjab, India</Text>
+                        </View>
+
                     </View>
-
-
-                </View>
-                <View style={styles.SwiperCardView}>
-                    <View style={styles.QuarterMainView}>
+                    <View style={styles.QuarterCardContainView}>
 
                         <TouchableOpacity
-                            style={styles.QuartercardView}
+                            style={styles.QuarterCard}
                             activeOpacity={0.9}
                             onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
                             <Text style={styles.txtQuarter}>Qtr 1 </Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                            style={styles.QuartercardView}
+                            style={styles.QuarterCard}
                             activeOpacity={0.9}
                             onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
                             <Text style={styles.txtQuarter}>Qtr 2 </Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                            style={styles.QuartercardView}
+                            style={styles.QuarterCard}
                             activeOpacity={0.9}
                             onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
                             <Text style={styles.txtQuarter}>Qtr 3 </Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                            style={styles.QuartercardView}
+                            style={styles.QuarterCard}
                             activeOpacity={0.9}
                             onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
                             <Text style={styles.txtQuarter}>Qtr 4 </Text>
@@ -84,6 +85,7 @@ export default class DealerDetail extends Component {
                     </View>
                 </View>
             </View>
+
         )
     }
 }

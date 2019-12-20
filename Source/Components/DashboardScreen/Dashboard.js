@@ -5,14 +5,14 @@ import * as AppConstants from '../Helper/AppConstants';
 import Styles from './DashboardStyle';
 // import SplashScreen from 'react-native-splash-screen';
 const Images = {
-  Iconcoupon: 'iconcoupon',
-  Iconelectronics: 'iconelectronics',
-  Iconmenacc: 'iconmenacc',
-  Iconwomenacc: 'iconwomenacc',
-  Iconstationary: 'iconstationary',
-  Iconhealthcare: 'iconhealthcare',
-  Iconfoodcoupon: 'iconfoodcoupon',
-  Iconsubscription: 'iconsubscription',
+  Target: 'target',
+  PayoutReport: 'payoutreport',
+  Scheme: 'scheme',
+  ProductPerformance: 'productperformance',
+  Distribution: 'distribution',
+  Business: 'business',
+  SalesAnalysis: 'salesanalysis',
+  MarketPen: 'marketpen',
 }
 export default class Dashboard extends Component {
   //
@@ -35,12 +35,12 @@ export default class Dashboard extends Component {
         <View style={Styles.Container}>
 
           <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.Iconcoupon }} style={Styles.ImgCommonStyle}></Image>
+            <Image resizeMode='contain' source={{ uri: Images.Target }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}>Target V/S Achivements </Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}  onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={Styles.ImgCommonStyle}></Image>
+            <Image resizeMode='contain' source={{ uri: Images.PayoutReport }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}> Payout Reports </Text>
           </TouchableOpacity>
         </View>
@@ -48,12 +48,12 @@ export default class Dashboard extends Component {
         <View style={Styles.Container}>
 
           <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.Iconcoupon }} style={Styles.ImgCommonStyle}></Image>
+            <Image resizeMode='contain' source={{ uri: Images.Scheme }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}>Scheme Performance</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={Styles.ImgCommonStyle}></Image>
+            <Image resizeMode='contain' source={{ uri: Images.ProductPerformance }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}> Product Performance</Text>
           </TouchableOpacity>
         </View>
@@ -61,12 +61,12 @@ export default class Dashboard extends Component {
         <View style={Styles.Container}>
 
           <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.Iconcoupon }} style={Styles.ImgCommonStyle}></Image>
+            <Image resizeMode='contain' source={{ uri: Images.Distribution }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}> Distribution Activity</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={Styles.ImgCommonStyle}></Image>
+            <Image resizeMode='contain' source={{ uri: Images.Business }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}>Business Dev.Activity </Text>
           </TouchableOpacity>
         </View>
@@ -74,12 +74,12 @@ export default class Dashboard extends Component {
         <View style={Styles.Container}>
 
           <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.Iconcoupon }} style={Styles.ImgCommonStyle}></Image>
+            <Image resizeMode='contain' source={{ uri: Images.SalesAnalysis }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}> Sales Analysis  </Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={Styles.ImgCommonStyle}></Image>
+            <Image resizeMode='contain' source={{ uri: Images.MarketPen }} style={Styles.ImgCommonStyle}></Image>
             <Text style={Styles.txtTitleCommonStyle}>Market Penetration </Text>
           </TouchableOpacity>
         </View>

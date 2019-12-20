@@ -6,14 +6,14 @@ export default {
         alignItems: 'center',
     },
     cardView: {
-        backgroundColor: AppConstants.COLORS.WHITE,
+        // backgroundColor: AppConstants.COLORS.WHITE,
         alignSelf: 'center',
         width: AppConstants.getDeviceWidth(100),
         elevation: 0,
     },
-    ImageReferEarnStyle: {
-        height: AppConstants.getDeviceHeight(12.78),
-        width: AppConstants.getDeviceWidth(58.55),
+    ImgBestPerformStyle: {
+        height: AppConstants.getDeviceHeight(14),
+        width: AppConstants.getDeviceWidth(58),
         alignSelf: 'center',
         marginBottom: AppConstants.getDeviceHeight(2),
     },

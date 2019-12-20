@@ -3,22 +3,25 @@ export default {
     mainContainer: {
         flex: 1,
     },
-    cardView: {
-        backgroundColor: AppConstants.COLORS.APPTHEME,
-        borderColor: AppConstants.COLORS.APPTHEME,
-        borderBottomRightRadius: AppConstants.getDeviceHeight(3),
-        borderBottomLeftRadius: AppConstants.getDeviceHeight(3),
-        alignSelf: 'center',
+    QuarterView: {
         width: AppConstants.getDeviceWidth(100),
-        height: AppConstants.getDeviceHeight(38.3),
+        height: AppConstants.getDeviceHeight(45),
+        backgroundColor: AppConstants.COLORS.VIEWCOLOR,
+        borderRadius: AppConstants.getDeviceHeight(2.5),
         elevation: 0,
+    },
+    BusinessView:{
+        width:  AppConstants.getDeviceWidth(100),
+        height: AppConstants.getDeviceHeight(34),
+        backgroundColor: AppConstants.COLORS.APPTHEME,
+        borderBottomEndRadius: AppConstants.getDeviceHeight(2.5),
+        borderBottomStartRadius: AppConstants.getDeviceHeight(2.5),
     },
     txtBusinessName: {
         fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
         fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS24),
         color: AppConstants.COLORS.WHITE,
         marginLeft: AppConstants.getDeviceWidth(5.33),
-        // marginTop: AppConstants.getDeviceHeight(2)
     },
     txtMedicineWholesaler: {
         color: AppConstants.COLORS.MEDICINETEXTCOLOR,
@@ -28,8 +31,6 @@ export default {
     },
     borderContainer: {
         width: AppConstants.getDeviceWidth(88.10),
-        // borderBottomWidth: AppConstants.getDeviceWidth(1),
-        // borderBottomColor: AppConstants.COLORS.DEALERDETAILBORDERBOTTOMCOLOR,
         marginTop: AppConstants.getDeviceHeight(2),
         alignSelf: 'center',
         borderWidth: AppConstants.getDeviceWidth(0.5),
@@ -58,49 +59,30 @@ export default {
     LocationIconstyle: {
         marginBottom: AppConstants.getDeviceHeight(2),
     },
-    QuarterMainView: {
-        // flexDirection: 'row',
-        // justifyContent: 'space-around',
-        backgroundColor: AppConstants.COLORS.VIEWCOLOR,
+    QuarterCardContainView: {
         flexDirection: 'row',
-        justifyContent: 'space-around',
-        borderBottomRightRadius: AppConstants.getDeviceHeight(3),
-        borderBottomLeftRadius: AppConstants.getDeviceHeight(3),
-        alignSelf: 'center',
-        width: AppConstants.getDeviceWidth(100),
-        paddingTop: AppConstants.getDeviceHeight(2.34),
-        // borderBottomRightRadius: AppConstants.getDeviceHeight(3),
-        // borderBottomLeftRadius: AppConstants.getDeviceHeight(3),
-    },
-    SwiperCardView: {
-        alignSelf: 'center',
-        elevation: 0,
-        width: AppConstants.getDeviceWidth(100),
-        height: AppConstants.getDeviceHeight(40),
-        backgroundColor: AppConstants.COLORS.WHITE,
-        borderBottomRightRadius: AppConstants.getDeviceHeight(3),
-        borderBottomLeftRadius: AppConstants.getDeviceHeight(3),
-      },
-    QuartercardView: {
-        marginBottom: AppConstants.getDeviceHeight(3),
-        // alignSelf: 'center',
         justifyContent: 'space-evenly',
+        paddingTop: AppConstants.getDeviceHeight(2),
+    },
+
+    QuarterCard: {
         shadowColor: AppConstants.COLORS.BLACK, // IOS
         shadowOffset: { height: 1, width: 1 }, // IOS
         shadowOpacity: 1, // IOS
         shadowRadius: 1, //IOS
-        elevation: 5, // Android,
+        elevation: 2, // Android,
         height: AppConstants.getDeviceHeight(6),
         width: AppConstants.getDeviceWidth(15),
         borderRadius: AppConstants.getDeviceWidth(2),
         backgroundColor: AppConstants.COLORS.WHITE,
-        // marginTop: AppConstants.getDeviceHeight(2),
+        paddingTop: AppConstants.getDeviceHeight(1),
     },
     txtQuarter: {
         fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
         fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
         textAlign: 'center',
-        color: AppConstants.COLORS.TEXTCOLOR,
+        color: AppConstants.COLORS.TEXTCOLOR,   
     },
+
 
 }

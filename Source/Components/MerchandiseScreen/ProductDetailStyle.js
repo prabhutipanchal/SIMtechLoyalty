@@ -69,7 +69,7 @@ export default {
     shadowOffset: { height: 1, width: 1 }, // IOS
     shadowOpacity: 1, // IOS
     shadowRadius: 1, //IOS
-    // elevation: 5, // Android,
+    elevation: 0, // Android,
     height: AppConstants.getDeviceHeight(7.5),
     width: AppConstants.getDeviceWidth(32.27),
     borderRadius: AppConstants.getDeviceWidth(2),
