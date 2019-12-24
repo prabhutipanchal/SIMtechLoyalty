@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, Alert, Keyboard, Image, TouchableOpacity, StatusBar } from 'react-native';
+import { View, Text,Keyboard, Image, TouchableOpacity, StatusBar } from 'react-native';
 import Styles from './LoginStyle';
 import { TextField } from 'react-native-material-textfield';
+// import MyTextField from '../../CustomControls/MyTextField';
 import Toast, { DURATION } from 'react-native-easy-toast';
 import * as AppConstants from '../Helper/AppConstants';
 import MobileIcon from 'react-native-vector-icons/FontAwesome';
@@ -76,9 +77,6 @@ export default class Login extends Component {
           fadeOutDuration={1000}
           textStyle={AppConstants.CommonStyles.ToastTextStyle}
         />
-        {/* <ScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flexGrow: 1 }}> */}
         <View style={Styles.logoContainer}>
           <Image
             resizeMode="contain"
@@ -91,6 +89,24 @@ export default class Login extends Component {
           <Text style={Styles.txtsignintitle}>Sign in to access your account.</Text>
         </View>
         <View style={Styles.txtInputView}>
+          {/* <MyTextField
+            isborderShow={false}
+            tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
+            textColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
+            baseColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
+            label="Mobile No."
+            keyboardType={'phone-pad'}
+            value={this.state.MobileNumber}
+            maxLength={10}
+            blurOnSubmit={true}
+            onSubmitEditing={() => {
+              this.refs.Password.focus();
+            }}
+            onChangeText={MobileNumber => this.setState({ MobileNumber })}
+            returnKeyType={'next'}
+          /> */}
+
+          
           <TextField
             style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1 }}
             keyboardType={'phone-pad'}
@@ -172,7 +188,6 @@ export default class Login extends Component {
             onPress={this.validateFields.bind(this)}
           />
         </View>
-        {/* </ScrollView> */}
       </View>
 
     );

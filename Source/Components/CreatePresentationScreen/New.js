@@ -8,7 +8,7 @@ import styles from './NewStyle';
 import * as AppConstants from '../Helper/AppConstants';
 import MyButton from '../../CustomControls/MyButton';
 import { TextField } from 'react-native-material-textfield';
-import { Dropdown } from 'react-native-material-dropdown';
+import MyDropDown from '../../CustomControls/MyDropDown';
 import Toast, { DURATION } from 'react-native-easy-toast';
 import Icon from 'react-native-vector-icons/AntDesign';
 import CloseIcon from 'react-native-vector-icons/Entypo';
@@ -17,7 +17,7 @@ import RadioButtonIcon from 'react-native-vector-icons/Ionicons';
 import CloseIcon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 const Images = {
     Imgreferearn: 'imgreferearn',
-    
+
 };
 export default class New extends Component {
     constructor(props) {
@@ -173,15 +173,15 @@ export default class New extends Component {
     }
     onPressList(index) {
         this.setState({ selectedItem: index, });
+
     }
+
     onPressListReport1(index, id) {
         this.setState({ removeItem: index });
         this.deleteItemById(id)
     }
     renderItem = ({ item, index }) => {
         const value = this.state.selectedItem == index ? 'check-circle' : 'checkbox-blank-circle-outline'
-        // const itemNumber = this.state.dataSource.filter(item => item.isSelect).length;
-        // const value = this.state.selectedItem(item)? 'check-circle' : 'circle-outline'
         return (
             <View style={styles.mainCardView} >
                 <Text style={styles.txtTarget}>{item.TargetAchivements}</Text>
@@ -220,16 +220,16 @@ export default class New extends Component {
         const filteredData = this.state.FlatListItemsReport1.filter(item => item.id !== id);
         this.setState({ FlatListItemsReport1: filteredData });
     }
-    selectItem = (data) => {
+    selectItem = data => {
         data.item.isSelect = !data.item.isSelect;
         data.item.selectedClass = data.item.isSelect
             ? styles.selected : styles.list;
-        const index = this.state.FlatListItemsReport1.findIndex(
+
+        const index = this.state.selectedItem.findIndex(
             item => data.item.id === item.id
-        );
-        this.state.FlatListItemsReport1[index] = data.item;
+        ); this.state.selectedItem[index] = data.item;
         this.setState({
-            FlatListItemsReport1: this.state.FlatListItemsReport1
+            selectedItem: this.state.selectedItem
         });
     };
     renderItemforReport1 = ({ item, index }) => {
@@ -336,62 +336,41 @@ export default class New extends Component {
                                 AppConstants.FONTSIZE.FS15,
                             )}
                             inputContainerStyle={{
-                                // paddingLeft: AppConstants.getDeviceWidth(10.93),
                                 fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
                             }}
                             maxLength={20}
                             labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                            // labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
                             autoCorrect={false}
                             autoCapitalize="none"
                             blurOnSubmit={true}
                             onSubmitEditing={() => {
                                 Keyboard.dismiss;
-                                this.validateFields();
+                                // this.validateFields();
                             }}
                             onChangeText={Name => this.setState({ Name })}
                             returnKeyType={'go'}
                         />
-                        <Dropdown
+                        <MyDropDown
+                            isborderShow={false}
                             label='Year'
-                            itemCount={5}
-                            animationDuration={5}
-                            value={this.state.Year}
                             data={Year}
                             tintColor={AppConstants.COLORS.BASECOLOR_1}
                             textColor={AppConstants.COLORS.BASECOLOR_2}
                             baseColor={AppConstants.COLORS.BASECOLOR_1}
-                            fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                            labelFontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                            autoCorrect={false}
-                            autoCapitalize="words"
-                            labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                            labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                            style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                            blurOnSubmit={true}
+                            value={this.state.Year}
                             onChangeText={(Year) => this.setState({ Year })}
-                            returnKeyType={"next"}
-                        />
-                        <Dropdown
+                            returnKeyType={"next"} />
+                        <MyDropDown
+                            isborderShow={false}
                             label='Select Quarter'
-                            itemCount={5}
-                            animationDuration={5}
-                            value={this.state.Quarter}
                             data={Quarter}
-                            tintColor={AppConstants.COLORS.BASECOLOR_1}
-                            textColor={AppConstants.COLORS.BASECOLOR_2}
-                            baseColor={AppConstants.COLORS.BASECOLOR_1}
-                            fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                            labelFontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                            autoCorrect={false}
-                            autoCapitalize="words"
-                            labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                            labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                            style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                            blurOnSubmit={true}
+                            tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
+                            textColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
+                            baseColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
+                            value={this.state.Quarter}
                             onChangeText={(Quarter) => this.setState({ Quarter })}
-                            returnKeyType={"next"}
-                        />
+                            returnKeyType={"next"} />
+
                     </View>
                     <View style={styles.btnDesignPresentationView}>
                         <Modal visible={this.state.modalVisible1}

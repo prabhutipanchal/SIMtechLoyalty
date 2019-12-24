@@ -18,7 +18,6 @@ export default {
     elevation: 5,
     alignSelf: 'center',
     paddingBottom: AppConstants.getDeviceHeight(4),
-    // height: AppConstants.getDeviceHeight(56.87),
     width: AppConstants.getDeviceWidth(89.33),
     borderColor: AppConstants.COLORS.BORDERCOLOR,
     backgroundColor: AppConstants.COLORS.WHITE,
@@ -57,7 +56,6 @@ export default {
     borderRightColor: AppConstants.COLORS.VIEWCOLOR,
     marginTop: AppConstants.getDeviceHeight(0.9),
     marginBottom: AppConstants.getDeviceHeight(0.9),
-    // paddingBottom: AppConstants.getDeviceHeight(2),
   },
   SearchCancelIconStyle: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS25),
@@ -158,7 +156,7 @@ export default {
   SearchTextView: {
     justifyContent: 'center',
     width: AppConstants.getDeviceWidth(51.93),
-    // paddingLeft: AppConstants.getDeviceWidth(1),
+   
   },
   searchbarView: {
     flexDirection: 'row',
@@ -221,7 +219,7 @@ export default {
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
-    // paddingBottom: AppConstants.getDeviceHeight(1.85),
+   
   },
   SalesViewStyle: {
     flexDirection: 'row',
@@ -238,7 +236,7 @@ export default {
     borderColor: AppConstants.COLORS.TOPBORDERCOLOR,
     marginTop: AppConstants.getDeviceHeight(1),
     marginBottom: AppConstants.getDeviceHeight(1),
-    // paddingBottom: AppConstants.getDeviceHeight(1.85),
+   
   },
   txtSales: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
@@ -255,7 +253,6 @@ export default {
     justifyContent: 'center',
     marginTop: AppConstants.getDeviceHeight(1),
     marginBottom: AppConstants.getDeviceHeight(1),
-    // paddingBottom: AppConstants.getDeviceHeight(1.85),
 
   },
   txtPrice: {

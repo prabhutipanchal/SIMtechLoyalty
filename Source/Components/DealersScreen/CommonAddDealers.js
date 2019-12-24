@@ -32,11 +32,7 @@ const customStyles = {
     stepIndicatorLabelFontSize: 13,
     currentStepIndicatorLabelFontSize: 13,
     stepIndicatorLabelCurrentColor: AppConstants.COLORS.APPTHEME,
-    // stepIndicatorLabelFinishedColor: '#ffffff',
-    // stepIndicatorLabelUnFinishedColor: '#aaaaaa',
-    // labelColor: '#999999',
     labelSize: 13,
-    // currentStepLabelColor: '#fe7013'
 }
 export default class CommonAddDealers extends Component {
     constructor(props) {

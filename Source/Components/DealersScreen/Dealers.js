@@ -119,7 +119,7 @@ export default class Dealers extends Component {
                     <FlatList
                         data={this.state.FlatListItems}
                         keyExtractor={(item, index) => index.toString()}
-                        extraData={this.state.lastsyncstatus}
+                        // extraData={this.state.lastsyncstatus}
                         renderItem={this.renderItem}
 
                     />

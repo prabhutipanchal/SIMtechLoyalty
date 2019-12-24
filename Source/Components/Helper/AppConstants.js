@@ -37,11 +37,12 @@ export const ProfilePicPath =
 export const CheckLogin = '0';
 export const SCREENS = {
   //---------------TabBar Screens------------
-  ACCOUNT: 'Account',
-  MERCH: 'Merchandise',
-  DASHBOARD: 'Dashboard',
-  EVENTS: 'Events',
+  
+  DEALERS:'Dealers',
   PRODUCT: 'Products',
+  DASHBOARD: 'Dashboard',
+  CREATEPRESENTATION: 'CreatePresentation',
+  MERCH: 'Merchandise',
   //---------------TABBAR SCREENS-------------
 
   //-------------Stack Navigation Screens----
@@ -52,20 +53,17 @@ export const SCREENS = {
   LOGIN: 'Login',
   REFERANDINVITE: 'ReferAndInvite',
   FORGOTPASSWORD: 'ForgotPassword',
-  OTP: 'OTP',
   CHANGEPASSWORD: 'Changepassword',
   NOTIFICATION: 'Notification',
   FAQ: 'Faq',
   ANALYTICS: 'Analytics',
   ENABLEFACEID: 'EnableFaceID',
   TERMASANDCONDITION: 'TermsAndCondition',
-  CREATEPRESENTATION: 'CreatePresentation',
   ADDDEALERS: 'AddDealers',
   NODEALERS: 'NoDealers',
   PRODUCTSFILTER: 'ProductsFilter',
   MERCHANDISEPRODUCT: 'MerchandiseProduct',
   DEALERDETAIL: 'DealerDetail',
-  DEALERS:'Dealers',
   PRODUCTDETAIL: 'ProductDetail',
   BESTPERFORMERS: 'BestPerformers',
   BUSINESSDETAIL: 'BusinessDetail',
@@ -76,7 +74,6 @@ export const SCREENS = {
   UPLOADDETAILS: 'UploadDetails',
   COMMONADDDEALERS:'CommonAddDealers',
   REPORTS: 'Reports',
-  DASHBOARD: 'Dashboard',
   LOGOUT: 'Logout'
 
 
@@ -109,14 +106,9 @@ export const Messages = {
   OTPLENGTH: 'OTP should be 4 Digits',
   OTPNOTANUMBER: 'OTP should be Digits',
   APIERROR: 'Error Processing Data. Please try again',
-  EMPTYCART: 'No Medicines added to Cart',
   ERRORSAVINGINDB: 'Error Saving data. Please try again',
   ERRORFETCHINGFROMDB: 'Error Fetching data. Please try again',
   NODATEOFBIRTH: 'Please select Date of Birth',
-  NODELIVERYADDRESS: 'Please select Delivery Address',
-  NOPATIENT: 'Please select Patient',
-  NOHEIGHT: 'Please select Height',
-  NOPATIENTNAME: 'Please enter Patient Name',
   NONAME: 'Please enter Name',
   NOBANKNAME: 'Please enter Bank Name',
   NOBRANCHNAME: 'Please enter Branch Name',
@@ -130,16 +122,9 @@ export const Messages = {
   NOFIRMTYPE: 'Please select Type of Firm',
   NOPARTNERTYPE: 'Please select Type of Partner',
   NOPANNUMBER: 'Please enter PAN Number',
-  NODATAFORRIFILL: 'Please Select Refill Interval Or Next Delivery Date',
   NOFIRSTNAME: 'Please enter First Name',
   NOLASTNAME: 'Please enter Last Name',
   NOEMAIL: 'Please enter Email Address',
-  NORELATIONWITHPATIENT: 'Please enter relation with Patient',
-  NOBLOODGROUP: 'Please enter blood group',
-  NOWEIGHT: 'Please enter Weight',
-  NOMEDICALCONDITIONS: 'Please enter medical condition',
-  NOALLERGIES: 'Please enter allergies',
-  NOMEDICATIONS: 'Please enter medications',
   NOPROFILEPHOTO: 'Please Choose a Profile Pic',
   NOPRISCRIPTION: 'Please Upload a Prescription',
   GENDAR: 'Please Select Gendar',
@@ -152,12 +137,7 @@ export const Messages = {
   SENDMESSAGE: 'Please enter message',
   INVALIDEMAILADDRESS: 'Please enter correct Email Address',
   NOTEARMSCONDITION: 'Please Agree Terms and Conditions',
-  SELECTMEDICIINE: 'Please select Medicine',
-  SELECTANYONEREMINDER: 'Please set any one Reminder',
-  NODOCTORNAME: 'Please enter Doctor Name',
   COPYREFERRALCODE: 'Your Referral Code Copied',
-  NOTVALIDDOCTORNAME: 'Please enter valid Doctor Name',
-  // NOPROMOCODE:'Please enter Promocode', commented beacuse it's optional...
 };
 export const COLORS = {
   APP_BG: '#FFF',

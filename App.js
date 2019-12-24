@@ -3,7 +3,7 @@
 // /* eslint-disable eqeqeq */
 // /* eslint-disable no-fallthrough */
 // /* eslint-disable react-native/no-inline-styles */
-import { View, Platform, TouchableOpacity, Easing, Animated, BackHandler, Alert,Text } from 'react-native';
+import { View, Platform, TouchableOpacity, Easing, Animated, BackHandler, Alert,} from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import drawerContentComponents from './Source/Components/AccountScreen/drawerContentComponents';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
@@ -108,7 +108,7 @@ export const Tab_1 = createBottomTabNavigator(
               color={
                 focused
                   ? AppConstants.COLORS.APPTHEME
-                  : AppConstants.COLORS.BASECOLOR_2
+                  : AppConstants.COLORS.TEXTCOLOR
               }
             />
           ),
@@ -133,7 +133,7 @@ export const Tab_1 = createBottomTabNavigator(
               color={
                 focused
                   ? AppConstants.COLORS.APPTHEME
-                  : AppConstants.COLORS.BASECOLOR_2
+                  : AppConstants.COLORS.TEXTCOLOR
               }
             />
           ),
@@ -181,7 +181,7 @@ export const Tab_1 = createBottomTabNavigator(
             color={
               focused
                 ? AppConstants.COLORS.APPTHEME
-                : AppConstants.COLORS.BASECOLOR_2
+                : AppConstants.COLORS.TEXTCOLOR
             }
           />
         ),
@@ -208,7 +208,7 @@ export const Tab_1 = createBottomTabNavigator(
               color={
                 focused
                   ? AppConstants.COLORS.APPTHEME
-                  : AppConstants.COLORS.BASECOLOR_2
+                  : AppConstants.COLORS.TEXTCOLOR
               }
             />
           ),
@@ -216,34 +216,34 @@ export const Tab_1 = createBottomTabNavigator(
       },
     },
   },
-  
+
   {
     navigationOptions: ({ navigation }) => {
       const { routeName } = navigation.state.routes[navigation.state.index];
       return {
         headerTitle: routeName,
-        headerRight:navigation.state.index==0? <TouchableOpacity
-        activeOpacity={0.9}
-        onPress={()=>navigation.navigate(AppConstants.SCREENS.COMMONADDDEALERS)}>
-        <Icons
-          name="plus-circle"
-          style={{ marginRight: AppConstants.getDeviceWidth(3.5) }}
-          size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS30)}
-          color={AppConstants.COLORS.APPTHEME}
-        />
-      </TouchableOpacity>:<View/>
-        //navigation.state.index == 0 ? '' :
+        headerRight: navigation.state.index == 0 ? <TouchableOpacity
+          activeOpacity={0.9}
+          onPress={() => navigation.navigate(AppConstants.SCREENS.COMMONADDDEALERS)}>
+          <Icons
+            name="plus-circle"
+            style={{ marginRight: AppConstants.getDeviceWidth(3.5) }}
+            size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS30)}
+            color={AppConstants.COLORS.APPTHEME}
+          />
+        </TouchableOpacity> : <View />
       };
     },
     tabBarPosition: 'top',
     tabBarOptions: {
       activeTintColor: AppConstants.COLORS.APPTHEME,
-      inactiveTintColor: AppConstants.COLORS.BASECOLOR_2,
+      inactiveTintColor: AppConstants.COLORS.TEXTCOLOR,
 
       labelStyle: {
         fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
         fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS13),
         color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
+        
       },
       style: {
         backgroundColor: AppConstants.COLORS.TABBAR_BG_COLOR,
@@ -251,9 +251,9 @@ export const Tab_1 = createBottomTabNavigator(
         height: AppConstants.getDeviceHeight(10.22),
       },
     },
-    
-      initialRouteName: 'Dashboard',
-  
+
+    initialRouteName: 'Dashboard',
+
   },
 );
 const RootStack = createStackNavigator(
@@ -282,15 +282,6 @@ const RootStack = createStackNavigator(
 
     ForgotPassword: {
       screen: ForgotPassword,
-      // navigationOptions: {
-      //   // gesturesEnabled: false,
-      //   // drawerLockMode: 'closeDrawer',
-      //   // drawerLabel: <Login />,
-      // },
-      //   navigationOptions: {
-      //     drawerLockMode: "locked-close",
-      //     disableGestures: true
-      // },
     },
 
     Login: {
@@ -298,9 +289,6 @@ const RootStack = createStackNavigator(
       navigationOptions: {
         gesturesEnabled: false,
       },
-      // navigationOptions: ({ navigation })=> ({
-      //   drawerLockMode: navigation.state.index > 0 ? 'locked-closed' : 'unlocked',
-      // }),
     },
     Merchandise: {
       screen: Merchandise,
@@ -519,11 +507,6 @@ function getHeaderLeft(navigation) {
 
 function getControlColour(navigation) {
   switch (navigation.state.routeName) {
-    // case 'Notification':
-    // case 'AddDealers':
-    // case 'Changepassword':
-    // case 'MerchandiseProduct':
-    // case 'Dashboard':
     case 'DealerDetail':
       return AppConstants.COLORS.WHITE;
     default:
@@ -562,7 +545,6 @@ function getHeaderBackground(navigation) {
 
 function getRightIcons(navigation) {
   switch (navigation.state.routeName) {
-    // case 'Changepassword':
     case 'Dealers':
       return (
         <View
@@ -604,23 +586,6 @@ function getRightIcons(navigation) {
             marginRight: AppConstants.getDeviceWidth(3),
             zIndex: 1,
           }}>
-          {/* <SearchIcons
-            onPress={() => navigation.navigate('Setting')}
-            name="md-settings"
-            style={{ marginRight: AppConstants.getDeviceWidth(3) }}
-            size={AppConstants.moderateScale(AppConstants.FONTSIZE.FS22)}
-            color={getControlColour(navigation)}
-          />
-          <TouchableOpacity
-            style={{ flexDirection: 'row' }}
-            activeOpacity={0.9}
-            onPress={() => {
-              AppConstants.CheckLogin = '1';
-              AppConstants.checkForUserLogin() == true
-                ? navigation.navigate(AppConstants.SCREENS.CART)
-                : navigation.navigate(AppConstants.SCREENS.LOGIN);
-            }}
-          /> */}
         </View>
       );
   }

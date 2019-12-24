@@ -35,7 +35,6 @@ export default {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS17),
     color: AppConstants.COLORS.APPTHEME,
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1_BOLD,
-    // textAlign: 'center',
   },
   nextButtonView: {
     width: AppConstants.getDeviceWidth(20.27),

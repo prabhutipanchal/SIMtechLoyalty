@@ -5,8 +5,6 @@ export default {
     },
     logoContainer: {
         marginTop: AppConstants.getDeviceHeight(10),
-        // height: AppConstants.getDeviceHeight(7.2),
-        // width: AppConstants.getDeviceWidth(61.33),
         alignSelf: 'center',
       },
       logo: {

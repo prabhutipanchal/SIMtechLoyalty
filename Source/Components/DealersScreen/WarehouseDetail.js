@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Text, View, Keyboard, Alert } from 'react-native';
 import { TextField } from 'react-native-material-textfield';
-import { Dropdown } from 'react-native-material-dropdown';
+import MyDropDown from '../../CustomControls/MyDropDown';
 import MyButton from '../../CustomControls/MyButton';
 import Toast, { DURATION } from 'react-native-easy-toast';
 import styles from './CommonAddDealersStyle';
@@ -205,46 +205,27 @@ export default class WarehouseDetail extends Component {
                         onChangeText={Area => this.setState({ Area })}
                         returnKeyType={"next"}
                     />
-                    <Dropdown
+                    <MyDropDown
+                        isborderShow={false}
                         label='State'
-                        itemCount={5}
-                        animationDuration={5}
-                        value={this.state.State}
                         data={state}
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        autoCorrect={false}
-                        autoCapitalize="words"
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        blurOnSubmit={true}
+                        value={this.state.State}
                         onChangeText={(State) => this.setState({ State })}
-                        returnKeyType={"next"}
-                    />
-                    <Dropdown
+                        returnKeyType={"next"} />
+
+                    <MyDropDown
+                        isborderShow={false}
                         label='City'
-                        itemCount={5}
-                        animationDuration={5}
-                        value={this.state.City}
                         data={city}
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        autoCorrect={false}
-                        autoCapitalize="words"
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        blurOnSubmit={true}
+                        value={this.state.City}
                         onChangeText={(City) => this.setState({ City })}
-                        returnKeyType={"next"}
-                    />
+                        returnKeyType={"next"} />
 
                     <TextField
                         style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
@@ -282,7 +263,7 @@ export default class WarehouseDetail extends Component {
                 <View style={styles.btnAddBillingAddress}>
                     <MyButton
                         Text="Save & Add Contact Detail"
-                        onPress={ this.validateFields.bind(this)}
+                        onPress={this.validateFields.bind(this)}
                     />
 
                 </View>

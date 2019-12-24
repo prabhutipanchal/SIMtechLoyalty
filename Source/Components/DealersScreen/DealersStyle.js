@@ -72,8 +72,6 @@ export default {
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
-    // paddingBottom: AppConstants.getDeviceHeight(1.85),
-
   },
   loyaltyViewStyle: {
     flexDirection: 'row',
@@ -90,7 +88,6 @@ export default {
     borderColor: AppConstants.COLORS.BORDERCOLOR,
      marginTop: AppConstants.getDeviceHeight(1),
      marginBottom: AppConstants.getDeviceHeight(1),
-    // paddingBottom: AppConstants.getDeviceHeight(2),
   },
   txtloyalty: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
@@ -103,7 +100,6 @@ export default {
     justifyContent: 'center',
     marginTop: AppConstants.getDeviceHeight(1),
     marginBottom: AppConstants.getDeviceHeight(1),
-    // paddingBottom: AppConstants.getDeviceHeight(2),
   },
   txtamount: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),

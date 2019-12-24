@@ -2,7 +2,6 @@ import * as AppConstants from '../Helper/AppConstants';
 export default {
   mainContainer: {
     flex: 1,
-    // alignItems: 'center',
   },
   txtTarget:{
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,

@@ -6,7 +6,7 @@ export default {
   },
   txtInputView: {
     width: AppConstants.getDeviceWidth(91.47),
-    margin: AppConstants.getDeviceWidth(3),
+    paddingLeft: AppConstants.getDeviceWidth(4),
   },
   btnDesignPresentationView: {
     marginTop: AppConstants.getDeviceHeight(1),
@@ -124,13 +124,12 @@ export default {
     justifyContent: 'center'
   },
   modalMainView: {
-    // shadowColor: AppConstants.COLORS.BORDERCOLOR, // IOS
-    // shadowOffset: { height: 1, width: 1 }, // IOS
-    // shadowOpacity: 1, // IOS
-    // shadowRadius: 1, //IOS
-    // elevation: 5,
+    shadowColor: AppConstants.COLORS.BORDERCOLOR, // IOS
+    shadowOffset: { height: 1, width: 1 }, // IOS
+    shadowOpacity: 1, // IOS
+    shadowRadius: 1, //IOS
+    elevation: 0,
     alignSelf: 'center',
-    // height: AppConstants.getDeviceHeight(86),
     width: AppConstants.getDeviceWidth(85.87),
     borderColor: AppConstants.COLORS.BORDERCOLOR,
     backgroundColor: AppConstants.COLORS.WHITE,
@@ -165,7 +164,6 @@ export default {
   //FlatList Design
 
   mainCardView: {
-    // marginBottom: AppConstants.getDeviceHeight(1),
     backgroundColor: AppConstants.COLORS.WHITE,
     borderRadius: AppConstants.getDeviceHeight(1),
     flexDirection: 'row',
@@ -177,8 +175,6 @@ export default {
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
     color: AppConstants.COLORS.TEXTCOLOR,
-    // marginTop: AppConstants.getDeviceHeight(1),
-    // marginBottom: AppConstants.getDeviceHeight(3),
     paddingBottom: AppConstants.getDeviceHeight(3),
     paddingLeft: AppConstants.getDeviceHeight(2),
 
@@ -270,5 +266,5 @@ export default {
     flex: 1,
     alignSelf: 'center',
     marginBottom: AppConstants.getDeviceHeight(2),
-  },
+  }, 
 };

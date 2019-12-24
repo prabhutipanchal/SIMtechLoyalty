@@ -49,24 +49,6 @@ export default class ContactDetail extends Component {
         else if (this.state.Mobile1.length != 10) {
             this.refs.toast.show(AppConstants.Messages.MOBILENOLENGTH, DURATION.LENGTH_LONG);
         }
-        // else if (this.state.Name2.trim() == '') {
-        //     this.refs.toast.show(
-        //         AppConstants.Messages.NONAME,
-        //         DURATION.LENGTH_LONG,
-        //     );
-        // }
-        // else if (this.state.EmailAddress2.trim() == '' || !this.validateEmail2(this.state.EmailAddress2.trim())) {
-        //     this.refs.toast.show(AppConstants.Messages.INVALIDEMAILADDRESS, DURATION.LENGTH_LONG);
-        // }
-        // else if (this.state.Mobile2.trim() == '') {
-        //     this.refs.toast.show(AppConstants.Messages.NOMOBILENO1, DURATION.LENGTH_LONG);
-        // }
-        // else if (isNaN(this.state.Mobile2.trim())) {
-        //     this.refs.toast.show(AppConstants.Messages.MOBILENONOTANUMBER, DURATION.LENGTH_LONG);
-        // }
-        // else if (this.state.Mobile2.length != 10) {
-        //     this.refs.toast.show(AppConstants.Messages.MOBILENOLENGTH, DURATION.LENGTH_LONG);
-        // }
         else {
             this.props.onPageChange(4)
         }
@@ -79,7 +61,6 @@ export default class ContactDetail extends Component {
 
 
                 <View style={styles.txtInputView}>
-                    {/* <Text style={styles.txtContactCommonStyle}>Contact 1</Text> */}
                     <Toast
                         ref="toast"
                         style={AppConstants.CommonStyles.ToastStyle}
@@ -104,7 +85,6 @@ export default class ContactDetail extends Component {
                         )}
                         inputContainerStyle={{
 
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
                             fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
                         }}
                         maxLength={20}
@@ -135,10 +115,8 @@ export default class ContactDetail extends Component {
                         )}
                         inputContainerStyle={{
 
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
                             fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
                         }}
-                        // maxLength={20}
                         labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
                         labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
                         autoCorrect={false}
@@ -166,7 +144,6 @@ export default class ContactDetail extends Component {
                         )}
                         inputContainerStyle={{
 
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
                             fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
                         }}
                         maxLength={10}
@@ -182,105 +159,13 @@ export default class ContactDetail extends Component {
                         onChangeText={Mobile1 => this.setState({ Mobile1 })}
                         returnKeyType={"next"}
                     />
-                    {/* <Text style={styles.txtContactCommonStyle}>Contact 2</Text>
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'default'}
-                        selectTextOnFocus={false}
-                        label="Enter Name"
-                        value={this.state.Name2}
-                        tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
-                        textColor={AppConstants.COLORS.TEXTCOLOR}
-                        baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
 
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
-                        maxLength={20}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="words"
-                        blurOnSubmit={true}
-                        onSubmitEditing={() => {
-                            Keyboard.dismiss;
-                            this.validateFields();
-                        }}
-                        onChangeText={Name2 => this.setState({ Name2 })}
-                        returnKeyType={"next"}
-                    />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'email-address'}
-                        selectTextOnFocus={false}
-                        label="Email Address"
-                        value={this.state.EmailAddress2}
-                        tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
-                        textColor={AppConstants.COLORS.TEXTCOLOR}
-                        baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
-                        // maxLength={20}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="none"
-                        blurOnSubmit={true}
-                        onSubmitEditing={() => {
-                            Keyboard.dismiss;
-                            this.validateFields();
-                        }}
-                        onChangeText={EmailAddress2 => this.setState({ EmailAddress2 })}
-                        returnKeyType={'go'}
-                    />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'phone-pad'}
-                        selectTextOnFocus={false}
-                        label="Mobile"
-                        value={this.state.Mobile2}
-                        tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
-                        textColor={AppConstants.COLORS.TEXTCOLOR}
-                        baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
-                        maxLength={10}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="words"
-                        blurOnSubmit={true}
-                        onSubmitEditing={() => {
-                            Keyboard.dismiss;
-                            this.validateFields();
-                        }}
-                        onChangeText={Mobile2 => this.setState({ Mobile2 })}
-                        returnKeyType={"next"}
-                    /> */}
                 </View>
                 <View style={styles.btnAddBillingAddress}>
 
                     <MyButton
                         Text=" Save & Add Bank Detail"
-                        onPress={ this.validateFields.bind(this)}
+                        onPress={this.validateFields.bind(this)}
                     />
 
                 </View>

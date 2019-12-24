@@ -34,14 +34,6 @@ export default {
     color: AppConstants.COLORS.WHITE,
     marginBottom: AppConstants.getDeviceHeight(2.5),
   },
-  // txtKnowMore: {
-  //   marginBottom: AppConstants.getDeviceHeight(4.93),
-  //   textAlign: 'center',
-  //   textDecorationLine: 'underline',
-  //   fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
-  //   fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
-  //   color: AppConstants.COLORS.WHITE,
-  // },
   txtCopyShare: {
     paddingTop: AppConstants.getDeviceHeight(4.43),
     paddingBottom: AppConstants.getDeviceHeight(2.83),

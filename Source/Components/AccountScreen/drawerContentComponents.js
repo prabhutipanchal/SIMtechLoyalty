@@ -12,16 +12,9 @@ import TermsIcons from 'react-native-vector-icons/Feather';
 import KeyIcon from 'react-native-vector-icons/FontAwesome5';
 import BellIcon from 'react-native-vector-icons/Fontisto';
 const Images = {
-  Invitefriendsgift: 'icon',
-  IconChgPassword: 'iconchgpassword',
-  Iconnotification: 'iconnotification',
-  Iconfaq: 'iconfaq',
   Iconrefer: 'iconrefer',
-  Iconanalytics: 'iconanalytics',
   Iconenablefaceid: 'iconenablefaceid',
-  Iconterms: 'iconterms',
-  Iconcreatepresentation: 'iconcreatepresentation',
-  Iconlogout: 'iconlogout',
+
 };
 
 export default class drawerContentComponents extends Component {

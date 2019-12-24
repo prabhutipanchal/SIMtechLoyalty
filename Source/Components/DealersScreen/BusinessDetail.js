@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, Alert, Keyboard } from 'react-native'
 import { TextField } from 'react-native-material-textfield';
-import { Dropdown } from 'react-native-material-dropdown';
+import MyDropDown from '../../CustomControls/MyDropDown';
 import MyButton from '../../CustomControls/MyButton';
 import Toast, { DURATION } from 'react-native-easy-toast';
 import styles from './CommonAddDealersStyle';
@@ -142,26 +142,16 @@ export default class BusinessDetail extends Component {
                         onChangeText={LegalName => this.setState({ LegalName })}
                         returnKeyType={"next"}
                     />
-                    <Dropdown
+                    <MyDropDown
+                        isborderShow={false}
                         label='Type of firm'
-                        itemCount={5}
-                        animationDuration={5}
-                        value={this.state.FirmType}
                         data={firmType}
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        autoCorrect={false}
-                        autoCapitalize="words"
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        blurOnSubmit={true}
+                        value={this.state.FirmType}
                         onChangeText={(FirmType) => this.setState({ FirmType })}
-                        returnKeyType={"next"}
-                    />
+                        returnKeyType={"next"} />
                     <TextField
                         style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
                         keyboardType={'default'}
@@ -220,26 +210,17 @@ export default class BusinessDetail extends Component {
                         onChangeText={PanNumber => this.setState({ PanNumber })}
                         returnKeyType={'next'}
                     />
-                    <Dropdown
+                    <MyDropDown
+                        isborderShow={false}
                         label='Partner Type'
-                        itemCount={5}
-                        animationDuration={5}
-                        value={this.state.PartnerType}
                         data={partnerType}
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        autoCorrect={false}
-                        autoCapitalize="words"
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        blurOnSubmit={true}
+                        value={this.state.PartnerType}
                         onChangeText={(PartnerType) => this.setState({ PartnerType })}
-                        returnKeyType={"next"}
-                    />
+                        returnKeyType={"next"} />
+
                 </View>
                 <View style={styles.btnAddBillingAddress}>
 

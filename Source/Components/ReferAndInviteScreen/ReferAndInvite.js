@@ -73,10 +73,6 @@ export default class ReferAndInvite extends Component {
           <Text style={styles.txtInviteFriend}>
             Invite your friend and earn 50 loyalty points for free for every sign ups.</Text>
 
-          {/* <TouchableOpacity>
-            <Text style={styles.txtKnowMore}>Know More</Text>
-          </TouchableOpacity> */}
-
         </View>
 
         <Text style={styles.txtCopyShare}>

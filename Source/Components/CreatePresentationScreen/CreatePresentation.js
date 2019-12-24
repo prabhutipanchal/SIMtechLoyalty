@@ -4,7 +4,6 @@ import { createAppContainer } from 'react-navigation';
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 import New from './New';
 import Templates from './Templates';
-// import History from './History';
 import * as AppConstants from '../Helper/AppConstants';
 
 const Tab = createMaterialTopTabNavigator(
@@ -25,14 +24,6 @@ const Tab = createMaterialTopTabNavigator(
                 };
             },
         },
-        // History: {
-        //     screen: History,
-        //     navigationOptions: ({ navigation }) => {
-        //         return {
-        //             tabBarLabel: 'History',
-        //         };
-        //     },
-        // },
     },
     {
         tabBarOptions: {
@@ -49,8 +40,6 @@ const Tab = createMaterialTopTabNavigator(
             },
             style: {
                 backgroundColor: AppConstants.COLORS.WHITE,
-                // borderBottomLeftRadius: AppConstants.getDeviceHeight(5),
-                // borderBottomRightRadius: AppConstants.getDeviceHeight(5),
                 elevation: 0,
             }
         },

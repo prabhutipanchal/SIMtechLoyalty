@@ -4,7 +4,6 @@ export default {
     flex: 1,
   },
   Container: {
-    // marginTop: AppConstants.getDeviceHeight(4.93),
     width: AppConstants.getDeviceWidth(91.47),
     alignSelf: 'center',
   },

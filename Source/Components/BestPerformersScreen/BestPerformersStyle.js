@@ -6,7 +6,6 @@ export default {
         alignItems: 'center',
     },
     cardView: {
-        // backgroundColor: AppConstants.COLORS.WHITE,
         alignSelf: 'center',
         width: AppConstants.getDeviceWidth(100),
         elevation: 0,
@@ -105,7 +104,6 @@ export default {
        
     },
     btnsigninView: {
-        // marginTop: AppConstants.getDeviceHeight(3.69),
         alignSelf: 'center',
       },
     
