@@ -325,7 +325,6 @@ export default class New extends Component {
                         <TextField
                             style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
                             keyboardType={'default'}
-                            selectTextOnFocus={false}
                             label="Name"
                             value={this.state.Name}
                             tintColor={AppConstants.COLORS.TEXTFIELDTEXT}

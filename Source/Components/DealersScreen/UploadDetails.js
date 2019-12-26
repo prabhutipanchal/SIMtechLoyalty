@@ -1,8 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, Alert } from 'react-native';
-import { TextField } from 'react-native-material-textfield';
-import MyButton from '../../CustomControls/MyButton';
 import Toast, { DURATION } from 'react-native-easy-toast';
 import styles from './CommonAddDealersStyle';
 import * as AppConstants from '../Helper/AppConstants';

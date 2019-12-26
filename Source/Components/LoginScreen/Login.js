@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text,Keyboard, Image, TouchableOpacity, StatusBar } from 'react-native';
+import { View, Text, Keyboard, Image, TouchableOpacity, StatusBar } from 'react-native';
 import Styles from './LoginStyle';
-import { TextField } from 'react-native-material-textfield';
-// import MyTextField from '../../CustomControls/MyTextField';
+import MyTextField from '../../CustomControls/MyTextField';
 import Toast, { DURATION } from 'react-native-easy-toast';
 import * as AppConstants from '../Helper/AppConstants';
 import MobileIcon from 'react-native-vector-icons/FontAwesome';
@@ -89,49 +88,18 @@ export default class Login extends Component {
           <Text style={Styles.txtsignintitle}>Sign in to access your account.</Text>
         </View>
         <View style={Styles.txtInputView}>
-          {/* <MyTextField
-            isborderShow={false}
+          <MyTextField
             tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
             textColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
             baseColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
-            label="Mobile No."
-            keyboardType={'phone-pad'}
-            value={this.state.MobileNumber}
-            maxLength={10}
-            blurOnSubmit={true}
-            onSubmitEditing={() => {
-              this.refs.Password.focus();
-            }}
-            onChangeText={MobileNumber => this.setState({ MobileNumber })}
-            returnKeyType={'next'}
-          /> */}
-
-          
-          <TextField
-            style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1 }}
-            keyboardType={'phone-pad'}
-            selectTextOnFocus={false}
-            label="Mobile No."
-            value={this.state.MobileNumber}
-            tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
-            textColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
-            baseColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
-            fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-            labelFontSize={AppConstants.moderateScale(
-              AppConstants.FONTSIZE.FS15,
-            )}
             inputContainerStyle={{
-              paddingLeft: AppConstants.getDeviceWidth(10.93),
+              paddingLeft: AppConstants.getDeviceWidth(10.95),
               fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
             }}
+            label="Mobile No."
+            keyboardType={'phone-pad'}
+            value={this.state.MobileNumber}
             maxLength={10}
-            autoCorrect={false}
-            autoCapitalize="words"
-            labelTextStyle={{
-              fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-            }}
-            labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-            style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
             blurOnSubmit={true}
             onSubmitEditing={() => {
               this.refs.Password.focus();
@@ -143,31 +111,20 @@ export default class Login extends Component {
             style={Styles.phoneIcon} name="mobile-phone" />
         </View>
         <View style={Styles.txtInputView}>
-          <TextField
-            style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1 }}
+          <MyTextField
             secureTextEntry={this.state.showtxtPassword}
-            label="Password"
-            value={this.state.Password}
             tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
             textColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
             baseColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
-            fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-            labelFontSize={AppConstants.moderateScale(
-              AppConstants.FONTSIZE.FS15,
-            )}
             inputContainerStyle={{
-              paddingLeft: AppConstants.getDeviceWidth(10.93),
+              paddingLeft: AppConstants.getDeviceWidth(10.95),
               fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
             }}
-            maxLength={15}
-            autoCorrect={false}
-            autoCapitalize="none"
-            labelTextStyle={{
-              fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
-            }}
-            labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-            blurOnSubmit={true}
+            label="Password"
             ref="Password"
+            value={this.state.Password}
+            maxLength={15}
+            blurOnSubmit={true}
             onSubmitEditing={() => {
               Keyboard.dismiss;
               this.validateFields();

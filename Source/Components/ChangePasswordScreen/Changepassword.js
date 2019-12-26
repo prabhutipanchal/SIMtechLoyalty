@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Keyboard, Alert, Text, } from 'react-native';
+import { View, ScrollView, Keyboard,} from 'react-native';
 import styles from './ChangepasswordStyle';
 import * as AppConstants from '../Helper/AppConstants';
 import PwdIcon from 'react-native-vector-icons/MaterialIcons';
@@ -78,7 +78,7 @@ export default class ChangePassword extends Component {
             <View style={styles.lockiconview}>
 
               <View style={styles.txtInputView1}>
-
+                
                 <TextField
                   selectTextOnFocus={false}
                   secureTextEntry={this.state.showtxtPassword}
@@ -94,7 +94,6 @@ export default class ChangePassword extends Component {
                     AppConstants.FONTSIZE.FS15,
                   )}
                   inputContainerStyle={{
-
                     paddingLeft: AppConstants.getDeviceWidth(10.93),
                     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
                   }}
@@ -110,7 +109,6 @@ export default class ChangePassword extends Component {
                   onSubmitEditing={() => {
                     this.refs.newPwd.focus();
                   }}
-
                   onChangeText={OldPassword => this.setState({ OldPassword })}
                   returnKeyType={'next'}
                 />

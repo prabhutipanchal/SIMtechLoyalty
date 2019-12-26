@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
-import { Text, View, Keyboard, Alert } from 'react-native';
-import { TextField } from 'react-native-material-textfield';
+import { Text, View, Keyboard, } from 'react-native';
+import MyTextField from '../../CustomControls/MyTextField';
 import MyButton from '../../CustomControls/MyButton';
 import Toast, { DURATION } from 'react-native-easy-toast';
 import styles from './CommonAddDealersStyle';
@@ -48,9 +48,6 @@ export default class BankDetail extends Component {
                 DURATION.LENGTH_LONG,
             );
         }
-        // else if (this.state.IFSCCode.length != 11) {
-        //     this.refs.toast.show(AppConstants.Messages.IFSCNOLENGTH, DURATION.LENGTH_LONG);
-        // }
         else if (this.state.BankName.trim() == '') {
             this.refs.toast.show(
                 AppConstants.Messages.NOBANKNAME,
@@ -89,28 +86,13 @@ export default class BankDetail extends Component {
                     textStyle={AppConstants.CommonStyles.ToastTextStyle}
                 />
                 <View style={styles.txtInputView}>
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'default'}
-                        selectTextOnFocus={false}
-                        label="Account Name"
-                        value={this.state.AccountName}
+                    <MyTextField
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        label="Account Name"
+                        value={this.state.AccountName}
                         maxLength={20}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="words"
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -119,28 +101,15 @@ export default class BankDetail extends Component {
                         onChangeText={AccountName => this.setState({ AccountName })}
                         returnKeyType={"next"}
                     />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'phone-pad'}
-                        selectTextOnFocus={false}
-                        label="Account Number"
-                        value={this.state.AccountNumber}
+                    <MyTextField
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        keyboardType={'phone-pad'}
+                        label="Account Number"
+                        value={this.state.AccountNumber}
                         maxLength={18}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="none"
+                        // autoCapitalize="none"
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -149,28 +118,14 @@ export default class BankDetail extends Component {
                         onChangeText={AccountNumber => this.setState({ AccountNumber })}
                         returnKeyType={"next"}
                     />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'default'}
-                        selectTextOnFocus={false}
-                        label="IFSC Code"
-                        value={this.state.IFSCCode}
+                    <MyTextField
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        label="IFSC Code"
+                        value={this.state.IFSCCode}
                         maxLength={11}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize='characters'
+                        // autoCapitalize='characters'
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -179,29 +134,14 @@ export default class BankDetail extends Component {
                         onChangeText={IFSCCode => this.setState({ IFSCCode })}
                         returnKeyType={"next"}
                     />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'default'}
-                        selectTextOnFocus={false}
-                        label="Bank Name"
-                        value={this.state.BankName}
+                    <MyTextField
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        label="Bank Name"
+                        value={this.state.BankName}
                         maxLength={20}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="none"
+                        // autoCapitalize="none"
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -210,29 +150,14 @@ export default class BankDetail extends Component {
                         onChangeText={BankName => this.setState({ BankName })}
                         returnKeyType={"next"}
                     />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'default'}
-                        selectTextOnFocus={false}
-                        label="Branch"
-                        value={this.state.Branch}
+                    <MyTextField
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        label="Branch"
+                        value={this.state.Branch}
                         maxLength={15}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="none"
+                        // autoCapitalize="none"
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -241,30 +166,15 @@ export default class BankDetail extends Component {
                         onChangeText={Branch => this.setState({ Branch })}
                         returnKeyType={"next"}
                     />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'default'}
-                        selectTextOnFocus={false}
-                        label="Branch Address"
-                        multiline={true}
-                        value={this.state.BranchAddress}
+                    <MyTextField
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        label="Branch Address"
+                        multiline={true}
+                        value={this.state.BranchAddress}
                         maxLength={50}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="none"
+                        // autoCapitalize="none"
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -278,7 +188,7 @@ export default class BankDetail extends Component {
 
                     <MyButton
                         Text=" Save & Upload Documents"
-                        onPress={ this.validateFields.bind(this)}
+                        onPress={this.validateFields.bind(this)}
                     />
 
                 </View>

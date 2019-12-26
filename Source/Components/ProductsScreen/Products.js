@@ -84,7 +84,6 @@ export default class Products extends Component {
                                             placeholder="Search Product"
                                             style={styles.txtSearch}
                                             onChangeText={(text) => {
-                                                // this.SearchFilterFunction(text);
                                                 this.setState({ text })
                                             }}
                                             onKeyPress={() => this.searchClick(true)} />
@@ -108,8 +107,8 @@ export default class Products extends Component {
                             </View>
                             <View style={styles.NameView}>
                                 <TextField
-                                    selectTextOnFocus={false}
                                     label="Name"
+                                    value={this.state.Name}
                                     tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
                                     textColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                                     baseColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
@@ -119,10 +118,6 @@ export default class Products extends Component {
                                     labelFontSize={AppConstants.moderateScale(
                                         AppConstants.FONTSIZE.FS16,
                                     )}
-                                    inputContainerStyle={{
-                                        // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                                        fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                                    }}
                                     maxLength={15}
                                     autoCorrect={false}
                                     autoCapitalize="none"
@@ -132,7 +127,7 @@ export default class Products extends Component {
                                     labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
                                     style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
                                     onSubmitEditing={() => {
-                                        this.refs.newPwd.focus();
+                                        Keyboard.dismiss;
                                     }}
                                     onChangeText={Name => this.setState({ Name })}
                                     returnKeyType={'next'}
@@ -188,7 +183,6 @@ export default class Products extends Component {
                                 placeholder="Search Products"
                                 style={styles.txtSearchbarAndtxtLocation}
                                 onChangeText={(text) => {
-                                    // this.SearchFilterFunction(text);
                                     this.setState({ text })
                                 }}
                                 onKeyPress={() => this.searchClick(true)} />

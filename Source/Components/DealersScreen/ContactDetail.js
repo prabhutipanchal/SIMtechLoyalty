@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react'
-import { Text, View, Keyboard, Alert } from 'react-native'
-import { TextField } from 'react-native-material-textfield';
+import { Text, View, Keyboard, } from 'react-native'
+import MyTextField from '../../CustomControls/MyTextField';
 import MyButton from '../../CustomControls/MyButton';
 import Toast, { DURATION } from 'react-native-easy-toast';
 import styles from './CommonAddDealersStyle';
@@ -11,12 +11,9 @@ export default class ContactDetail extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            Name1: '',
-            EmailAddress1: '',
-            Mobile1: '',
-            Name2: '',
-            EmailAddress2: '',
-            Mobile2: '',
+            Name: '',
+            EmailAddress: '',
+            Mobile: '',
         }
     }
     validateEmail = (EmailAddress1) => {
@@ -70,93 +67,51 @@ export default class ContactDetail extends Component {
                         fadeOutDuration={700}
                         textStyle={AppConstants.CommonStyles.ToastTextStyle}
                     />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'default'}
-                        selectTextOnFocus={false}
-                        label="Enter Name"
-                        value={this.state.Name1}
-                        tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
+                    <MyTextField
+                        tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        label="Enter Name"
+                        value={this.state.Name}
                         maxLength={20}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="words"
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
                             this.validateFields();
                         }}
-                        onChangeText={Name1 => this.setState({ Name1 })}
+                        onChangeText={Name => this.setState({ Name })}
                         returnKeyType={"next"}
                     />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'email-address'}
-                        selectTextOnFocus={false}
-                        label="Email Address"
-                        value={this.state.EmailAddress1}
-                        tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
+                    <MyTextField
+                        tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="none"
+                        keyboardType={'email-address'}
+                        label="Email Address"
+                        value={this.state.EmailAddress}
+                        maxLength={20}
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
                             this.validateFields();
                         }}
-                        onChangeText={EmailAddress1 => this.setState({ EmailAddress1 })}
+                        onChangeText={EmailAddress => this.setState({ EmailAddress })}
                         returnKeyType={'go'}
                     />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'phone-pad'}
-                        selectTextOnFocus={false}
-                        label="Mobile"
-                        value={this.state.Mobile1}
-                        tintColor={AppConstants.COLORS.TEXTFIELDTEXT}
+                    <MyTextField
+                        tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        keyboardType={'phone-pad'}
+                        label="Mobile"
+                        value={this.state.Mobile}
                         maxLength={10}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="words"
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
                             this.validateFields();
                         }}
-                        onChangeText={Mobile1 => this.setState({ Mobile1 })}
+                        onChangeText={Mobile => this.setState({ Mobile })}
                         returnKeyType={"next"}
                     />
 

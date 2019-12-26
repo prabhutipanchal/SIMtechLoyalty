@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Text, View, Alert, Keyboard } from 'react-native'
-import { TextField } from 'react-native-material-textfield';
+import { Text, View, Keyboard } from 'react-native'
+import MyTextField from '../../CustomControls/MyTextField';
 import MyDropDown from '../../CustomControls/MyDropDown';
 import MyButton from '../../CustomControls/MyButton';
 import Toast, { DURATION } from 'react-native-easy-toast';
@@ -100,7 +100,7 @@ export default class BusinessDetail extends Component {
             },
         ];
         return (
-            <View>
+            <View style={styles.mainContainer}>
 
                 <Text style={styles.txtBusinessDetail}>Business Detail </Text>
                 <Toast
@@ -113,27 +113,13 @@ export default class BusinessDetail extends Component {
                     textStyle={AppConstants.CommonStyles.ToastTextStyle}
                 />
                 <View style={styles.txtInputView}>
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'default'}
-                        selectTextOnFocus={false}
-                        label="Legal Name"
-                        value={this.state.LegalName}
+                    <MyTextField
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        label="Legal Name"
+                        value={this.state.LegalName}
                         maxLength={20}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="words"
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -152,27 +138,14 @@ export default class BusinessDetail extends Component {
                         value={this.state.FirmType}
                         onChangeText={(FirmType) => this.setState({ FirmType })}
                         returnKeyType={"next"} />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'default'}
-                        selectTextOnFocus={false}
-                        label="GST Number"
-                        value={this.state.GstNumber}
+                    <MyTextField
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        label="GST Number"
+                        value={this.state.GstNumber}
                         maxLength={15}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize='characters'
+                        // autoCapitalize='characters'
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -181,27 +154,14 @@ export default class BusinessDetail extends Component {
                         onChangeText={GstNumber => this.setState({ GstNumber })}
                         returnKeyType={'next'}
                     />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'default'}
-                        selectTextOnFocus={false}
-                        label="PAN Number"
-                        value={this.state.PanNumber}
+                    <MyTextField
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        label="PAN Number"
+                        value={this.state.PanNumber}
                         maxLength={10}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize='characters'
+                        // autoCapitalize='characters'
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -210,6 +170,7 @@ export default class BusinessDetail extends Component {
                         onChangeText={PanNumber => this.setState({ PanNumber })}
                         returnKeyType={'next'}
                     />
+
                     <MyDropDown
                         isborderShow={false}
                         label='Partner Type'

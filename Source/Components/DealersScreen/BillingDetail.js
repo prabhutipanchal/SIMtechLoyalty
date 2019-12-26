@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { Component } from 'react';
-import { Text, View, Keyboard, Alert } from 'react-native';
-import { TextField } from 'react-native-material-textfield';
+import { Text, View, Keyboard, } from 'react-native';
+import MyTextField from '../../CustomControls/MyTextField';
 import MyDropDown from '../../CustomControls/MyDropDown';
 import MyButton from '../../CustomControls/MyButton';
 import Toast, { DURATION } from 'react-native-easy-toast';
@@ -112,30 +112,14 @@ export default class BillingDetail extends Component {
                     textStyle={AppConstants.CommonStyles.ToastTextStyle}
                 />
                 <View style={styles.txtInputView}>
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'default'}
-                        selectTextOnFocus={false}
-                        label="Address line 1"
-                        multiline={true}
-                        value={this.state.AddressLine1}
+                    <MyTextField
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        label="Address line 1"
+                        multiline={true}
+                        value={this.state.AddressLine1}
                         maxLength={50}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="words"
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -144,30 +128,14 @@ export default class BillingDetail extends Component {
                         onChangeText={AddressLine1 => this.setState({ AddressLine1 })}
                         returnKeyType={"next"}
                     />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'default'}
-                        selectTextOnFocus={false}
-                        label="Address line 2"
-                        multiline={true}
-                        value={this.state.AddressLine2}
+                    <MyTextField
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        label="Address line 2"
+                        multiline={true}
+                        value={this.state.AddressLine2}
                         maxLength={50}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="words"
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -176,29 +144,15 @@ export default class BillingDetail extends Component {
                         onChangeText={AddressLine2 => this.setState({ AddressLine2 })}
                         returnKeyType={"next"}
                     />
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'default'}
-                        selectTextOnFocus={false}
-                        label="Area"
-                        maxLength={25}
-                        value={this.state.Area}
+
+                    
+                    <MyTextField
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
-
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="words"
+                        label="Area"
+                        maxLength={25}
+                        value={this.state.Area}
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -207,6 +161,7 @@ export default class BillingDetail extends Component {
                         onChangeText={Area => this.setState({ Area })}
                         returnKeyType={"next"}
                     />
+                    
                     <MyDropDown
                         isborderShow={false}
                         label='State'
@@ -229,30 +184,14 @@ export default class BillingDetail extends Component {
                         onChangeText={(City) => this.setState({ City })}
                         returnKeyType={"next"} />
 
-
-                    <TextField
-                        style={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        keyboardType={'number-pad'}
-                        selectTextOnFocus={false}
-                        label="Post Code"
-                        value={this.state.Postcode}
+                    <MyTextField
                         tintColor={AppConstants.COLORS.TEXTFIELDBASECOLOR}
                         textColor={AppConstants.COLORS.TEXTCOLOR}
                         baseColor={AppConstants.COLORS.TEXTCOLOR}
-                        fontSize={AppConstants.moderateScale(AppConstants.FONTSIZE.FS16)}
-                        labelFontSize={AppConstants.moderateScale(
-                            AppConstants.FONTSIZE.FS16,
-                        )}
-                        inputContainerStyle={{
-
-                            // paddingLeft: AppConstants.getDeviceWidth(10.93),
-                            fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2,
-                        }}
+                        label="Post Code"
                         maxLength={6}
-                        labelTextStyle={{ fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_2 }}
-                        labelPadding={AppConstants.LEBALPEDDING.LEBALPEDDING10}
-                        autoCorrect={false}
-                        autoCapitalize="words"
+                        value={this.state.Postcode}
+                        keyboardType={'number-pad'}
                         blurOnSubmit={true}
                         onSubmitEditing={() => {
                             Keyboard.dismiss;
@@ -261,6 +200,8 @@ export default class BillingDetail extends Component {
                         onChangeText={Postcode => this.setState({ Postcode })}
                         returnKeyType={'go'}
                     />
+
+                    
 
                 </View>
                 <View style={styles.btnAddBillingAddress}>

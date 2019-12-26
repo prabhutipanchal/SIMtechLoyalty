@@ -30,8 +30,8 @@ export default {
   },
   phoneIcon: {
     position: 'absolute',
-    top: AppConstants.getDeviceHeight(5),
-    left: AppConstants.getDeviceHeight(1),
+    top: AppConstants.getDeviceHeight(6),
+    left: AppConstants.getDeviceHeight(1.5),
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS22),
     color: AppConstants.COLORS.APPTHEME,
   },

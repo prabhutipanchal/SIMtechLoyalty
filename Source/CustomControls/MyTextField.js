@@ -38,10 +38,11 @@ export default class MyTextInput extends Component {
                 selectTextOnFocus={this.props.selectTextOnFocus}
                 secureTextEntry={this.props.secureTextEntry}
                 label={this.props.label}
-                style={this.props.isbordershow == true ? [this.styles.Common, this.props.style] : this.props.isbordershow == false ? [this.styles.Common1, this.props.style] : this.props.style}
+                //style={this.props.isbordershow == true ? [this.styles.Common, this.props.style] : this.props.isbordershow == false ? [this.styles.Common1, this.props.style] : this.props.style}
+                containerStyle={this.props.isbordershow == true ? [this.styles.Common, this.props.style] : this.props.isbordershow == false ? [this.styles.Common1, this.props.style] : this.props.style}
                 maxLength={this.props.maxLength}
                 minLength={this.props.minLength}
-                // ref={'textInput'}
+                ref={'TextField'}
                 blurOnSubmit={this.props.blurOnSubmit}
                 returnKeyType={this.props.returnKeyType}
                 onSubmitEditing={this.props.onSubmitEditing}
@@ -53,5 +54,5 @@ export default class MyTextInput extends Component {
     }
 }
 MyTextInput.defaultProps = {
-    isbordershow: false,
+    isbordershow: true,
 }
