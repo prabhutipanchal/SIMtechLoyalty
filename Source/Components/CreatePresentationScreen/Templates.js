@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Text, View,FlatList } from 'react-native'
-import ThumbIcon from 'react-native-vector-icons/FontAwesome';
+import React, { Component } from 'react';
+import { Text, View, FlatList } from 'react-native';
+import MyCard from '../../CustomControls/MyCard';
 import * as AppConstants from '../Helper/AppConstants';
 import Styles from './TemplatesStyle';
 
@@ -51,8 +51,8 @@ export default class Templates extends Component {
                     data={this.state.FlatListItems}
                     ItemSeparatorComponent={this.FlatListItemSeparator}
                     renderItem={({ item }) =>
-
-                        <View style={Styles.mainCardView}>
+                        // <View style={Styles.mainCardView}>
+                        <MyCard>
                             <View style={Styles.TemplateViewstyle}>
                                 <Text style={Styles.txtname}>{item.name}</Text>
                             </View>
@@ -64,8 +64,9 @@ export default class Templates extends Component {
                             <View style={Styles.TemplateViewstyle}>
                                 <Text style={Styles.txtReports}>{item.Reports} </Text>
                             </View>
+                            {/* </View> */}
+                        </MyCard>
 
-                        </View>
                     }
                 />
             </View>

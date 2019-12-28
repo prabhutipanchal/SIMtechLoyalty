@@ -3,6 +3,7 @@ import { Text, View, FlatList, TouchableOpacity, Modal, Picker, TextInput, Keybo
 import styles from './ProductsStyle';
 import FilterIcon from 'react-native-vector-icons/AntDesign';
 import { TextField } from 'react-native-material-textfield';
+import MyCard from '../../CustomControls/MyCard';
 import * as AppConstants from '../Helper/AppConstants';
 import Slider from '@react-native-community/slider';
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
@@ -45,7 +46,7 @@ export default class Products extends Component {
 
         }
     }
-    updateUser = (category) => {
+    updateCategory = (category) => {
         this.setState({ category: category })
 
     }
@@ -66,43 +67,44 @@ export default class Products extends Component {
     render() {
         const { navigate } = this.props.navigation;
         return (
+            /*Inside Modal Style*/
             <View style={styles.mainContainer}>
                 <Modal visible={this.state.modalVisible}
                     transparent={true}
                     presentationStyle={'overFullScreen'}>
-                    <View style={styles.modalcontainerView}>
-                        <View style={styles.modalMainView}>
-                            <View style={styles.searchbarFilterMainView}>
-                                <View style={styles.searchbarView}>
-                                    <View style={styles.SearchIconView}>
+                    <View style={styles.InsideSearchModalPopupView}>
+                        <View style={styles.SearchModalPopupInsideView}>
+                            <View style={styles.SearchbarFilterPopupView}>
+                                <View style={styles.BothSearchbarView}>
+                                    <View style={styles.BothSearchIconView}>
                                         <MaterialIcons name="search"
-                                            style={styles.SearchIconStyle} />
+                                            style={styles.BothSearchIconStyle} />
                                     </View>
-                                    <View style={styles.SearchTextView}>
+                                    <View style={styles.BothSearchProductTextView}>
                                         <TextInput
                                             value={this.state.text}
                                             placeholder="Search Product"
-                                            style={styles.txtSearch}
+                                            style={styles.txtSearchProduct}
                                             onChangeText={(text) => {
                                                 this.setState({ text })
                                             }}
                                             onKeyPress={() => this.searchClick(true)} />
                                     </View>
-                                    <View style={styles.SearchCancelIconView}>
+                                    <View style={styles.BothSearchCancelIconView}>
                                         {
                                             this.state.searchBarFocused && this.state.text != '' ?
                                                 <TouchableOpacity activeOpacity={0.9} onPress={() => this.clearText()}>
                                                     <MaterialIcons name="close"
-                                                        style={styles.SearchCancelIconStyle} /></TouchableOpacity> : null
+                                                        style={styles.BothSearchCancelIconStyle} /></TouchableOpacity> : null
                                         }
                                     </View>
                                 </View>
-                                <View style={styles.filterView}>
+                                <View style={styles.BothFilterIconView}>
                                     <FilterIcon name="filter"
-                                        style={styles.filiterModalIconStyle} />
+                                        style={styles.InsideFiliterModalIconStyle} />
                                 </View>
                             </View>
-                            <View style={styles.sliderView}>
+                            <View style={styles.FilterProductByView}>
                                 <Text style={styles.txtFiliterProductBy}>Filter Product by</Text>
                             </View>
                             <View style={styles.NameView}>
@@ -133,17 +135,17 @@ export default class Products extends Component {
                                     returnKeyType={'next'}
                                 />
                             </View>
-                            <View style={styles.PickerView}>
+                            <View style={styles.CategoryPickerView}>
                                 <Picker
-                                    style={styles.PickerStyle}
-                                    selectedValue={this.state.category} onValueChange={this.updateUser}>
+                                    style={styles.CategoryPickerStyle}
+                                    selectedValue={this.state.category} onValueChange={this.updateCategory}>
                                     <Picker.Item label="Category" value="Category" />
                                     <Picker.Item label="Category1" value="Category1" />
                                     <Picker.Item label="Category2" value="Category2" />
 
                                 </Picker>
                             </View>
-                            <View style={styles.sliderView}>
+                            <View style={styles.PriceSliderView}>
                                 <Text style={styles.txtsliderprice}>Price</Text>
                                 <Text style={styles.txtslidervalue}>{'\u20B9'}{parseInt(this.state.sliderval)}</Text>
                             </View>
@@ -157,7 +159,7 @@ export default class Products extends Component {
                                 thumbTintColor={AppConstants.COLORS.APPTHEME}
                             />
 
-                            <View style={styles.sliderView}>
+                            <View style={styles.PriceSliderView}>
                                 <Text style={styles.txtminvalue}>{this.state.sliderminimumval}</Text>
                                 <Text style={styles.txtmaxvalue}>{this.state.slidermaximumval}</Text>
                             </View>
@@ -171,36 +173,35 @@ export default class Products extends Component {
                     </View>
                 </Modal>
 
-                <View style={styles.searchbarMainView}>
-                    <View style={styles.searchbarView}>
-                        <View style={styles.SearchIconView}>
+                <View style={styles.OutsideSearchbarView}>
+                    <View style={styles.BothSearchbarView}>
+                        <View style={styles.BothSearchIconView}>
                             <MaterialIcons name="search"
-                                style={styles.SearchIconStyle} />
+                                style={styles.BothSearchIconStyle} />
                         </View>
-                        <View style={styles.SearchTextView}>
+                        <View style={styles.BothSearchProductTextView}>
                             <TextInput
                                 value={this.state.text}
                                 placeholder="Search Products"
-                                style={styles.txtSearchbarAndtxtLocation}
                                 onChangeText={(text) => {
                                     this.setState({ text })
                                 }}
                                 onKeyPress={() => this.searchClick(true)} />
                         </View>
-                        <View style={styles.SearchCancelIconView}>
+                        <View style={styles.BothSearchCancelIconView}>
                             {
                                 this.state.searchBarFocused && this.state.text != '' ?
                                     <TouchableOpacity activeOpacity={0.9} onPress={() => this.clearText()}>
                                         <MaterialIcons name="close"
-                                            style={styles.SearchCancelIconStyle} />
+                                            style={styles.BothSearchCancelIconStyle} />
                                     </TouchableOpacity> : null
                             }
                         </View>
                     </View>
-                    <View style={styles.filterView}>
+                    <View style={styles.BothFilterIconView}>
                         <TouchableOpacity onPress={() => this.setState({ modalVisible: true })}>
                             <FilterIcon name="filter"
-                                style={styles.filiterIconStyle} />
+                                style={styles.OutsideFiliterIconStyle} />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -208,40 +209,41 @@ export default class Products extends Component {
                 <FlatList
                     data={this.state.FlatListItems}
                     ItemSeparatorComponent={this.FlatListItemSeparator}
-
                     renderItem={({ item }) =>
 
-                        <TouchableOpacity style={styles.mainCardView} activeOpacity={0.9}
-                            onPress={() => this.props.navigation.navigate(AppConstants.SCREENS.PRODUCTDETAIL, { Name: item.Productname })}
+                        <TouchableOpacity
+                            activeOpacity={0.9}
+                            onPress={() => this.props.navigation.navigate(AppConstants.SCREENS.PRODUCTDETAIL,
+                                { Name: item.Productname })}
                         >
+                            <MyCard>
+                                <View style={styles.SalesNoView}>
+                                    <Text style={styles.txtSalesNo}>SKU#4255</Text>
+                                </View>
 
-                            <View style={styles.SalesNoView}>
-                                <Text style={styles.txtSalesNo}>SKU#4255</Text>
-                            </View>
+                                <View style={styles.ProductAndDescriptionView}>
+                                    <Text style={styles.txtproductName}>{item.Productname}</Text>
+                                </View>
 
-                            <View style={styles.Container}>
-                                <Text style={styles.txtproductName}>{item.Productname}</Text>
-                            </View>
+                                <View style={styles.ProductAndDescriptionView}>
+                                    <Text style={styles.txtDescription}>{item.Description}</Text>
+                                </View>
 
-                            <View style={styles.Container}>
-                                <Text style={styles.txtDescription}>{item.Description}</Text>
-                            </View>
+                                <View style={styles.ProductTypeView}>
+                                    <Text style={styles.txtProductType}>{item.ProductType} </Text>
+                                </View>
 
-                            <View style={styles.ProductTypeView}>
-                                <Text style={styles.txtproductType}>{item.ProductType} </Text>
-                            </View>
-
-                            <View style={styles.SalesViewStyle}>
-                                <TouchableOpacity activeOpacity={0.9} style={styles.TouchSalesButton}>
-                                    <Text style={styles.txtSales}>Sales </Text>
-                                    <Text style={styles.txtamount}>12,655</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity activeOpacity={0.9} style={styles.TouchPriceButton}>
-                                    <Text style={styles.txtPrice}>Price </Text>
-                                    <Text style={styles.txtRupees}> {'\u20B9'}699</Text>
-                                </TouchableOpacity>
-                            </View>
-
+                                <View style={styles.SalesView}>
+                                    <TouchableOpacity activeOpacity={0.9} style={styles.TouchSalesButton}>
+                                        <Text style={styles.txtSales}>Sales </Text>
+                                        <Text style={styles.txtamount}>12,655</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity activeOpacity={0.9} style={styles.TouchPriceButton}>
+                                        <Text style={styles.txtPrice}>Price </Text>
+                                        <Text style={styles.txtRupees}> {'\u20B9'}699</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </MyCard>
                         </TouchableOpacity>
                     }
                 />

@@ -14,7 +14,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import CloseIcon from 'react-native-vector-icons/Entypo';
 import RadioButtonIcon from 'react-native-vector-icons/Ionicons';
 // import CloseIcon1 from 'react-native-vector-icons/FontAwesome';
-import CloseIcon1 from 'react-native-vector-icons/MaterialCommunityIcons';
+import SelectIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 const Images = {
     Imgreferearn: 'imgreferearn',
 
@@ -183,12 +183,12 @@ export default class New extends Component {
     renderItem = ({ item, index }) => {
         const value = this.state.selectedItem == index ? 'check-circle' : 'checkbox-blank-circle-outline'
         return (
-            <View style={styles.mainCardView} >
+            <View style={styles.AddReportModalView} >
                 <Text style={styles.txtTarget}>{item.TargetAchivements}</Text>
                 <TouchableOpacity
                     onPress={() => this.onPressList(index, item.id)}
                 >
-                    <CloseIcon1
+                    <SelectIcon
                         name={value}
                         size={AppConstants.getDeviceWidth(6)} color={AppConstants.COLORS.EDITBUTTON}
                     />
@@ -199,12 +199,12 @@ export default class New extends Component {
     renderItemImage = ({ item, index }) => {
         const value = this.state.selectedItem == index ? 'check-circle' : 'checkbox-blank-circle-outline'
         return (
-            <View style={styles.SecondFlatListView}>
+            <View style={styles.SelectDesignLayoutsCardView}>
                 {item.image}
 
-                <TouchableOpacity style={styles.SelectView} onPress={() => this.onPressList(index, item.id)} >
+                <TouchableOpacity style={styles.SelectIconView} onPress={() => this.onPressList(index, item.id)} >
                     {/* {item.icon} */}
-                    <CloseIcon1
+                    <SelectIcon
                         name={value}
                         // name='checkbox-blank-circle-outline'
                         size={AppConstants.getDeviceWidth(6)} color={AppConstants.COLORS.EDITBUTTON}
@@ -235,9 +235,9 @@ export default class New extends Component {
     renderItemforReport1 = ({ item, index }) => {
         return (
             <View
-                style={styles.CardView}
+                style={styles.PayoutReportsCardView}
                 activeOpacity={0.9} >
-                <Text style={styles.txtPayout}>{item.title}</Text>
+                <Text style={styles.txtPayoutReports}>{item.title}</Text>
                 <TouchableOpacity onPress={() => this.onPressListReport1(index, item.id)} >
                     <Icon
                         name={'closecircle'}
@@ -282,10 +282,10 @@ export default class New extends Component {
                     transparent={true}
                     presentationStyle={'overFullScreen'}>
 
-                    <View style={styles.modalcontainerView}>
-                        <View style={styles.modalMainView}>
+                    <View style={styles.AddReportModalContainerView}>
+                        <View style={styles.AddReportModalCardView}>
                             <TouchableOpacity onPress={() => this.setState({ modalVisible: false })}
-                                style={styles.CloseView}>
+                                style={styles.CloseIcon}>
                                 <CloseIcon name="cross"
                                     size={AppConstants.getDeviceWidth(12)} color={AppConstants.COLORS.TEXTCOLOR}
                                     onPress={() => this.setState({ modalVisible: false })} />
@@ -369,15 +369,15 @@ export default class New extends Component {
                             value={this.state.Quarter}
                             onChangeText={(Quarter) => this.setState({ Quarter })}
                             returnKeyType={"next"} />
-
                     </View>
+
                     <View style={styles.btnDesignPresentationView}>
                         <Modal visible={this.state.modalVisible1}
                             transparent={false}
                             presentationStyle={'overFullScreen'}>
-                            <View style={styles.SecondmodalcontainerView}>
 
-                                <View style={styles.SecondmodalMainView}>
+                            <View style={styles.SelectDesignModalContainerView}>
+                                <View style={styles.SelectDesignModalCardView}>
 
                                     <Text style={styles.txtselectDesign}>Select Design Layouts</Text>
 
@@ -410,8 +410,12 @@ export default class New extends Component {
                             <Text style={styles.txtReports}>Reports</Text>
                             <Text style={styles.txtDescription}>Select & Arrange Reports you wanted in presentation</Text>
                         </View>
-                        <TouchableOpacity style={{ justifyContent: 'flex-end' }} activeOpacity={0.9} onPress={() => this.setState({ modalVisible: true })}>
-                            <Icon name="pluscircle" size={AppConstants.getDeviceWidth(10)} color={AppConstants.COLORS.APPTHEME} />
+                        <TouchableOpacity 
+                        style={{ justifyContent: 'flex-end' }} 
+                        activeOpacity={0.9} 
+                        onPress={() => this.setState({ modalVisible: true })}>
+                            <Icon name="pluscircle" size={AppConstants.getDeviceWidth(10)} 
+                            color={AppConstants.COLORS.APPTHEME} />
                         </TouchableOpacity>
                     </View>
 
@@ -441,7 +445,7 @@ export default class New extends Component {
                         />
                     </TouchableOpacity> */}
 
-                    <View style={styles.ButtonView}>
+                    <View style={styles.SaveTemplateButtonView}>
                         <TouchableOpacity
                             activeOpacity={0.9}
                             style={styles.SaveTemplateViewCode}>

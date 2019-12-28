@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { Text, View, Image,FlatList, StatusBar } from 'react-native'
+import { Text, View, Image, FlatList, StatusBar } from 'react-native'
 import styles from './BestPerformersStyle';
 import * as AppConstants from '../Helper/AppConstants';
 import SplashScreen from 'react-native-splash-screen';
 import MyButton from '../../CustomControls/MyButton';
+import MyCard from '../../CustomControls/MyCard';
 const Images = {
     BestPerform: 'bestperfomimg',
 };
@@ -64,9 +65,9 @@ export default class BestPerformers extends Component {
                         data={this.state.FlatListItems}
                         ItemSeparatorComponent={this.FlatListItemSeparator}
                         renderItem={({ item }) =>
-                            <View
-                                // onPress={() => this.props.navigation.replace(AppConstants.SCREENS.DASHBOARD)} 
-                                style={styles.mainCardView}>
+                            <MyCard
+                            // onPress={() => this.props.navigation.replace(AppConstants.SCREENS.DASHBOARD)} 
+                            >
                                 <View style={styles.ImagePhotoView}>
                                     <Image
                                         resizeMode={'contain'}
@@ -93,9 +94,10 @@ export default class BestPerformers extends Component {
                                     <Text style={styles.txtTotalSales}>{item.TotalSales} </Text>
                                     <Text style={styles.txtAmount}>12,655</Text>
                                 </View>
-                            </View>
+                            </MyCard>
                         }
                     />
+
                     <View style={styles.btnsigninView}>
                         <MyButton
                             Text="Continue to Dashboard"

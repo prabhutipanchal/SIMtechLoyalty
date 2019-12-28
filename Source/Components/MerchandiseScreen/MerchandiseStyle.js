@@ -8,20 +8,6 @@ export default {
         flexDirection: 'row',
         justifyContent: 'space-evenly',
     },
-    mainCardView: {
-        backgroundColor: AppConstants.COLORS.WHITE,
-        borderColor: AppConstants.COLORS.TEXTFIELDBASECOLOR,
-        borderRadius: AppConstants.getDeviceHeight(1),
-        shadowColor: AppConstants.COLORS.TEXTFIELDBASECOLOR, // IOS
-        shadowOffset: { height: 1, width: 1 }, // IOS
-        shadowOpacity: 1, // IOS
-        shadowRadius: 1, //IOS
-        elevation: 5,
-        paddingTop: AppConstants.getDeviceHeight(2.85),
-        paddingBottom: AppConstants.getDeviceHeight(2.85),
-        width: AppConstants.getDeviceWidth(41.87),
-        justifyContent: 'center',
-    },
     ImgCommonStyle: {
         height: AppConstants.getDeviceHeight(7),
         width: AppConstants.getDeviceWidth(12),
@@ -29,6 +15,14 @@ export default {
     },
     txtTitleCommonStyle: {
         marginTop: AppConstants.getDeviceHeight(1),
+        color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
+        fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
+        fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
+        textAlign: 'center'
+    },
+    txtMenAccessories: {
+        marginTop: AppConstants.getDeviceHeight(1),
+        marginBottom: AppConstants.getDeviceHeight(2.4),
         color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
         fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
         fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),

@@ -33,7 +33,7 @@ export default {
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
 
   },
-  CardView: {
+  PayoutReportsCardView: {
     backgroundColor: AppConstants.COLORS.WHITE,
     borderRadius: AppConstants.getDeviceHeight(1),
     shadowColor: AppConstants.COLORS.BORDERCOLOR, // IOS
@@ -50,9 +50,8 @@ export default {
     paddingHorizontal: AppConstants.getDeviceWidth(3),
     flexDirection: 'row',
     marginBottom: AppConstants.getDeviceHeight(1),
-
   },
-  txtPayout: {
+  txtPayoutReports: {
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
@@ -70,7 +69,7 @@ export default {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
     marginLeft: AppConstants.getDeviceWidth(4),
   },
-  ButtonView: {
+  SaveTemplateButtonView: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
@@ -116,14 +115,14 @@ export default {
     textAlign: 'center',
     color: AppConstants.COLORS.WHITE,
   },
-  //modal
-  modalcontainerView: {
+  //Add Report Modal Design
+  AddReportModalContainerView: {
     backgroundColor: AppConstants.COLORS.MODALBACKGROUNDCOLOR,
     alignItems: 'center',
     flex: 1,
     justifyContent: 'center'
   },
-  modalMainView: {
+  AddReportModalCardView: {
     shadowColor: AppConstants.COLORS.BORDERCOLOR, // IOS
     shadowOffset: { height: 1, width: 1 }, // IOS
     shadowOpacity: 1, // IOS
@@ -142,7 +141,6 @@ export default {
     marginTop: AppConstants.getDeviceHeight(2),
     paddingBottom: AppConstants.getDeviceHeight(3),
     paddingLeft: AppConstants.getDeviceHeight(3),
-
   },
   ApplyButton: {
     flexDirection: 'row',
@@ -161,9 +159,9 @@ export default {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
   },
 
-  //FlatList Design
-
-  mainCardView: {
+ 
+//AddReport Popup Design
+  AddReportModalView: {
     backgroundColor: AppConstants.COLORS.WHITE,
     borderRadius: AppConstants.getDeviceHeight(1),
     flexDirection: 'row',
@@ -177,11 +175,10 @@ export default {
     color: AppConstants.COLORS.TEXTCOLOR,
     paddingBottom: AppConstants.getDeviceHeight(3),
     paddingLeft: AppConstants.getDeviceHeight(2),
-
   },
 
-  //close Design
-  CloseView: {
+  //Add Report Modal close Icon Design
+  CloseIcon: {
     borderWidth: 1,
     borderColor: 'rgba(0,0,0,0.2)',
     alignItems: 'center',
@@ -194,9 +191,7 @@ export default {
     backgroundColor: '#fff',
     borderRadius: 100,
   },
-  SelectView: {
-    // borderWidth: 1,
-    // borderColor: 'rgba(0,0,0,0.2)',
+  SelectIconView: {
     alignItems: 'center',
     justifyContent: 'center',
     width: AppConstants.getDeviceHeight(5),
@@ -207,15 +202,15 @@ export default {
     backgroundColor: '#fff',
     borderRadius: 100,
   },
-  //Modal2 Design
-  SecondmodalcontainerView: {
+  //Select Design Layout Modal Design
+  SelectDesignModalContainerView: {
     backgroundColor: AppConstants.COLORS.MODALBACKGROUNDCOLOR,
     alignItems: 'center',
     flex: 1,
     justifyContent: 'center'
   },
 
-  SecondmodalMainView: {
+  SelectDesignModalCardView: {
     alignSelf: 'center',
     // height: AppConstants.getDeviceHeight(100),
     width: AppConstants.getDeviceWidth(90),
@@ -232,7 +227,7 @@ export default {
     marginTop: AppConstants.getDeviceHeight(2),
     paddingLeft: AppConstants.getDeviceHeight(3),
   },
-  SecondFlatListView: {
+  SelectDesignLayoutsCardView: {
     shadowColor: AppConstants.COLORS.BORDERCOLOR, // IOS
     shadowOffset: { height: 1, width: 1 }, // IOS
     shadowOpacity: 1, // IOS

@@ -4,13 +4,13 @@ export default {
     flex: 1,
     // backgroundColor: '#E4EEFF',
   },
-  modalcontainerView: {
+  InsideSearchModalPopupView: {
     backgroundColor: AppConstants.COLORS.MODALBACKGROUNDCOLOR,
     alignItems: 'center',
     flex: 1,
     justifyContent: 'center'
   },
-  modalMainView: {
+  SearchModalPopupInsideView: {
     shadowColor: AppConstants.COLORS.BORDERCOLOR, // IOS
     shadowOffset: { height: 1, width: 1 }, // IOS
     shadowOpacity: 1, // IOS
@@ -23,7 +23,7 @@ export default {
     backgroundColor: AppConstants.COLORS.WHITE,
     borderRadius: AppConstants.getDeviceHeight(1),
   },
-  searchbarFilterMainView: {
+  SearchbarFilterPopupView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignSelf: 'center',
@@ -35,21 +35,21 @@ export default {
     borderTopLeftRadius: AppConstants.getDeviceHeight(1),
   },
 
-  SearchIconView: {
+  BothSearchIconView: {
     justifyContent: 'center',
     alignItems: 'flex-end',
     width: AppConstants.getDeviceWidth(14),
   },
-  SearchIconStyle: {
+  BothSearchIconStyle: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS25),
     color: AppConstants.COLORS.LIGHTGRAY,
   },
-  txtSearch: {
+  txtSearchProduct: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
   },
-  SearchCancelIconView: {
+  BothSearchCancelIconView: {
     width: AppConstants.getDeviceWidth(12),
     justifyContent: 'center',
     borderRightWidth: AppConstants.getDeviceHeight(0.2),
@@ -57,26 +57,22 @@ export default {
     marginTop: AppConstants.getDeviceHeight(0.9),
     marginBottom: AppConstants.getDeviceHeight(0.9),
   },
-  SearchCancelIconStyle: {
+  BothSearchCancelIconStyle: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS25),
     color: AppConstants.COLORS.GOOGLE_BUTTON,
   },
-  filterView: {
+  BothFilterIconView: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
     alignSelf: 'center',
     paddingRight: AppConstants.getDeviceWidth(3),
   },
-  filiterIconStyle: {
-    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS22),
-    color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
-  },
-  filiterModalIconStyle: {
+  InsideFiliterModalIconStyle: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS22),
     color: AppConstants.COLORS.APPTHEME,
   },
-  sliderView: {
+  FilterProductByView: {
     alignSelf: 'center',
     width: AppConstants.getDeviceWidth(78),
     flexDirection: 'row',
@@ -93,18 +89,24 @@ export default {
     width: AppConstants.getDeviceWidth(80),
     alignSelf: 'center'
   },
-  PickerView: {
+  CategoryPickerView: {
     alignSelf: 'center',
     width: AppConstants.getDeviceWidth(84),
     borderBottomWidth: AppConstants.getDeviceHeight(0.2),
     borderBottomColor: AppConstants.COLORS.DROPDOWNBORDERBOTTOMCOLOR,
-
   },
-  PickerStyle: {
+  CategoryPickerStyle: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
   },
-
+  PriceSliderView: {
+    alignSelf: 'center',
+    width: AppConstants.getDeviceWidth(78),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: AppConstants.getDeviceHeight(1),
+    marginBottom: AppConstants.getDeviceHeight(1),
+  },
   txtsliderprice: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
@@ -137,7 +139,9 @@ export default {
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS16),
   },
-  searchbarMainView: {
+  //Above is Insiside Modal Style and Below Style is Outside Modal Style
+
+  OutsideSearchbarView: {
     marginTop: AppConstants.getDeviceHeight(1),
     shadowColor: AppConstants.COLORS.BORDERCOLOR, // IOS
     shadowOffset: { height: 1, width: 1 }, // IOS
@@ -153,28 +157,17 @@ export default {
     borderRadius: AppConstants.getDeviceHeight(1),
     borderWidth: AppConstants.getDeviceHeight(0.1),
   },
-  SearchTextView: {
+  BothSearchProductTextView: {
     justifyContent: 'center',
     width: AppConstants.getDeviceWidth(51.93),
-   
   },
-  searchbarView: {
+  BothSearchbarView: {
     flexDirection: 'row',
     width: AppConstants.getDeviceWidth(47.93),
   },
-  mainCardView: {
-    backgroundColor: AppConstants.COLORS.WHITE,
-    borderRadius: AppConstants.getDeviceHeight(1),
-    shadowColor: AppConstants.COLORS.BORDERCOLOR, // IOS
-    shadowOffset: { height: 1, width: 1 }, // IOS
-    shadowOpacity: 1, // IOS
-    shadowRadius: 1, //IOS
-    elevation: 5,
-    paddingTop: AppConstants.getDeviceHeight(2.85),
-    marginTop: AppConstants.getDeviceHeight(2),
-    marginBottom: AppConstants.getDeviceHeight(2),
-    alignSelf: 'center',
-    width: AppConstants.getDeviceWidth(89.33),
+  OutsideFiliterIconStyle: {
+    fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS22),
+    color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
   },
   SalesNoView: {
     width: AppConstants.getDeviceWidth(23),
@@ -192,7 +185,7 @@ export default {
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS12),
   },
-  Container: {
+  ProductAndDescriptionView: {
     flexDirection: 'row',
     width: AppConstants.getDeviceWidth(78),
     alignSelf: 'center',
@@ -215,13 +208,13 @@ export default {
     marginTop: AppConstants.getDeviceHeight(1.48),
     marginBottom: AppConstants.getDeviceHeight(1.48),
   },
-  txtproductType: {
+  txtProductType: {
     fontFamily: AppConstants.FONTFAMILY.FONT_FAMILY_1,
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
     color: AppConstants.COLORS.TEXTFIELDBASECOLOR,
-   
+
   },
-  SalesViewStyle: {
+  SalesView: {
     flexDirection: 'row',
     width: AppConstants.getDeviceWidth(89.33),
     borderTopColor: AppConstants.COLORS.TOPBORDERCOLOR,
@@ -236,7 +229,6 @@ export default {
     borderColor: AppConstants.COLORS.TOPBORDERCOLOR,
     marginTop: AppConstants.getDeviceHeight(1),
     marginBottom: AppConstants.getDeviceHeight(1),
-   
   },
   txtSales: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),
@@ -253,7 +245,6 @@ export default {
     justifyContent: 'center',
     marginTop: AppConstants.getDeviceHeight(1),
     marginBottom: AppConstants.getDeviceHeight(1),
-
   },
   txtPrice: {
     fontSize: AppConstants.moderateScale(AppConstants.FONTSIZE.FS14),

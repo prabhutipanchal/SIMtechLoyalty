@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
-import { Text, View, FlatList, TouchableOpacity, Image } from 'react-native'
+import React, { Component } from 'react';
+import { Text, View, FlatList, TouchableOpacity, Image } from 'react-native';
 import styles from './MerchandiseProductStyle';
 import * as AppConstants from '../Helper/AppConstants';
+import MyCard from '../../CustomControls/MyCard';
 const Images = {
     Iconcoupon: 'iconcoupon',
-    Iconelectronics: 'iconelectronics',
+    Electronics: 'electronics',
     Iconmenacc: 'iconmenacc',
     Iconwomenacc: 'iconwomenacc',
     Iconstationary: 'iconstationary',
@@ -81,17 +82,17 @@ export default class MerchandiseProduct extends Component {
                     data={this.state.FlatListItems}
                     ItemSeparatorComponent={this.FlatListItemSeparator}
                     renderItem={({ item }) =>
-                        <View style={styles.mainCardView}>
+                        <MyCard isflexrow={3}>
                             <View>
                                 <TouchableOpacity onPress={() => navigate(AppConstants.SCREENS.PRODUCTDETAIL, { Name:item.ProductName,Type:item.ProductType })}>
-                                    <Image resizeMode='contain' source={{ uri: Images.Iconelectronics }} style={styles.Productimg}>
+                                    <Image resizeMode='contain' source={{ uri: Images.Electronics }} style={styles.Productimg}>
                                     </Image>
                                 </TouchableOpacity>
 
                                 <Text style={styles.txtProductName}>{item.ProductName}</Text>
                                 <Text style={styles.txtpoints}>{item.points} </Text>
                             </View>
-                        </View>
+                        </MyCard>
                     }
                 />
             </View>

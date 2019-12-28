@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, FlatList } from 'react-native';
 import ThumbIcon from 'react-native-vector-icons/FontAwesome';
+import MyCard from '../../CustomControls/MyCard';
 import * as AppConstants from '../Helper/AppConstants';
 import Styles from './NotificationStyle';
 
@@ -52,7 +53,7 @@ export default class Notification extends Component {
                     ItemSeparatorComponent={this.FlatListItemSeparator}
                     renderItem={({ item }) =>
 
-                        <View style={Styles.mainCardView}>
+                        <MyCard isflexrow={4}>
                             <View style={Styles.NotificationViewstyle}>
                                 <ThumbIcon style={Styles.ThumbIconstyle} name="thumbs-up" />
                                 <Text style={Styles.txttitle}>{item.name}</Text>
@@ -66,7 +67,7 @@ export default class Notification extends Component {
                                 <Text style={Styles.txttime}>{item.time} </Text>
                             </View>
 
-                        </View>
+                        </MyCard>
                     }
                 />
             </View>

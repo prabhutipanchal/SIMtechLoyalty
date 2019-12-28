@@ -8,20 +8,6 @@ export default {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
-  mainCardView: {
-    backgroundColor: AppConstants.COLORS.WHITE,
-    borderRadius: AppConstants.getDeviceHeight(1),
-    shadowColor: AppConstants.COLORS.BORDERCOLOR, // IOS
-    shadowOffset: { height: 1, width: 1 }, // IOS
-    shadowOpacity: 1, // IOS
-    shadowRadius: 1, //IOS
-    elevation: 5,
-    paddingTop: AppConstants.getDeviceHeight(2.85),
-    marginTop: AppConstants.getDeviceHeight(2),
-    marginBottom: AppConstants.getDeviceHeight(2),
-    alignSelf: 'center',
-    width: AppConstants.getDeviceWidth(89.33),
-  },
   DealerTypeView: {
     width: AppConstants.getDeviceWidth(23),
     borderBottomLeftRadius: AppConstants.getDeviceHeight(1),

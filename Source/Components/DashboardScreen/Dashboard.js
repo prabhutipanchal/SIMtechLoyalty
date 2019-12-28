@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { View, Text, StatusBar, TouchableOpacity, Image } from 'react-native';
 import * as AppConstants from '../Helper/AppConstants';
 import Styles from './DashboardStyle';
+import MyCard from '../../CustomControls/MyCard';
 // import SplashScreen from 'react-native-splash-screen';
 const Images = {
   Target: 'target',
@@ -34,53 +35,74 @@ export default class Dashboard extends Component {
         />
         <View style={Styles.Container}>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.Target }} style={Styles.ImgCommonStyle}></Image>
-            <Text style={Styles.txtTitleCommonStyle}>Target V/S Achivements </Text>
+          <TouchableOpacity
+            activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+            <MyCard isflexrow={0}>
+              <Image resizeMode='contain' source={{ uri: Images.Target }} style={Styles.ImgCommonStyle}></Image>
+              <Text style={Styles.txtTitleCommonStyle}>Target V/S Achivements </Text>
+            </MyCard>
           </TouchableOpacity>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9}  onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.PayoutReport }} style={Styles.ImgCommonStyle}></Image>
-            <Text style={Styles.txtTitleCommonStyle}> Payout Reports </Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={Styles.Container}>
-
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.Scheme }} style={Styles.ImgCommonStyle}></Image>
-            <Text style={Styles.txtTitleCommonStyle}>Scheme Performance</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.ProductPerformance }} style={Styles.ImgCommonStyle}></Image>
-            <Text style={Styles.txtTitleCommonStyle}> Product Performance</Text>
+          <TouchableOpacity
+            activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+            <MyCard isflexrow={0}>
+              <Image resizeMode='contain' source={{ uri: Images.PayoutReport }} style={Styles.ImgCommonStyle}></Image>
+              <Text style={Styles.txtPayoutSalesAnalysisCommon}>Payout Reports </Text>
+            </MyCard>
           </TouchableOpacity>
         </View>
 
         <View style={Styles.Container}>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.Distribution }} style={Styles.ImgCommonStyle}></Image>
-            <Text style={Styles.txtTitleCommonStyle}> Distribution Activity</Text>
+          <TouchableOpacity
+            activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+            <MyCard isflexrow={0}>
+              <Image resizeMode='contain' source={{ uri: Images.Scheme }} style={Styles.ImgCommonStyle}></Image>
+              <Text style={Styles.txtTitleCommonStyle}>Scheme Performance</Text>
+            </MyCard>
           </TouchableOpacity>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.Business }} style={Styles.ImgCommonStyle}></Image>
-            <Text style={Styles.txtTitleCommonStyle}>Business Dev.Activity </Text>
+          <TouchableOpacity
+            activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+            <MyCard isflexrow={0}>
+              <Image resizeMode='contain' source={{ uri: Images.ProductPerformance }} style={Styles.ImgCommonStyle}></Image>
+              <Text style={Styles.txtTitleCommonStyle}> Product Performance</Text>
+            </MyCard>
           </TouchableOpacity>
         </View>
 
         <View style={Styles.Container}>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.SalesAnalysis }} style={Styles.ImgCommonStyle}></Image>
-            <Text style={Styles.txtTitleCommonStyle}> Sales Analysis  </Text>
+          <TouchableOpacity
+            activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+            <MyCard isflexrow={0}>
+              <Image resizeMode='contain' source={{ uri: Images.Distribution }} style={Styles.ImgCommonStyle}></Image>
+              <Text style={Styles.txtTitleCommonStyle}> Distribution Activity</Text>
+            </MyCard>
           </TouchableOpacity>
 
-          <TouchableOpacity style={Styles.mainCardView} activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
-            <Image resizeMode='contain' source={{ uri: Images.MarketPen }} style={Styles.ImgCommonStyle}></Image>
-            <Text style={Styles.txtTitleCommonStyle}>Market Penetration </Text>
+          <TouchableOpacity
+            activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+            <MyCard isflexrow={0}>
+              <Image resizeMode='contain' source={{ uri: Images.Business }} style={Styles.ImgCommonStyle}></Image>
+              <Text style={Styles.txtTitleCommonStyle}>Business Dev.Activity </Text>
+            </MyCard>
+          </TouchableOpacity>
+        </View>
+
+        <View style={Styles.Container}>
+          <TouchableOpacity activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+            <MyCard isflexrow={0}>
+              <Image resizeMode='contain' source={{ uri: Images.SalesAnalysis }} style={Styles.ImgCommonStyle}></Image>
+              <Text style={Styles.txtPayoutSalesAnalysisCommon}> Sales Analysis  </Text>
+            </MyCard>
+          </TouchableOpacity>
+
+          <TouchableOpacity activeOpacity={0.9} onPress={() => navigate(AppConstants.SCREENS.REPORTS)}>
+            <MyCard isflexrow={0}>
+              <Image resizeMode='contain' source={{ uri: Images.MarketPen }} style={Styles.ImgCommonStyle}></Image>
+              <Text style={Styles.txtTitleCommonStyle}>Market Penetration </Text>
+            </MyCard>
           </TouchableOpacity>
         </View>
 

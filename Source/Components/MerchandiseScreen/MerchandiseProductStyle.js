@@ -4,22 +4,6 @@ export default {
     flex: 1,
     // backgroundColor: '#E4EEFF',
   },
-  mainCardView: {
-    backgroundColor: AppConstants.COLORS.WHITE,
-    borderColor: AppConstants.COLORS.BORDERCOLOR,
-    borderRadius: AppConstants.getDeviceHeight(1),
-    shadowColor: AppConstants.COLORS.BORDERCOLOR, // IOS
-    shadowOffset: { height: 1, width: 1 }, // IOS
-    shadowOpacity: 1, // IOS
-    shadowRadius: 1, //IOS
-    elevation: 5,
-    paddingBottom: AppConstants.getDeviceHeight(2.85),
-    marginTop: AppConstants.getDeviceHeight(2),
-    marginRight: AppConstants.getDeviceHeight(1),
-    marginLeft: AppConstants.getDeviceHeight(2),
-    flex: 1,
-    flexDirection: 'column',
-  },
   Productimg: {
     height: AppConstants.getDeviceHeight(20),
     width: AppConstants.getDeviceWidth(30),

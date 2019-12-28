@@ -5,6 +5,7 @@ import LocationIcon from 'react-native-vector-icons/EvilIcons';
 import * as AppConstants from '../Helper/AppConstants';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MyButton from '../../CustomControls/MyButton';
+import MyCard from '../../CustomControls/MyCard';
 const Images = {
     Logo: 'nodealerfound',
 };
@@ -56,14 +57,12 @@ export default class Dealers extends Component {
     }
 
     renderItem = ({ item, index }) => {
-         const { navigate } = this.props.navigation;
+        const { navigate } = this.props.navigation;
         return (
             <TouchableOpacity
                 activeOpacity={0.9}
                 onPress={() => navigate(AppConstants.SCREENS.DEALERDETAIL)}  >
-                <View
-
-                    style={styles.mainCardView}>
+                <MyCard>
                     <View style={styles.DealerTypeView}>
                         <Text style={styles.txtDealerType}>Dealer Type</Text>
                     </View>
@@ -87,9 +86,8 @@ export default class Dealers extends Component {
                             <Text style={styles.txtamount}>Amount </Text>
                             <Text style={styles.txtloyaltyAmount}> {'\u20B9'}699</Text>
                         </View>
-
                     </View>
-                </View>
+                </MyCard>
             </TouchableOpacity>
         )
     }
