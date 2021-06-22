@@ -14,9 +14,7 @@ const Images = {
 export default class Login extends Component {
   static navigationOptions = ({ navigation }) => ({
     headerLeft: () => (
-
       <View />
-
     ),
   })
 
@@ -142,7 +140,8 @@ export default class Login extends Component {
         <View style={Styles.btnsigninView}>
           <MyButton
             Text="Sign In"
-            onPress={this.validateFields.bind(this)}
+            // onPress={this.validateFields.bind(this)}
+            onPress={this.props.navigation.replace(AppConstants.SCREENS.DASHBOARD)}
           />
         </View>
       </View>

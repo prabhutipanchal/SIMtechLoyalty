@@ -46,6 +46,9 @@ export const SCREENS = {
   //---------------TABBAR SCREENS-------------
 
   //-------------Stack Navigation Screens----
+  SCANBARCODE: 'ScanBarcode',
+  CHAT: 'Chat',
+  MYSCHEDULE: 'MySchedule',
   INTRO: 'Intro',
   CART: 'Cart',
   SPLASH: 'Splash',
@@ -140,6 +143,8 @@ export const Messages = {
   COPYREFERRALCODE: 'Your Referral Code Copied',
 };
 export const COLORS = {
+  HEADER_BG_DARK: '#37251C',
+  HEADER_BG_LIGHT: '#6D4835',
   APP_BG: '#FFF',
   APPTHEME: '#0F58D6',
   TABBAR_BG_COLOR: '#EBF2FC',

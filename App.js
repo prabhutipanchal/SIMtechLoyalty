@@ -46,6 +46,11 @@ import UploadDetails from './Source/Components/DealersScreen/UploadDetails';
 import CommonAddDealers from './Source/Components/DealersScreen/CommonAddDealers'
 import Reports from './Source/Components/ReportsScreen/Reports';
 
+import ScanBarcode from './Source/Components/ScanBarcodeScreen/ScanBarcode';
+import Chat from './Source/Components/ChatScreen/Chat';
+import MySchedule from './Source/Components/MySchedule/MySchedule';
+import MyBreakdown from './Source/Components/MyBreakdown/MyBreakdown';
+
 class HamburgerIcon extends Component {
   toggleDrawer = () => {
     this.props.navigationProps.toggleDrawer();
@@ -96,11 +101,11 @@ const transitionConfig = () => {
 };
 export const Tab_1 = createBottomTabNavigator(
   {
-    Dealers: {
-      screen: Dealers,
+    Notification: {
+      screen: Notification,
       navigationOptions: ({ navigation }) => {
         return {
-          tabBarLabel: 'Dealers',
+          tabBarLabel: 'Notifications',
           tabBarIcon: ({ focused }) => (
             <DealersIcons
               name="users"
@@ -170,10 +175,10 @@ export const Tab_1 = createBottomTabNavigator(
         };
       },
     },
-    CreatePresentation: {
-      screen: CreatePresentation,
+    Chat: {
+      screen: Chat,
       navigationOptions: {
-        tabBarLabel: 'Presentations',
+        tabBarLabel: 'Chat',
         tabBarIcon: ({ focused }) => (
           <Icons
             name="file-table-outline"
@@ -187,9 +192,6 @@ export const Tab_1 = createBottomTabNavigator(
         ),
       },
     },
-
-
-
     Merchandise: {
       screen: Merchandise,
       navigationOptions: ({ navigation }) => {
@@ -264,8 +266,17 @@ const RootStack = createStackNavigator(
         isBack: 1,
       },
     },
-    Dealers: {
-      screen: Dealers,
+    ScanBarcode: {
+      screen: ScanBarcode,
+    },
+    Chat: {
+      screen: Chat,
+    },
+    MySchedule: {
+      screen: MySchedule,
+      navigationOptions: {
+        title: 'My Schedule',
+      },
     },
     Initial: {
       screen: Initial,
@@ -279,11 +290,9 @@ const RootStack = createStackNavigator(
         header: null,
       },
     },
-
     ForgotPassword: {
       screen: ForgotPassword,
     },
-
     Login: {
       screen: Login,
       navigationOptions: {
@@ -545,7 +554,7 @@ function getHeaderBackground(navigation) {
 
 function getRightIcons(navigation) {
   switch (navigation.state.routeName) {
-    case 'Dealers':
+    case 'ScanBarcode':
       return (
         <View
           style={{
